@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>서울형 키즈카페 지도</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="hero-copy">
+          <p class="eyebrow">Seoul Kids Cafe Map</p>
+          <div class="topbar-main">
+            <div class="headline-group">
+              <div class="title-block">
+                <h1>서울형 키즈카페 지도</h1>
+                <p class="intro">지도와 카드 목록으로 서울형 키즈카페 지점을 빠르게 찾아보세요.</p>
+              </div>
+              <div class="hero-stats" aria-label="요약 정보">
+                <div class="stat-pill">
+                  <span class="stat-label">전체 지점</span>
+                  <strong id="total-count">0</strong>
+                </div>
+                <div class="stat-pill">
+                  <span class="stat-label">자치구 수</span>
+                  <strong id="district-count">0</strong>
+                </div>
+              </div>
+            </div>
+            <div class="toolbar">
+              <div id="active-filters" class="active-filters" hidden></div>
+              <div class="result-count" id="result-count">0개 지점</div>
+              <button
+                id="filter-toggle"
+                class="filter-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="filter-panel"
+              >
+                필터 열기
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="filter-panel" class="controls is-collapsed" aria-label="필터 영역" hidden>
+          <div class="control-grid compact-grid">
+            <label class="field field-search">
+              <span>검색</span>
+              <input id="search-input" type="search" placeholder="지점명 또는 주소 검색" />
+            </label>
+            <label class="field">
+              <span>자치구</span>
+              <select id="district-filter">
+                <option value="">전체 자치구</option>
+              </select>
+            </label>
+          </div>
+          <div class="filter-row">
+            <section class="field age-filter-field">
+              <div class="age-filter-head">
+                <span>이용 희망 연령 (연나이)</span>
+                <span id="age-selection-summary" class="age-selection-summary">전체 연령</span>
+              </div>
+              <div id="age-filter" class="age-filter" role="group" aria-label="이용 가능 연령 필터"></div>
+            </section>
+            <section class="field weekend-filter-field">
+              <div class="age-filter-head">
+                <span>운영 요일</span>
+                <span id="weekend-selection-summary" class="age-selection-summary">전체 운영일</span>
+              </div>
+              <div id="weekend-filter" class="age-filter compact-age-filter" role="group" aria-label="주말 운영 필터">
+                <button type="button" class="age-chip" data-weekend="saturday">토</button>
+                <button type="button" class="age-chip" data-weekend="sunday">일</button>
+              </div>
+            </section>
+          </div>
+          <div class="control-footer">
+            <button id="reset-filters" class="ghost-button" type="button">필터 초기화</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="map-panel">
+          <div class="panel-header">
+            <div>
+              <p class="panel-eyebrow">Map View</p>
+              <h2>서울 전역 지도</h2>
+            </div>
+            <p class="panel-note">카드를 누르면 지도가 해당 위치로 이동합니다.</p>
+          </div>
+          <div id="map" aria-label="서울형 키즈카페 지도"></div>
+        </section>
+        <aside class="list-panel">
+          <div class="panel-header list-header">
+            <div>
+              <p class="panel-eyebrow">List View</p>
+              <h2>지점 목록</h2>
+            </div>
+            <p class="panel-note" id="selection-hint">원하는 지점을 골라 상세 위치를 확인하세요.</p>
+          </div>
+          <div id="card-list" class="card-list" aria-live="polite">
+            <div class="empty-state">
+              <strong>데이터를 불러오는 중입니다.</strong>
+              <p>카드 목록과 지도를 잠시만 기다려 주세요.</p>
+            </div>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <template id="card-template">
+      <article class="cafe-card" tabindex="0" role="button">
+        <div class="thumb-wrap">
+          <img class="thumb" alt="" loading="lazy" />
+          <div class="thumb placeholder">이미지 없음</div>
+        </div>
+        <div class="card-body">
+          <div class="card-head">
+            <div class="card-chips">
+              <span class="type-chip"></span>
+              <span class="district"></span>
+            </div>
+            <h2 class="name"></h2>
+          </div>
+          <p class="address"></p>
+          <p class="feature-summary"></p>
+          <div class="status-row">
+            <span class="status-pill saturday-status"></span>
+            <span class="status-pill sunday-status"></span>
+            <span class="status-pill parking-status"></span>
+          </div>
+          <p class="parking-info"></p>
+          <dl class="meta">
+            <div>
+              <dt>이용연령</dt>
+              <dd class="age"></dd>
+            </div>
+            <div>
+              <dt>이용정원</dt>
+              <dd class="capacity"></dd>
+            </div>
+            <div>
+              <dt>운영일</dt>
+              <dd class="operation-days"></dd>
+            </div>
+            <div>
+              <dt>문의</dt>
+              <dd class="phone"></dd>
+            </div>
+          </dl>
+          <div class="card-footer">
+            <span class="card-hint">지도에서 위치 보기</span>
+            <div class="card-actions">
+              <a class="guide-button" target="_blank" rel="noreferrer noopener">이용안내</a>
+              <a class="reserve-button" target="_blank" rel="noreferrer noopener">예약 페이지</a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+  </html>
