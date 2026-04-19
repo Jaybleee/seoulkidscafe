@@ -877,7 +877,7 @@ h1 {
 
   .active-filters {
     grid-column: 1 / -1;
-    grid-row: 2;
+    grid-row: 1;
     max-width: none;
     white-space: normal;
     border-radius: 18px;
@@ -885,7 +885,7 @@ h1 {
 
   .result-count {
     grid-column: 1;
-    grid-row: 1;
+    grid-row: 2;
     width: fit-content;
     min-width: 0;
     justify-self: start;
@@ -893,7 +893,7 @@ h1 {
 
   .filter-toggle {
     grid-column: 2;
-    grid-row: 1;
+    grid-row: 2;
     width: auto;
     justify-self: end;
   }
