@@ -10,7 +10,6 @@ const state = {
   cafes: [],
   filtered: [],
   activeId: "",
-  activeMobilePanel: "map",
   selectedAges: new Set(),
   selectedWeekendDays: new Set(),
   markers: new Map(),
@@ -32,7 +31,6 @@ const elements = {
   listViewToggle: document.getElementById("list-view-toggle"),
   totalCount: document.getElementById("total-count"),
   districtCount: document.getElementById("district-count"),
-  selectionHint: document.getElementById("selection-hint"),
   ageFilter: document.getElementById("age-filter"),
   ageSelectionSummary: document.getElementById("age-selection-summary"),
   weekendFilter: document.getElementById("weekend-filter"),
@@ -51,15 +49,6 @@ function normalizeCafeName(value) {
     .replace(/^서울형\s*키즈카페\s*/u, "")
     .replace(/^일반형\s*키즈카페\s*/u, "")
     .trim();
-}
-
-function compactAddress(value) {
-  const text = sanitizeText(value);
-  if (!text) {
-    return "";
-  }
-
-  return text.replace(/^서울특별시\s*/u, "").replace(/^서울시\s*/u, "").trim();
 }
 
 function parseNullableBoolean(value) {
@@ -188,7 +177,6 @@ function toggleFilterPanel() {
 }
 
 function updateMobilePanel(panel) {
-  state.activeMobilePanel = panel;
   elements.content.dataset.mobileView = panel;
   elements.mapViewToggle?.classList.toggle("is-active", panel === "map");
   elements.listViewToggle?.classList.toggle("is-active", panel === "list");
@@ -308,7 +296,6 @@ function showCafeCardInList(cafeId = state.activeId) {
 
   state.activeId = cafeId;
   highlightActiveCard();
-  updateSelectionHint();
 
   if (window.innerWidth <= 960) {
     updateMobilePanel("list");
@@ -481,7 +468,7 @@ function filterCafes() {
   });
 
   if (!state.filtered.some((cafe) => cafe.id === state.activeId)) {
-    state.activeId = state.filtered[0]?.id || "";
+    state.activeId = "";
   }
 
   elements.resultCount.textContent = `${state.filtered.length}개 지점`;
@@ -490,9 +477,6 @@ function filterCafes() {
   updateMarkers();
   if (state.activeId) {
     highlightActiveCard();
-    updateSelectionHint();
-  } else {
-    elements.selectionHint.textContent = "조건에 맞는 지점을 골라 상세 위치를 확인하세요.";
   }
 }
 
@@ -652,10 +636,6 @@ function setActiveCafe(cafeId, openPopup = false) {
     focusActiveCard();
   }
 
-}
-
-function updateSelectionHint() {
-  elements.selectionHint.textContent = "";
 }
 
 function resetFilters() {
