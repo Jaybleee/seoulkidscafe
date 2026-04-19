@@ -10,6 +10,7 @@ const state = {
   cafes: [],
   filtered: [],
   activeId: "",
+  activeMobilePanel: "map",
   selectedAges: new Set(),
   selectedWeekendDays: new Set(),
   markers: new Map(),
@@ -25,7 +26,10 @@ const elements = {
   activeFilters: document.getElementById("active-filters"),
   filterToggle: document.getElementById("filter-toggle"),
   filterPanel: document.getElementById("filter-panel"),
+  filterBackdrop: document.getElementById("filter-backdrop"),
   resetFilters: document.getElementById("reset-filters"),
+  mapViewToggle: document.getElementById("map-view-toggle"),
+  listViewToggle: document.getElementById("list-view-toggle"),
   totalCount: document.getElementById("total-count"),
   districtCount: document.getElementById("district-count"),
   selectionHint: document.getElementById("selection-hint"),
@@ -35,10 +39,27 @@ const elements = {
   weekendSelectionSummary: document.getElementById("weekend-selection-summary"),
   cardList: document.getElementById("card-list"),
   cardTemplate: document.getElementById("card-template"),
+  content: document.querySelector(".content"),
 };
 
 function sanitizeText(value, fallback = "") {
   return typeof value === "string" && value.trim() ? value.trim() : fallback;
+}
+
+function normalizeCafeName(value) {
+  return sanitizeText(value)
+    .replace(/^서울형\s*키즈카페\s*/u, "")
+    .replace(/^일반형\s*키즈카페\s*/u, "")
+    .trim();
+}
+
+function compactAddress(value) {
+  const text = sanitizeText(value);
+  if (!text) {
+    return "";
+  }
+
+  return text.replace(/^서울특별시\s*/u, "").replace(/^서울시\s*/u, "").trim();
 }
 
 function parseNullableBoolean(value) {
@@ -80,7 +101,7 @@ function parseSupportedAges(ageText) {
 function normalizeCafe(record, index) {
   return {
     id: sanitizeText(record.id, `kc_${String(index + 1).padStart(3, "0")}`),
-    name: sanitizeText(record.name, "이름 미상"),
+    name: normalizeCafeName(record.name) || "이름 미상",
     district: sanitizeText(record.district),
     address: sanitizeText(record.address, "주소 정보 없음"),
     phone: sanitizeText(record.phone, "문의처 정보 없음"),
@@ -114,8 +135,12 @@ function availableAges(cafes) {
 }
 
 function updateSummary(cafes) {
-  elements.totalCount.textContent = cafes.length.toLocaleString("ko-KR");
-  elements.districtCount.textContent = countDistinctDistricts(cafes).toLocaleString("ko-KR");
+  if (elements.totalCount) {
+    elements.totalCount.textContent = cafes.length.toLocaleString("ko-KR");
+  }
+  if (elements.districtCount) {
+    elements.districtCount.textContent = countDistinctDistricts(cafes).toLocaleString("ko-KR");
+  }
 }
 
 function updateActiveFilterSummary() {
@@ -152,12 +177,40 @@ function updateFilterPanel(open) {
   elements.filterToggle.textContent = open ? "필터 닫기" : "필터 열기";
   elements.filterToggle.setAttribute("aria-expanded", String(open));
   elements.filterPanel.hidden = !open;
+  elements.filterBackdrop.hidden = !open;
   elements.filterPanel.classList.toggle("is-collapsed", !open);
+  elements.filterBackdrop.classList.toggle("is-visible", open);
 }
 
 function toggleFilterPanel() {
   const isOpen = elements.filterToggle.getAttribute("aria-expanded") === "true";
   updateFilterPanel(!isOpen);
+}
+
+function updateMobilePanel(panel) {
+  state.activeMobilePanel = panel;
+  elements.content.dataset.mobileView = panel;
+  elements.mapViewToggle?.classList.toggle("is-active", panel === "map");
+  elements.listViewToggle?.classList.toggle("is-active", panel === "list");
+  elements.mapViewToggle?.setAttribute("aria-selected", String(panel === "map"));
+  elements.listViewToggle?.setAttribute("aria-selected", String(panel === "list"));
+
+  if (panel === "map") {
+    requestAnimationFrame(() => {
+      state.map?.invalidateSize();
+      if (window.innerWidth <= 960 && state.activeId) {
+        const marker = state.markers.get(state.activeId);
+        marker?.openPopup();
+      }
+    });
+  }
+
+  if (panel === "list" && window.innerWidth <= 960 && state.activeId) {
+    requestAnimationFrame(() => {
+      const activeCard = document.querySelector(`.cafe-card[data-id="${state.activeId}"]`);
+      activeCard?.scrollIntoView({ block: "start", behavior: "smooth" });
+    });
+  }
 }
 
 function updateAgeSelectionSummary() {
@@ -166,7 +219,7 @@ function updateAgeSelectionSummary() {
     elements.ageSelectionSummary.textContent = "전체 연령";
     return;
   }
-  elements.ageSelectionSummary.textContent = `${selected.join(", ")}세 선택`;
+  elements.ageSelectionSummary.textContent = `${selected.join(", ")} 선택`;
 }
 
 function renderAgeFilter(cafes) {
@@ -176,7 +229,8 @@ function renderAgeFilter(cafes) {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "age-chip";
-    button.textContent = `${age}세`;
+    button.textContent = String(age);
+    button.setAttribute("aria-label", `${age}세`);
     button.dataset.age = String(age);
     button.classList.toggle("is-selected", state.selectedAges.has(age));
     button.setAttribute("aria-pressed", String(state.selectedAges.has(age)));
@@ -240,6 +294,30 @@ function parkingStatusLabel(cafe) {
   return "주차 정보 없음";
 }
 
+function focusActiveCard(options = {}) {
+  const { behavior = "smooth", block = "nearest" } = options;
+  const activeCard = document.querySelector(`.cafe-card[data-id="${state.activeId}"]`);
+  activeCard?.scrollIntoView({ block, behavior });
+  activeCard?.focus({ preventScroll: true });
+}
+
+function showCafeCardInList(cafeId = state.activeId) {
+  if (!cafeId) {
+    return;
+  }
+
+  state.activeId = cafeId;
+  highlightActiveCard();
+  updateSelectionHint();
+
+  if (window.innerWidth <= 960) {
+    updateMobilePanel("list");
+    return;
+  }
+
+  focusActiveCard({ block: "start" });
+}
+
 function initMap() {
   state.map = L.map("map", {
     zoomControl: true,
@@ -249,6 +327,24 @@ function initMap() {
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
   }).addTo(state.map);
+
+  const mapContainer = state.map.getContainer();
+  const handleShowList = (domEvent) => {
+    const detailButton = domEvent.target.closest("[data-popup-action='show-list']");
+    if (!detailButton) {
+      return;
+    }
+
+    domEvent.preventDefault();
+    domEvent.stopPropagation();
+
+    const cafeId = detailButton.getAttribute("data-cafe-id") || state.activeId;
+    showCafeCardInList(cafeId);
+    state.map.closePopup();
+  };
+
+  mapContainer.addEventListener("pointerup", handleShowList, true);
+  mapContainer.addEventListener("click", handleShowList, true);
 }
 
 function showCurrentLocation() {
@@ -297,6 +393,9 @@ function popupHtml(cafe) {
   const imageBlock = cafe.image_url
     ? `<img src="${cafe.image_url}" alt="${escapeHtml(cafe.name)}" />`
     : '<div class="popup-placeholder">이미지 없음</div>';
+  const listDetailButton = `<button type="button" class="popup-text-button popup-list-button" data-popup-action="show-list" data-cafe-id="${escapeHtml(
+    cafe.id
+  )}">목록에서 상세보기</button>`;
   const guideButton = cafe.detail_url
     ? `<a class="guide-button" href="${cafe.detail_url}" target="_blank" rel="noreferrer noopener">이용안내</a>`
     : "";
@@ -306,11 +405,12 @@ function popupHtml(cafe) {
 
   return `
     <div class="popup-card">
-      ${imageBlock}
       <h3>${escapeHtml(cafe.name)}</h3>
-      <p>${escapeHtml(cafe.cafe_type)}</p>
-      <p>${escapeHtml(cafe.address)}</p>
-      <div class="card-actions">
+      ${imageBlock}
+      <div class="card-actions popup-primary-action">
+        ${listDetailButton}
+      </div>
+      <div class="card-actions popup-link-actions">
         ${guideButton}
         ${reserveButton}
       </div>
@@ -369,7 +469,7 @@ function filterCafes() {
   state.filtered = state.cafes.filter((cafe) => {
     const matchesDistrict = !district || cafe.district === district;
     const matchesAge =
-      state.selectedAges.size === 0 || [...state.selectedAges].some((age) => cafe.supported_ages.includes(age));
+      state.selectedAges.size === 0 || [...state.selectedAges].every((age) => cafe.supported_ages.includes(age));
     const matchesWeekend =
       state.selectedWeekendDays.size === 0 ||
       [...state.selectedWeekendDays].every((day) =>
@@ -408,7 +508,21 @@ function renderCards() {
     return;
   }
 
-  state.filtered.forEach((cafe) => {
+  const isDesktop = window.innerWidth > 960;
+  const visibleCafes =
+    isDesktop && state.activeId
+      ? [...state.filtered].sort((a, b) => {
+          if (a.id === state.activeId) {
+            return -1;
+          }
+          if (b.id === state.activeId) {
+            return 1;
+          }
+          return 0;
+        })
+      : state.filtered;
+
+  visibleCafes.forEach((cafe) => {
     const fragment = elements.cardTemplate.content.cloneNode(true);
     const card = fragment.querySelector(".cafe-card");
     const thumbWrap = fragment.querySelector(".thumb-wrap");
@@ -426,6 +540,7 @@ function renderCards() {
     const capacity = fragment.querySelector(".capacity");
     const operationDays = fragment.querySelector(".operation-days");
     const phone = fragment.querySelector(".phone");
+    const cardHint = fragment.querySelector(".card-hint");
     const guideButton = fragment.querySelector(".guide-button");
     const reserveButton = fragment.querySelector(".reserve-button");
 
@@ -477,7 +592,20 @@ function renderCards() {
     }
 
     card.addEventListener("click", (event) => {
-      if (event.target.closest(".reserve-button, .guide-button")) {
+      if (event.target.closest(".reserve-button, .guide-button, .card-hint")) {
+        return;
+      }
+      setActiveCafe(cafe.id, true);
+    });
+
+    cardHint.addEventListener("click", () => {
+      if (window.innerWidth <= 960) {
+        updateMobilePanel("map");
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            setActiveCafe(cafe.id, true);
+          });
+        });
         return;
       }
       setActiveCafe(cafe.id, true);
@@ -508,23 +636,26 @@ function setActiveCafe(cafeId, openPopup = false) {
   const cafe = state.filtered.find((item) => item.id === cafeId);
   const marker = state.markers.get(cafeId);
   if (cafe && marker && cafe.lat !== null && cafe.lng !== null) {
-    state.map.flyTo([cafe.lat, cafe.lng], 14, { duration: 0.5 });
+    const zoom = 14;
+    const target = L.latLng(cafe.lat, cafe.lng);
+    const verticalOffset = window.innerWidth <= 640 ? 160 : 120;
+    const adjustedCenter = state.map.unproject(state.map.project(target, zoom).subtract([0, verticalOffset]), zoom);
+
     if (openPopup) {
-      marker.openPopup();
+      state.map.once("moveend", () => marker.openPopup());
     }
+
+    state.map.flyTo(adjustedCenter, zoom, { duration: 0.5 });
   }
 
-  const activeCard = document.querySelector(`.cafe-card[data-id="${cafeId}"]`);
-  activeCard?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  if (window.innerWidth > 960) {
+    focusActiveCard();
+  }
+
 }
 
 function updateSelectionHint() {
-  const cafe = state.filtered.find((item) => item.id === state.activeId);
-  if (!cafe) {
-    elements.selectionHint.textContent = "원하는 지점을 골라 상세 위치를 확인하세요.";
-    return;
-  }
-  elements.selectionHint.textContent = `${cafe.name} 선택됨 · ${parkingStatusLabel(cafe)}`;
+  elements.selectionHint.textContent = "";
 }
 
 function resetFilters() {
@@ -560,7 +691,10 @@ function bindEvents() {
   elements.searchInput.addEventListener("input", filterCafes);
   elements.districtFilter.addEventListener("change", filterCafes);
   elements.filterToggle.addEventListener("click", toggleFilterPanel);
+  elements.filterBackdrop.addEventListener("click", () => updateFilterPanel(false));
   elements.resetFilters.addEventListener("click", resetFilters);
+  elements.mapViewToggle?.addEventListener("click", () => updateMobilePanel("map"));
+  elements.listViewToggle?.addEventListener("click", () => updateMobilePanel("list"));
   elements.weekendFilter.querySelectorAll("[data-weekend]").forEach((button) => {
     button.addEventListener("click", () => {
       const day = button.dataset.weekend;
@@ -586,6 +720,7 @@ async function main() {
     fillDistrictFilter(state.cafes);
     renderAgeFilter(state.cafes);
     renderWeekendFilter();
+    updateMobilePanel("map");
     updateFilterPanel(false);
     filterCafes();
   } catch (error) {

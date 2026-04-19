@@ -16,22 +16,11 @@
     <div class="page-shell">
       <header class="topbar">
         <div class="hero-copy">
-          <p class="eyebrow">Seoul Kids Cafe Map</p>
           <div class="topbar-main">
             <div class="headline-group">
               <div class="title-block">
                 <h1>서울형 키즈카페 지도</h1>
-                <p class="intro">지도와 카드 목록으로 서울형 키즈카페 지점을 빠르게 찾아보세요.</p>
-              </div>
-              <div class="hero-stats" aria-label="요약 정보">
-                <div class="stat-pill">
-                  <span class="stat-label">전체 지점</span>
-                  <strong id="total-count">0</strong>
-                </div>
-                <div class="stat-pill">
-                  <span class="stat-label">자치구 수</span>
-                  <strong id="district-count">0</strong>
-                </div>
+                <p class="intro">서울형 키즈카페를 지도와 카드로 빠르게 찾아보세요.</p>
               </div>
             </div>
             <div class="toolbar">
@@ -50,19 +39,17 @@
           </div>
         </div>
         <div id="filter-panel" class="controls is-collapsed" aria-label="필터 영역" hidden>
-          <div class="control-grid compact-grid">
+          <div class="filter-layout">
             <label class="field field-search">
               <span>검색</span>
               <input id="search-input" type="search" placeholder="지점명 또는 주소 검색" />
             </label>
-            <label class="field">
+            <label class="field field-district">
               <span>자치구</span>
               <select id="district-filter">
                 <option value="">전체 자치구</option>
               </select>
             </label>
-          </div>
-          <div class="filter-row">
             <section class="field age-filter-field">
               <div class="age-filter-head">
                 <span>이용 희망 연령 (연나이)</span>
@@ -80,31 +67,36 @@
                 <button type="button" class="age-chip" data-weekend="sunday">일</button>
               </div>
             </section>
-          </div>
-          <div class="control-footer">
-            <button id="reset-filters" class="ghost-button" type="button">필터 초기화</button>
+            <div class="control-footer">
+              <button id="reset-filters" class="ghost-button" type="button">초기화</button>
+            </div>
           </div>
         </div>
       </header>
+      <div id="filter-backdrop" class="filter-backdrop" hidden></div>
+
+      <div class="mobile-view-toggle" role="tablist" aria-label="모바일 보기 전환">
+        <button id="map-view-toggle" class="view-toggle-button is-active" type="button" role="tab" aria-selected="true">
+          지도
+        </button>
+        <button id="list-view-toggle" class="view-toggle-button" type="button" role="tab" aria-selected="false">
+          목록
+        </button>
+      </div>
 
       <main class="content">
-        <section class="map-panel">
+        <section class="map-panel" data-view="map">
           <div class="panel-header">
             <div>
               <p class="panel-eyebrow">Map View</p>
-              <h2>서울 전역 지도</h2>
             </div>
-            <p class="panel-note">카드를 누르면 지도가 해당 위치로 이동합니다.</p>
           </div>
           <div id="map" aria-label="서울형 키즈카페 지도"></div>
         </section>
-        <aside class="list-panel">
+        <aside class="list-panel" data-view="list">
           <div class="panel-header list-header">
-            <div>
-              <p class="panel-eyebrow">List View</p>
-              <h2>지점 목록</h2>
-            </div>
-            <p class="panel-note" id="selection-hint">원하는 지점을 골라 상세 위치를 확인하세요.</p>
+            <p class="panel-eyebrow">List View</p>
+            <p class="panel-note" id="selection-hint"></p>
           </div>
           <div id="card-list" class="card-list" aria-live="polite">
             <div class="empty-state">
@@ -157,7 +149,7 @@
             </div>
           </dl>
           <div class="card-footer">
-            <span class="card-hint">지도에서 위치 보기</span>
+            <button class="card-hint" type="button">지도에서 위치 보기</button>
             <div class="card-actions">
               <a class="guide-button" target="_blank" rel="noreferrer noopener">이용안내</a>
               <a class="reserve-button" target="_blank" rel="noreferrer noopener">예약 페이지</a>
