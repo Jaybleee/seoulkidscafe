@@ -202,6 +202,14 @@ function naverMapUrl(place) {
   return `https://map.naver.com/p/search/${query}`;
 }
 
+function popupDirectLabel(place) {
+  if (place.secondaryUrl) return "예약하기";
+  const label = clean(place.primaryLabel).replace(/\s*→$/, "");
+  if (!label || label.includes("공식") || label.includes("검색")) return "공식 페이지";
+  if (label.includes("예약")) return "예약";
+  return label.replace(/\s*보기$/, "");
+}
+
 function feeLabel(fee) {
   const value = clean(fee);
   if (!value) return "요금 확인";
@@ -627,11 +635,11 @@ function popupHtml(place) {
     .map((item) => `<span>${escapeHtml(item.label)}</span>`)
     .join("");
   const directUrl = place.secondaryUrl || place.primaryUrl;
-  const directLabel = place.secondaryUrl ? "예약하기 →" : place.primaryUrl ? place.primaryLabel || "공식 페이지 →" : "";
+  const directLabel = directUrl ? popupDirectLabel(place) : "";
   const directAction = directUrl
     ? `<a class="popup-action primary" href="${escapeHtml(directUrl)}" target="_blank" rel="noreferrer noopener">${escapeHtml(directLabel)}</a>`
     : "";
-  const naverAction = `<a class="popup-action naver" href="${escapeHtml(naverMapUrl(place))}" target="_blank" rel="noreferrer noopener">네이버지도 보기</a>`;
+  const naverAction = `<a class="popup-action naver" href="${escapeHtml(naverMapUrl(place))}" target="_blank" rel="noreferrer noopener">네이버지도</a>`;
   return `
     <div class="popup-card">
       <div class="popup-meta">
@@ -643,7 +651,7 @@ function popupHtml(place) {
       <p class="popup-summary">${escapeHtml(place.summary || "")}</p>
       <div class="popup-facts">${facts}</div>
       <div class="popup-actions">
-        <button type="button" class="popup-action" data-popup-action="show-list" data-place-id="${escapeHtml(place.id)}">세부내용 보기</button>
+        <button type="button" class="popup-action" data-popup-action="show-list" data-place-id="${escapeHtml(place.id)}">세부내용</button>
         ${naverAction}
         ${directAction}
       </div>

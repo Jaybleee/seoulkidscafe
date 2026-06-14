@@ -907,7 +907,7 @@ h1 em {
 }
 
 .popup-card {
-  width: 230px;
+  width: min(76vw, 292px);
 }
 
 .popup-card h3 {
@@ -927,15 +927,11 @@ h1 em {
 }
 
 .popup-summary {
-  display: -webkit-box;
   margin: 7px 0 0;
-  overflow: hidden;
   color: var(--ink);
   font-size: 0.72rem;
   font-weight: 700;
-  line-height: 1.4;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  line-height: 1.45;
 }
 
 .popup-placeholder[hidden] {
@@ -984,11 +980,13 @@ h1 em {
 }
 
 .popup-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: 8px;
 }
 
 .popup-action {
-  flex: 1 1 0;
+  min-width: 0;
   min-height: 34px;
   display: inline-flex;
   align-items: center;
@@ -998,8 +996,10 @@ h1 em {
   background: #edf1ee;
   color: var(--ink);
   text-decoration: none;
-  font-size: 0.74rem;
+  font-size: 0.68rem;
   font-weight: 800;
+  line-height: 1.15;
+  white-space: nowrap;
   cursor: pointer;
 }
 
@@ -1012,6 +1012,20 @@ h1 em {
   border: 1px solid #03c75a;
   background: #effaf3;
   color: #138a45;
+}
+
+@media (max-width: 380px) {
+  .popup-card {
+    width: min(82vw, 280px);
+  }
+
+  .popup-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .popup-action.primary {
+    grid-column: span 2;
+  }
 }
 
 .mobile-view-toggle {
