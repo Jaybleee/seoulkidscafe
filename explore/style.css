@@ -395,6 +395,19 @@ h1 em {
   gap: 14px;
 }
 
+.content[data-mobile-view="map"] {
+  display: block;
+}
+
+.content[data-mobile-view="list"] {
+  display: block;
+}
+
+.content[data-mobile-view="map"] .list-panel,
+.content[data-mobile-view="list"] .map-panel {
+  display: none;
+}
+
 .map-panel,
 .list-panel {
   min-height: 72vh;
@@ -447,17 +460,20 @@ h1 em {
 
 #map {
   width: 100%;
-  height: calc(72vh - 42px);
+  height: calc(100vh - 238px);
   min-height: 540px;
 }
 
 .card-list {
-  height: calc(72vh - 42px);
+  min-height: calc(100vh - 238px);
+  height: auto;
   padding: 12px;
   overflow: auto;
   display: grid;
   gap: 10px;
   align-content: start;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 420px));
+  justify-content: center;
 }
 
 .place-card {
@@ -858,7 +874,29 @@ h1 em {
 }
 
 .mobile-view-toggle {
-  display: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  min-width: 142px;
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  overflow: hidden;
+  background: #fff;
+}
+
+.view-toggle-button {
+  min-height: 32px;
+  border: 0;
+  background: transparent;
+  color: var(--text3);
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.view-toggle-button.is-active {
+  background: var(--text);
+  color: #fff;
 }
 
 @media (max-width: 1280px) {
@@ -914,9 +952,6 @@ h1 em {
   }
 
   .mobile-view-toggle {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
     min-width: 132px;
     margin: 0;
   }
@@ -933,33 +968,14 @@ h1 em {
     box-shadow: var(--shadow);
   }
 
-  .view-toggle-button {
-    min-height: 40px;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    background: var(--panel);
-    color: var(--muted);
-    font-weight: 900;
-  }
-
-  .view-toggle-button.is-active {
-    background: var(--ink);
-    color: #fff;
-  }
-
-  .content {
-    display: block;
-  }
-
-  .content[data-mobile-view="map"] .list-panel,
-  .content[data-mobile-view="list"] .map-panel {
-    display: none;
-  }
-
   #map,
 .card-list {
     height: calc(100svh - 235px);
     min-height: 430px;
+  }
+
+  .card-list {
+    grid-template-columns: 1fr;
   }
 
   .place-card {

@@ -693,7 +693,7 @@ function showPlaceCardInList(placeId = state.activeId) {
   if (!placeId) return;
   state.activeId = placeId;
   renderCards();
-  if (window.innerWidth <= 900) updateMobilePanel("list");
+  updateMobilePanel("list");
   requestAnimationFrame(focusActiveCard);
 }
 
