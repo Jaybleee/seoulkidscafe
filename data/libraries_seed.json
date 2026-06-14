@@ -5,28 +5,15 @@
     "library_type": "어린이청소년도서관",
     "district": "강남구",
     "address": "서울 강남구 강남대로94길 21",
-    "recommended_age": [
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "문화체육관광부 소속 어린이·청소년 전문 도서관입니다. 소장자료, 사서추천도서, 프로그램 신청, 도서관 견학 신청과 어린이독도체험관 정보를 공식 페이지에서 함께 확인할 수 있습니다.",
     "info_label": "사서추천도서 · 프로그램신청 · 견학신청 · 어린이독도체험관",
     "note": "월별 휴관일과 프로그램 접수 여부는 공식 페이지에서 확인하세요.",
     "website_url": "https://www.nlcy.go.kr/NLCY/main/index.do",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.5009614,
-    "lng": 127.0296222,
-    "verification_status": "address_geocoded"
+    "parking_available": null
   },
   {
     "id": "seoul-childlib",
@@ -34,29 +21,15 @@
     "library_type": "어린이도서관",
     "district": "종로구",
     "address": "서울 종로구 사직로9길 7",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "유아 추천도서, 학년별 권장도서, 독서문화행사와 견학신청을 한 곳에서 확인할 수 있는 어린이 전문 도서관입니다. 책을 고르기 어려운 부모가 아이 연령에 맞춰 자료와 프로그램을 함께 살펴보기 좋습니다.",
     "info_label": "자료검색 · 유아추천도서 · 독서문화프로그램 · 견학신청",
     "note": "월별 휴관일과 프로그램 접수 여부는 공식 페이지에서 확인하세요.",
     "website_url": "https://childlib.sen.go.kr/childlib/index.do",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.5765082,
-    "lng": 126.9679078,
-    "verification_status": "address_geocoded"
+    "parking_available": null
   },
   {
     "id": "gangnam-hanok-childlib",
@@ -64,28 +37,15 @@
     "library_type": "어린이도서관",
     "district": "강남구",
     "address": "서울 강남구 자곡로7길 3",
-    "recommended_age": [
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "한옥 공간에서 어린이 자료와 독서문화행사를 이용할 수 있는 강남구립 어린이도서관입니다. 그림책 큐레이션, 한옥문화 행사, 도서관 견학신청 등 아이와 책 경험을 넓히기 좋습니다.",
     "info_label": "그림책 큐레이션 · 문화행사 · 견학신청 · 자료검색",
     "note": "한옥형 어린이도서관입니다. 휴관일과 행사 접수 여부는 공식 페이지에서 확인하세요.",
     "website_url": "https://library.gangnam.go.kr/hchildlib/index.do",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.473155,
-    "lng": 127.0995148,
-    "verification_status": "address_geocoded"
+    "parking_available": null
   },
   {
     "id": "ilwon-raon-english-lib",
@@ -93,28 +53,15 @@
     "library_type": "어린이영어도서관",
     "district": "강남구",
     "address": "서울 강남구 영동대로4길 5",
-    "recommended_age": [
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "어린이 영어자료와 영어 독서 프로그램을 중심으로 살펴볼 수 있는 강남구 공립 영어도서관입니다. 영어 그림책, 독서활동, 프로그램 접수 여부를 확인해 방문 계획을 세우기 좋습니다.",
     "info_label": "영어자료 · 영어독서 프로그램 · 자료검색",
     "note": "영어 특화형 도서관입니다. 세부 운영시간은 강남구립도서관 공식 페이지에서 확인하세요.",
     "website_url": "https://library.gangnam.go.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.4913842,
-    "lng": 127.0765953,
-    "verification_status": "address_geocoded"
+    "parking_available": null
   },
   {
     "id": "gangseo-gilkkot-childlib",
@@ -122,29 +69,15 @@
     "library_type": "어린이도서관",
     "district": "강서구",
     "address": "서울 강서구 금낭화로24길 5",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "강서구 공립 어린이도서관으로 그림책과 어린이 자료, 독서문화 프로그램을 함께 확인할 수 있습니다. 영유아부터 초등까지 책 읽기 습관을 만들 방문지로 살펴보기 좋습니다.",
     "info_label": "어린이자료 · 독서문화프로그램 · 자료검색",
     "note": "강서구립도서관 통합 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://lib.gangseo.seoul.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.5786732,
-    "lng": 126.8138522,
-    "verification_status": "address_geocoded"
+    "parking_available": null
   },
   {
     "id": "gangseo-dream-childlib",
@@ -152,29 +85,15 @@
     "library_type": "어린이도서관",
     "district": "강서구",
     "address": "서울 강서구 공항대로 615",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "강서구 공립 어린이도서관으로 어린이 자료와 독서문화 프로그램을 이용할 수 있습니다. 아이 연령에 맞는 자료실과 프로그램 일정을 먼저 확인하고 방문하기 좋습니다.",
     "info_label": "어린이자료 · 독서문화프로그램 · 자료검색",
     "note": "강서구립도서관 통합 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://lib.gangseo.seoul.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.5531797,
-    "lng": 126.8620729,
-    "verification_status": "address_geocoded"
+    "parking_available": null
   },
   {
     "id": "gangseo-english-lib",
@@ -182,28 +101,15 @@
     "library_type": "어린이영어도서관",
     "district": "강서구",
     "address": "서울 강서구 화곡로61길 99",
-    "recommended_age": [
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "어린이 영어자료와 영어 독서활동을 살펴볼 수 있는 강서구 공립 영어도서관입니다. 영어책을 접하게 하고 싶은 유아·초등 가정이 프로그램 일정을 확인하기 좋습니다.",
     "info_label": "영어자료 · 영어독서 프로그램 · 자료검색",
     "note": "강서구립도서관 통합 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://lib.gangseo.seoul.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.5582006,
-    "lng": 126.8469248,
-    "verification_status": "address_geocoded"
+    "parking_available": null
   },
   {
     "id": "gwangjin-childlib",
@@ -211,29 +117,15 @@
     "library_type": "어린이도서관",
     "district": "광진구",
     "address": "서울 광진구 뚝섬로52길 58",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "광진구 공립 어린이도서관으로 어린이 자료와 문화 프로그램을 확인할 수 있습니다. 미취학 아이와 초등 아이 모두 책과 활동을 함께 살펴보기 좋은 후보입니다.",
     "info_label": "어린이자료 · 문화프로그램 · 자료검색",
     "note": "광진구립도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://www.gwangjinlib.seoul.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.5319,
-    "lng": 127.0818,
-    "verification_status": "address_manual"
+    "parking_available": null
   },
   {
     "id": "guro-dreamtree-lib",
@@ -241,29 +133,15 @@
     "library_type": "어린이도서관",
     "district": "구로구",
     "address": "서울 구로구 구로동로26길 54",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "구로구 공립 어린이도서관으로 어린이 자료와 독서문화 프로그램을 이용할 수 있습니다. 동네 기반으로 책 읽기와 프로그램을 함께 찾는 가족에게 적합합니다.",
     "info_label": "어린이자료 · 독서문화프로그램 · 자료검색",
     "note": "구로구립도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://lib.guro.go.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.4902,
-    "lng": 126.8834,
-    "verification_status": "address_manual"
+    "parking_available": null
   },
   {
     "id": "guro-geulmaru-hanok-childlib",
@@ -271,29 +149,15 @@
     "library_type": "어린이도서관",
     "district": "구로구",
     "address": "서울 구로구 고척로27바길 7",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "한옥형 공간에서 어린이 자료와 독서활동을 경험할 수 있는 구로구 공립 어린이도서관입니다. 조용한 책 읽기와 문화 프로그램을 함께 찾는 가족에게 좋습니다.",
     "info_label": "한옥형 도서관 · 어린이자료 · 독서문화프로그램",
     "note": "구로구립도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://lib.guro.go.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.5035,
-    "lng": 126.8485,
-    "verification_status": "address_manual"
+    "parking_available": null
   },
   {
     "id": "guro-miracle-lib",
@@ -301,29 +165,15 @@
     "library_type": "어린이도서관",
     "district": "구로구",
     "address": "서울 구로구 구로중앙로40길 24",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "어린이 중심 독서문화 공간인 기적의도서관 계열 공립 도서관입니다. 그림책, 어린이 자료, 가족 독서 프로그램을 함께 확인하기 좋습니다.",
     "info_label": "어린이자료 · 가족독서 · 독서문화프로그램",
     "note": "구로구립도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://lib.guro.go.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.5012,
-    "lng": 126.8833,
-    "verification_status": "address_manual"
+    "parking_available": null
   },
   {
     "id": "guro-gungdong-childlib",
@@ -331,29 +181,15 @@
     "library_type": "어린이도서관",
     "district": "구로구",
     "address": "서울 구로구 오리로 1352",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "구로구 궁동 권역의 어린이 전용 공립 도서관입니다. 어린이 자료와 독서문화 프로그램을 동네 가까이에서 이용하려는 가족에게 유용합니다.",
     "info_label": "어린이자료 · 독서문화프로그램 · 자료검색",
     "note": "구로구립도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://lib.guro.go.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.5037146,
-    "lng": 126.8282483,
-    "verification_status": "address_geocoded"
+    "parking_available": null
   },
   {
     "id": "guro-gaebong-childlib",
@@ -361,29 +197,15 @@
     "library_type": "어린이도서관",
     "district": "구로구",
     "address": "서울 구로구 개봉로16길 31",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "구로구 개봉 권역의 어린이 전용 공립 도서관입니다. 책 읽기, 자료검색, 독서문화 프로그램을 함께 확인해 방문할 수 있습니다.",
     "info_label": "어린이자료 · 독서문화프로그램 · 자료검색",
     "note": "구로구립도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://lib.guro.go.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.4897,
-    "lng": 126.8588,
-    "verification_status": "address_manual"
+    "parking_available": null
   },
   {
     "id": "geumcheon-ginkgo-childlib",
@@ -391,29 +213,15 @@
     "library_type": "어린이도서관",
     "district": "금천구",
     "address": "서울 금천구 금하로30길 51",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "금천구 공립 어린이도서관으로 어린이 자료와 독서문화 프로그램을 이용할 수 있습니다. 영유아와 초등 아이의 책 선택과 프로그램 탐색에 적합합니다.",
     "info_label": "어린이자료 · 독서문화프로그램 · 자료검색",
     "note": "금천구립도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://geumcheonlib.seoul.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.4524,
-    "lng": 126.9087,
-    "verification_status": "address_manual"
+    "parking_available": null
   },
   {
     "id": "geumcheon-gasan-childlib",
@@ -421,29 +229,15 @@
     "library_type": "어린이도서관",
     "district": "금천구",
     "address": "서울 금천구 가산로5길 43",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "금천구 가산 권역의 어린이 전용 공립 도서관입니다. 어린이 자료와 독서 프로그램을 가까운 생활권에서 이용할 수 있습니다.",
     "info_label": "어린이자료 · 독서문화프로그램 · 자료검색",
     "note": "금천구립도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://geumcheonlib.seoul.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.472,
-    "lng": 126.8915,
-    "verification_status": "address_manual"
+    "parking_available": null
   },
   {
     "id": "nowon-childlib",
@@ -451,29 +245,15 @@
     "library_type": "어린이도서관",
     "district": "노원구",
     "address": "서울 노원구 한글비석로 346",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "노원구 대표 어린이 전용 공립 도서관입니다. 영유아·초등 자료와 독서문화 프로그램을 확인해 책 중심 나들이를 계획하기 좋습니다.",
     "info_label": "어린이자료 · 독서문화프로그램 · 자료검색",
     "note": "노원구립도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://www.nowonlib.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.6649137,
-    "lng": 127.0546907,
-    "verification_status": "address_geocoded"
+    "parking_available": null
   },
   {
     "id": "nowon-wolgye-childlib",
@@ -481,29 +261,15 @@
     "library_type": "어린이도서관",
     "district": "노원구",
     "address": "서울 노원구 마들로 57 월계문화복지센터",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "월계문화복지센터 내 어린이도서관으로 어린이 자료와 독서활동을 확인할 수 있습니다. 월계 권역 가족이 가까운 도서관 나들이를 계획하기 좋습니다.",
     "info_label": "어린이자료 · 독서문화프로그램 · 자료검색",
     "note": "노원구립도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://www.nowonlib.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.6298,
-    "lng": 127.061,
-    "verification_status": "address_manual"
+    "parking_available": null
   },
   {
     "id": "dobong-child-culture-info",
@@ -511,29 +277,15 @@
     "library_type": "어린이문화정보센터",
     "district": "도봉구",
     "address": "서울 도봉구 노해로 227",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "어린이 도서관 기능과 문화정보 프로그램을 함께 제공하는 도봉구 공립 어린이 시설입니다. 책과 문화활동을 한 번에 확인하려는 가족에게 적합합니다.",
     "info_label": "어린이자료 · 문화프로그램 · 자료검색",
     "note": "도봉구 통합도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://www.unilib.dobong.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.6478578,
-    "lng": 127.0272798,
-    "verification_status": "address_geocoded"
+    "parking_available": null
   },
   {
     "id": "dobongdong-childlib",
@@ -541,29 +293,15 @@
     "library_type": "어린이도서관",
     "district": "도봉구",
     "address": "서울 도봉구 도봉로169길 46",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "도봉동 권역의 어린이 전용 공립 도서관입니다. 어린이 자료, 책 읽기 활동, 문화 프로그램을 가까운 생활권에서 확인할 수 있습니다.",
     "info_label": "어린이자료 · 독서문화프로그램 · 자료검색",
     "note": "도봉구 통합도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://www.unilib.dobong.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.6821,
-    "lng": 127.044,
-    "verification_status": "address_manual"
+    "parking_available": null
   },
   {
     "id": "ddm-jangan-childlib",
@@ -571,29 +309,15 @@
     "library_type": "어린이도서관",
     "district": "동대문구",
     "address": "서울 동대문구 장한로14길 21",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "동대문구 장안 권역의 어린이 전용 공립 도서관입니다. 영유아·초등 자료와 독서문화 프로그램을 함께 살펴볼 수 있습니다.",
     "info_label": "어린이자료 · 독서문화프로그램 · 자료검색",
     "note": "동대문구정보화도서관 계열 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://www.l4d.or.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.5712572,
-    "lng": 127.0732176,
-    "verification_status": "address_geocoded"
+    "parking_available": null
   },
   {
     "id": "ddm-hwigyeong-childlib",
@@ -601,29 +325,15 @@
     "library_type": "어린이도서관",
     "district": "동대문구",
     "address": "서울 동대문구 망우로18가길 30",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "동대문구 휘경 권역의 어린이 전용 공립 도서관입니다. 어린이 자료와 프로그램 일정을 확인해 가까운 독서 나들이를 계획할 수 있습니다.",
     "info_label": "어린이자료 · 독서문화프로그램 · 자료검색",
     "note": "동대문구정보화도서관 계열 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://www.l4d.or.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.589,
-    "lng": 127.0638,
-    "verification_status": "address_manual"
+    "parking_available": null
   },
   {
     "id": "ddm-imun-childlib",
@@ -631,29 +341,15 @@
     "library_type": "어린이도서관",
     "district": "동대문구",
     "address": "서울 동대문구 한천로58길 81-11",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "동대문구 이문 권역의 어린이 전용 공립 도서관입니다. 그림책과 어린이 자료, 독서 프로그램을 확인하기 좋은 생활권 시설입니다.",
     "info_label": "어린이자료 · 독서문화프로그램 · 자료검색",
     "note": "동대문구정보화도서관 계열 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://www.l4d.or.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.6002,
-    "lng": 127.0686,
-    "verification_status": "address_manual"
+    "parking_available": null
   },
   {
     "id": "ddm-yongdu-english-lib",
@@ -661,28 +357,15 @@
     "library_type": "어린이영어도서관",
     "district": "동대문구",
     "address": "서울 동대문구 무학로44길 38",
-    "recommended_age": [
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "동대문구 어린이 영어자료 특화 공립 도서관입니다. 영어 그림책과 어린이 영어 독서활동을 찾는 가족이 프로그램 여부를 확인하기 좋습니다.",
     "info_label": "영어자료 · 영어독서 프로그램 · 자료검색",
     "note": "동대문구정보화도서관 계열 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://www.l4d.or.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.576,
-    "lng": 127.0285,
-    "verification_status": "address_manual"
+    "parking_available": null
   },
   {
     "id": "mapo-purme-childlib",
@@ -690,29 +373,15 @@
     "library_type": "어린이도서관",
     "district": "마포구",
     "address": "서울 마포구 월드컵북로 494",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "푸르메재단 넥슨어린이재활병원과 연계된 마포구 어린이도서관입니다. 어린이 자료와 독서문화 프로그램을 살펴볼 수 있어 병원·상암권 방문 동선과 함께 보기 좋습니다.",
     "info_label": "어린이자료 · 독서문화프로그램 · 자료검색",
     "note": "마포구립도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://mplib.mapo.go.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.5769128,
-    "lng": 126.8931825,
-    "verification_status": "address_geocoded"
+    "parking_available": null
   },
   {
     "id": "mapo-english-childlib",
@@ -720,28 +389,15 @@
     "library_type": "어린이영어도서관",
     "district": "마포구",
     "address": "서울 마포구 도화4길 53",
-    "recommended_age": [
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "마포구 어린이 영어자료 특화 공립 도서관입니다. 영어책과 독서 프로그램을 찾는 유아·초등 가정이 공식 일정을 확인하기 좋습니다.",
     "info_label": "영어자료 · 영어독서 프로그램 · 자료검색",
     "note": "마포구립도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://mplib.mapo.go.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.539533,
-    "lng": 126.951817,
-    "verification_status": "address_geocoded"
+    "parking_available": null
   },
   {
     "id": "sdm-saerom-childlib",
@@ -749,29 +405,15 @@
     "library_type": "어린이도서관",
     "district": "서대문구",
     "address": "서울 서대문구 증가로10길 45-9",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "서대문구 남가좌 권역의 어린이 전용 공립 도서관입니다. 그림책과 어린이 자료, 독서문화 프로그램을 확인할 수 있습니다.",
     "info_label": "어린이자료 · 독서문화프로그램 · 자료검색",
     "note": "서대문구립도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://lib.sdm.or.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.5798,
-    "lng": 126.922,
-    "verification_status": "address_manual"
+    "parking_available": null
   },
   {
     "id": "sdm-hongeun-dodam-lib",
@@ -779,29 +421,15 @@
     "library_type": "어린이가족특화도서관",
     "district": "서대문구",
     "address": "서울 서대문구 세검정로4길 32",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "어린이와 가족 이용에 초점을 둔 서대문구 공립 특화 도서관입니다. 가족 독서, 어린이 자료, 프로그램을 함께 확인하기 좋습니다.",
     "info_label": "어린이자료 · 가족독서 · 독서문화프로그램",
     "note": "서대문구립도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://lib.sdm.or.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.5938213,
-    "lng": 126.9496589,
-    "verification_status": "address_geocoded"
+    "parking_available": null
   },
   {
     "id": "seocho-childlib",
@@ -809,29 +437,15 @@
     "library_type": "어린이도서관",
     "district": "서초구",
     "address": "서울 서초구 서초중앙로24길 55",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "서초구 대표 어린이 전용 공립 도서관입니다. 어린이 자료와 독서문화 프로그램을 함께 살펴볼 수 있어 도심권 책 나들이로 적합합니다.",
     "info_label": "어린이자료 · 독서문화프로그램 · 자료검색",
     "note": "서초구립도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://public.seocholib.or.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.4925,
-    "lng": 127.0165,
-    "verification_status": "address_manual"
+    "parking_available": null
   },
   {
     "id": "seocho-book-village-lib",
@@ -839,29 +453,15 @@
     "library_type": "어린이도서관",
     "district": "서초구",
     "address": "서울 서초구 서초대로 202",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "책마을 콘셉트의 서초구 어린이 전용 공립 도서관입니다. 그림책과 어린이 자료, 독서 프로그램을 중심으로 방문 후보를 비교하기 좋습니다.",
     "info_label": "그림책 · 어린이자료 · 독서문화프로그램",
     "note": "서초구립도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://public.seocholib.or.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.4936592,
-    "lng": 127.0137025,
-    "verification_status": "address_geocoded"
+    "parking_available": null
   },
   {
     "id": "seocho-bangbae-childlib",
@@ -869,29 +469,15 @@
     "library_type": "어린이도서관",
     "district": "서초구",
     "address": "서울 서초구 방배로10길 18",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "방배 권역 어린이 전용 공립 도서관입니다. 어린이 자료와 독서문화 프로그램을 가까운 생활권에서 확인할 수 있습니다.",
     "info_label": "어린이자료 · 독서문화프로그램 · 자료검색",
     "note": "서초구립도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://public.seocholib.or.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.4804,
-    "lng": 126.999,
-    "verification_status": "address_manual"
+    "parking_available": null
   },
   {
     "id": "seongbuk-child-youth-lib",
@@ -899,28 +485,15 @@
     "library_type": "어린이청소년도서관",
     "district": "성북구",
     "address": "서울 성북구 삼선교로16길 59",
-    "recommended_age": [
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "성북구 어린이·청소년 전용 공립 문화 공간입니다. 어린이 자료, 청소년 자료, 독서문화 프로그램을 함께 볼 수 있어 형제자매 동반 방문에도 적합합니다.",
     "info_label": "어린이자료 · 청소년자료 · 독서문화프로그램",
     "note": "성북구립도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://www.sblib.seoul.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.5908,
-    "lng": 127.0142,
-    "verification_status": "address_manual"
+    "parking_available": null
   },
   {
     "id": "songpa-childlib",
@@ -928,28 +501,15 @@
     "library_type": "어린이도서관",
     "district": "송파구",
     "address": "서울 송파구 올림픽로 105",
-    "recommended_age": [
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "송파구립 어린이도서관으로 프로그램 신청, 사서추천도서, 북스타트, 견학신청을 함께 확인할 수 있습니다. 유아·초등 아이와 책놀이·그림책 프로그램을 고르려는 부모에게 유용합니다.",
     "info_label": "프로그램신청 · 추천도서 · 북스타트 · 견학신청",
     "note": "공식 페이지 하단 기준 주소는 서울시 송파구 올림픽로 105입니다.",
     "website_url": "https://www.splib.or.kr/spclib/index.do",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.5102229,
-    "lng": 127.0891203,
-    "verification_status": "address_geocoded"
+    "parking_available": null
   },
   {
     "id": "songpa-english-childlib",
@@ -957,28 +517,15 @@
     "library_type": "어린이영어도서관",
     "district": "송파구",
     "address": "서울 송파구 올림픽로 240",
-    "recommended_age": [
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "영어책과 영어 독서 프로그램을 중심으로 운영되는 송파구립 어린이 영어도서관입니다. Storytime, Book Club, Sing Along 같은 유아·초등 대상 영어 프로그램을 확인할 수 있습니다.",
     "info_label": "영어자료 · Storytime · Book Club · 프로그램신청",
     "note": "공식 페이지 하단 기준 주소는 서울시 송파구 올림픽로 240입니다.",
     "website_url": "https://www.splib.or.kr/spelib/index.do",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.5114987,
-    "lng": 127.0982387,
-    "verification_status": "address_geocoded"
+    "parking_available": null
   },
   {
     "id": "eunpyeong-daejo-childlib",
@@ -986,29 +533,15 @@
     "library_type": "어린이도서관",
     "district": "은평구",
     "address": "서울 은평구 역말로9길 2-9",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "은평구 대조 권역의 어린이 전용 공립 도서관입니다. 어린이 자료와 독서문화 프로그램을 가까운 생활권에서 확인할 수 있습니다.",
     "info_label": "어린이자료 · 독서문화프로그램 · 자료검색",
     "note": "은평구립도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://www.eplib.or.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.611,
-    "lng": 126.922,
-    "verification_status": "address_manual"
+    "parking_available": null
   },
   {
     "id": "eunpyeong-sinsa-childlib",
@@ -1016,29 +549,15 @@
     "library_type": "어린이도서관",
     "district": "은평구",
     "address": "서울 은평구 은평로4길 17",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "은평구 신사 권역의 어린이 전용 공립 도서관입니다. 그림책과 어린이 자료, 독서 프로그램을 함께 살펴보기 좋습니다.",
     "info_label": "어린이자료 · 독서문화프로그램 · 자료검색",
     "note": "은평구립도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://www.eplib.or.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.5981546,
-    "lng": 126.9122707,
-    "verification_status": "address_geocoded"
+    "parking_available": null
   },
   {
     "id": "yongsan-dreamtree-lib",
@@ -1046,29 +565,15 @@
     "library_type": "어린이도서관",
     "district": "용산구",
     "address": "서울 용산구 백범로 329",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "용산구 어린이 전용 공립 도서관입니다. 어린이 자료와 독서문화 프로그램을 살펴볼 수 있어 도심권 가족 방문지로 좋습니다.",
     "info_label": "어린이자료 · 독서문화프로그램 · 자료검색",
     "note": "용산구립도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://www.yslibrary.or.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.5388,
-    "lng": 126.9654,
-    "verification_status": "address_manual"
+    "parking_available": null
   },
   {
     "id": "junggu-son-gijeong-childlib",
@@ -1076,29 +581,15 @@
     "library_type": "어린이도서관",
     "district": "중구",
     "address": "서울 중구 손기정로 101-1",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "중구 손기정 권역의 어린이 전용 공립 도서관입니다. 어린이 자료와 문화 프로그램을 함께 확인할 수 있습니다.",
     "info_label": "어린이자료 · 독서문화프로그램 · 자료검색",
     "note": "중구구립도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://www.junggulib.or.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.5568,
-    "lng": 126.9645,
-    "verification_status": "address_manual"
+    "parking_available": null
   },
   {
     "id": "junggu-namsantown-childlib",
@@ -1106,29 +597,15 @@
     "library_type": "어린이도서관",
     "district": "중구",
     "address": "서울 중구 다산로 32 남산타운아파트",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "남산타운 생활권의 어린이 전용 공립 도서관입니다. 아파트 단지 인근에서 어린이 자료와 독서 프로그램을 이용할 수 있습니다.",
     "info_label": "어린이자료 · 독서문화프로그램 · 자료검색",
     "note": "중구구립도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://www.junggulib.or.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.5475,
-    "lng": 127.0068,
-    "verification_status": "address_manual"
+    "parking_available": null
   },
   {
     "id": "jungnang-forest-childlib",
@@ -1136,29 +613,15 @@
     "library_type": "어린이도서관",
     "district": "중랑구",
     "address": "서울 중랑구 망우로73길 46-1",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "중랑구 공립 어린이도서관으로 어린이 자료와 독서문화 프로그램을 함께 확인할 수 있습니다. 숲 콘셉트의 이름처럼 차분한 책 나들이 후보로 보기 좋습니다.",
     "info_label": "어린이자료 · 독서문화프로그램 · 자료검색",
     "note": "중랑구립도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://www.jungnanglib.seoul.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.602722,
-    "lng": 127.1039647,
-    "verification_status": "address_geocoded"
+    "parking_available": null
   },
   {
     "id": "jungnang-junghwa-childlib",
@@ -1166,28 +629,14 @@
     "library_type": "어린이도서관",
     "district": "중랑구",
     "address": "서울 중랑구 동일로124길 26",
-    "recommended_age": [
-      "영아",
-      "유아",
-      "초등"
-    ],
-    "operating_days": [
-      "화",
-      "수",
-      "목",
-      "금",
-      "토",
-      "일"
-    ],
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
     "fee": "무료",
     "summary": "중랑구 중화 권역의 어린이 전용 공립 도서관입니다. 어린이 자료와 독서 프로그램을 가까운 생활권에서 확인할 수 있습니다.",
     "info_label": "어린이자료 · 독서문화프로그램 · 자료검색",
     "note": "중랑구립도서관 공식 안내에서 운영시간과 휴관일을 확인하세요.",
     "website_url": "https://www.jungnanglib.seoul.kr/",
     "image_url": "",
-    "parking_available": null,
-    "lat": 37.5995,
-    "lng": 127.0825,
-    "verification_status": "address_manual"
+    "parking_available": null
   }
 ]

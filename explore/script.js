@@ -356,6 +356,7 @@ function normalizeLibrary(record, index) {
     subtype: clean(record.library_type, "어린이도서관"),
     name: clean(record.name, "어린이도서관"),
     district: clean(record.district, "지역 확인 필요"),
+    address: clean(record.address),
     summary: clean(record.summary, "그림책과 어린이 자료, 독서문화 프로그램을 함께 확인할 수 있는 어린이도서관입니다."),
     ageLabel: ageGroups.join(", ") || "영아, 유아, 초등",
     ageGroups,
@@ -393,7 +394,7 @@ function normalizeLibrary(record, index) {
 }
 
 function finalizePlace(place) {
-  place.searchText = `${place.name} ${place.categoryLabel} ${place.subtype} ${place.district} ${place.summary} ${place.infoLabel}`.toLowerCase();
+  place.searchText = `${place.name} ${place.categoryLabel} ${place.subtype} ${place.district} ${place.address || ""} ${place.summary} ${place.infoLabel}`.toLowerCase();
   return place;
 }
 
