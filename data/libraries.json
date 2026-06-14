@@ -1,0 +1,20 @@
+[
+  {
+    "id": "seoul-childlib",
+    "name": "서울특별시교육청 어린이도서관",
+    "library_type": "어린이도서관",
+    "district": "종로구",
+    "recommended_age": ["영아", "유아", "초등"],
+    "operating_days": ["화", "수", "목", "금", "토", "일"],
+    "fee": "무료",
+    "summary": "유아 추천도서, 학년별 권장도서, 독서문화행사와 견학신청을 한 곳에서 확인할 수 있는 어린이 전문 도서관입니다. 책을 고르기 어려운 부모가 아이 연령에 맞춰 자료와 프로그램을 함께 살펴보기 좋습니다.",
+    "info_label": "자료검색 · 유아추천도서 · 독서문화프로그램",
+    "note": "월별 휴관일과 프로그램 접수 여부는 공식 페이지에서 확인하세요.",
+    "website_url": "https://childlib.sen.go.kr/childlib/index.do",
+    "image_url": "",
+    "lat": 37.57694,
+    "lng": 126.96897,
+    "parking_available": null,
+    "verification_status": "official_location"
+  }
+]

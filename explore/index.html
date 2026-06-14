@@ -18,8 +18,9 @@
         <div class="title-area">
           <p class="eyebrow">Seoul Kids Map</p>
           <h1><em>서울</em> 아이랑 갈 곳</h1>
-          <p class="intro">키즈카페 · 박물관·체험 238곳을 한눈에</p>
+          <p class="intro">키즈카페 · 박물관·체험 · 도서관을 한눈에</p>
         </div>
+        <button id="search-toggle" class="search-toggle" type="button" aria-expanded="false" aria-label="검색 열기">⌕</button>
         <label class="search-shell">
           <span>검색</span>
           <input id="search-input" type="search" placeholder="장소명, 지역, 특징 검색" />
@@ -27,18 +28,19 @@
       </header>
 
       <section class="mode-tabs" aria-label="콘텐츠 유형">
-        <button class="mode-tab is-active" type="button" data-category="all">전체 <strong id="count-all">0</strong></button>
-        <button class="mode-tab" type="button" data-category="kids_cafe">키즈카페 <strong id="count-kids">0</strong></button>
-        <button class="mode-tab" type="button" data-category="museum">박물관·체험 <strong id="count-museums">0</strong></button>
+        <button class="mode-tab is-active" type="button" data-category="all">전체</button>
+        <button class="mode-tab" type="button" data-category="kids_cafe">키즈카페</button>
+        <button class="mode-tab" type="button" data-category="museum">박물관·체험</button>
+        <button class="mode-tab" type="button" data-category="library">도서관</button>
       </section>
 
       <section class="quick-filters" aria-label="빠른 조건">
-        <button id="filter-toggle" class="filter-toggle" type="button" aria-expanded="false">⚙ 필터</button>
+        <button id="filter-toggle" class="filter-toggle" type="button" aria-expanded="false" aria-label="필터 열기"></button>
         <span class="quick-divider" aria-hidden="true"></span>
         <button class="quick-chip" type="button" data-quick-filter="today">🟢 오늘 운영</button>
         <button class="quick-chip" type="button" data-quick-filter="free">🆓 무료</button>
         <button class="quick-chip" type="button" data-quick-filter="weekend">📅 주말</button>
-        <button class="quick-chip" type="button" data-quick-filter="official">공식 링크</button>
+        <button class="quick-chip" type="button" data-quick-filter="parking">🅿 주차</button>
         <button class="quick-chip favorite-quick" type="button" data-quick-filter="favorites">❤️ 즐겨찾기</button>
         <span class="quick-divider" aria-hidden="true"></span>
         <button class="quick-chip age-chip" type="button" data-quick-age="영아">👶 영아</button>
@@ -112,7 +114,7 @@
           <div id="active-filters" class="active-filters" hidden></div>
         </div>
         <div class="mobile-view-toggle" role="tablist" aria-label="모바일 보기 전환">
-          <button id="map-view-toggle" class="view-toggle-button is-active" type="button" role="tab" aria-selected="true">🗺 지도</button>
+          <button id="map-view-toggle" class="view-toggle-button is-active" type="button" role="tab" aria-selected="true">지도</button>
           <button id="list-view-toggle" class="view-toggle-button" type="button" role="tab" aria-selected="false">목록</button>
         </div>
       </div>
@@ -124,6 +126,7 @@
             <div class="legend">
               <span><i class="dot kids"></i>키즈카페</span>
               <span><i class="dot museum"></i>박물관·체험</span>
+              <span><i class="dot library"></i>도서관</span>
             </div>
           </div>
           <div id="map" aria-label="서울 아이랑 갈 곳 지도"></div>
@@ -171,7 +174,7 @@
           </dl>
           <p class="note"></p>
           <div class="card-footer">
-            <button class="map-button" type="button">🗺 지도</button>
+            <button class="map-button" type="button">지도</button>
             <div class="card-actions">
               <a class="primary-link" target="_blank" rel="noreferrer noopener">자세히 보기</a>
               <a class="secondary-link" target="_blank" rel="noreferrer noopener">예약</a>

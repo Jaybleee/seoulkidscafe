@@ -1,6 +1,7 @@
 const DATA_URLS = {
   kids: ["../data/kids_cafes.json", "./data/kids_cafes.json", "/data/kids_cafes.json"],
   museums: ["../data/museums.json", "./data/museums.json", "/data/museums.json"],
+  libraries: ["../data/libraries.json", "./data/libraries.json", "/data/libraries.json"],
 };
 const SEOUL_CENTER = [37.5665, 126.978];
 const DEFAULT_ZOOM = 11;
@@ -15,7 +16,7 @@ const QUICK_FILTER_LABELS = {
   today: "오늘 운영",
   free: "무료",
   weekend: "주말 가능",
-  official: "공식 링크",
+  parking: "주차",
   favorites: "즐겨찾기",
 };
 const FAVORITES_KEY = "seoulKidsMapFavorites";
@@ -30,6 +31,22 @@ const LINK_REVIEW_NAMES = new Set([
   "서울우리소리박물관",
 ]);
 const SEARCH_FALLBACK_NAMES = new Set(["허준박물관", "한국은행 화폐박물관", "서울우리소리박물관"]);
+const CATEGORY_LABELS = {
+  all: "전체",
+  kids_cafe: "키즈카페",
+  museum: "박물관·체험",
+  library: "도서관",
+};
+const MUSEUM_LINK_OVERRIDES = {
+  G밸리산업박물관: "https://gvmuseum.seoul.go.kr/",
+  국립경찰박물관: "https://www.policemuseum.go.kr/",
+  국립국악원: "https://www.gugak.go.kr/",
+  국립기상박물관: "https://science.kma.go.kr/museum/",
+  서울아트책보고: "https://artbookbogo.kr/",
+  서울새활용플라자: "https://www.seoulup.or.kr/",
+  키즈오토파크: "https://www.kidsautopark.org/",
+  "키즈오토파크(서울)": "https://www.kidsautopark.org/",
+};
 
 const state = {
   places: [],
@@ -64,12 +81,11 @@ const elements = {
   kidsOptionFilter: document.getElementById("kids-option-filter"),
   cardList: document.getElementById("card-list"),
   cardTemplate: document.getElementById("place-card-template"),
+  topbar: document.querySelector(".topbar"),
+  searchToggle: document.getElementById("search-toggle"),
   content: document.querySelector(".content"),
   mapViewToggle: document.getElementById("map-view-toggle"),
   listViewToggle: document.getElementById("list-view-toggle"),
-  countAll: document.getElementById("count-all"),
-  countKids: document.getElementById("count-kids"),
-  countMuseums: document.getElementById("count-museums"),
   quickFilters: document.querySelector(".quick-filters"),
 };
 
@@ -203,6 +219,15 @@ function normalizeKidsCafe(record, index) {
   const days = daysFromText(operationDays);
   if (openSaturday === true && !days.includes("토")) days.push("토");
   if (openSunday === true && !days.includes("일")) days.push("일");
+  const ageLabel = compactKidsAgeLabel(record.age);
+  const parkingAvailable = parseNullableBoolean(record.parking_available);
+  const parkingLabel = parkingAvailable === true ? "주차 가능" : parkingAvailable === false ? "주차 제한" : "주차 확인";
+  const originalSummary = clean(record.feature_summary);
+  const parentSummary = [
+    `${ageLabel} 아이가 예약제로 이용하는 서울형 실내 놀이공간입니다.`,
+    originalSummary ? originalSummary.replaceAll(" · ", ", ") : "운영 조건과 준비물을 확인해 방문 계획을 세우기 좋습니다.",
+    `${parkingLabel}이며, 휴관일과 결제 방식은 방문 전 확인하세요.`,
+  ].join(" ");
   return {
     id: `kids-${clean(record.id, String(index + 1))}`,
     category: "kids_cafe",
@@ -210,8 +235,8 @@ function normalizeKidsCafe(record, index) {
     subtype: clean(record.cafe_type, "서울형 키즈카페"),
     name: clean(record.name, "이름 확인 필요").replace(/^서울형\s*키즈카페\s*/u, "").replace(/^일반형\s*키즈카페\s*/u, ""),
     district: clean(record.district, "지역 확인 필요"),
-    summary: clean(record.feature_summary, "놀이돌봄, 예약, 운영 조건을 확인해 방문 계획을 세울 수 있는 서울형 키즈카페입니다."),
-    ageLabel: compactKidsAgeLabel(record.age),
+    summary: parentSummary,
+    ageLabel,
     ageGroups: parseKidsAgeGroups(record.age),
     operationLabel: operationDays,
     days,
@@ -228,7 +253,7 @@ function normalizeKidsCafe(record, index) {
     lng: isValidCoordinate(record.lng) ? Number(record.lng) : null,
     openSaturday,
     openSunday,
-    parkingAvailable: parseNullableBoolean(record.parking_available),
+    parkingAvailable,
     verificationStatus: "official_location",
     fee: "유료",
     hasOfficialLink: Boolean(clean(record.detail_url)),
@@ -241,9 +266,9 @@ function normalizeKidsCafe(record, index) {
     ].filter(Boolean),
     statusLabel: todayStatus(days),
     facts: [
-      fact(compactKidsAgeLabel(record.age), "age"),
+      fact(ageLabel, "age"),
       fact("유료", "fee"),
-      fact(parseNullableBoolean(record.parking_available) === true ? "주차 가능" : "주차 확인", "parking"),
+      fact(parkingAvailable === true ? "주차 가능" : "주차 확인", "parking"),
     ],
     searchText: "",
   };
@@ -253,12 +278,12 @@ function museumSummary(record) {
   const theme = clean(record.theme, "서울미래아이");
   const keyword = clean(record.keyword, "체험");
   const age = Array.isArray(record.recommended_age) ? record.recommended_age.join(", ") : "아이";
-  const fee = clean(record.fee, "요금 확인");
+  const fee = feeLabel(record.fee);
   const status =
     record.verification_status === "police_station_proxy"
-      ? "청소년경찰학교는 관할 경찰서 기준 위치를 먼저 확인해 두었습니다."
-      : "공식 페이지와 지도 정보를 함께 확인할 수 있습니다.";
-  return `${theme} 주제의 ${keyword} 콘텐츠입니다. ${age} 아이와 ${fee}로 즐길 수 있는 방문 후보이며, ${status}`;
+      ? "청소년경찰학교는 관할 경찰서별 프로그램 여부를 먼저 확인하고 예약 문의가 필요합니다."
+      : "전시 구성과 체험 프로그램 일정을 공식 페이지에서 확인해 방문 시간을 정하기 좋습니다.";
+  return `${keyword}를 아이 눈높이로 접하는 ${theme}형 공간입니다. ${age} 아이와 ${fee}로 방문하기 좋은 후보이며, ${status}`;
 }
 
 function normalizeMuseum(record, index) {
@@ -267,13 +292,13 @@ function normalizeMuseum(record, index) {
   const placeName = clean(record.name, "박물관");
   const needsLinkReview = LINK_REVIEW_NAMES.has(placeName);
   const useSearchFallback = SEARCH_FALLBACK_NAMES.has(placeName);
-  const websiteUrl = useSearchFallback ? "" : clean(record.website_url);
+  const websiteUrl = MUSEUM_LINK_OVERRIDES[placeName] || (useSearchFallback ? "" : clean(record.website_url));
   const hasOfficialLink = Boolean(websiteUrl);
   const fee = clean(record.fee);
   const badges = [
     days.includes(TODAY_DAY) ? "오늘 운영" : "",
     feeLabel(fee),
-    hasOfficialLink && !needsLinkReview ? "공식 링크" : needsLinkReview ? "링크 확인" : "공식 확인 필요",
+    needsLinkReview ? "링크 확인" : "",
     record.verification_status === "police_station_proxy" ? "위치 재확인" : "",
   ].filter(Boolean);
   const ageLabel = Array.isArray(record.recommended_age) ? record.recommended_age.join(", ") : "연령 확인";
@@ -293,7 +318,7 @@ function normalizeMuseum(record, index) {
     note:
       note ||
       (needsLinkReview
-        ? "공식 링크 응답 상태 재확인 필요: 방문 전 운영정보를 다시 확인해 주세요."
+        ? "방문 전 운영정보를 다시 확인해 주세요."
         : !hasOfficialLink
           ? "공식 페이지 미확인: 방문 전 검색 결과에서 운영정보를 확인해 주세요."
           : ""),
@@ -315,6 +340,54 @@ function normalizeMuseum(record, index) {
     badges,
     statusLabel: todayStatus(days),
     facts: [fact(ageLabel, "age"), fact(feeLabel(fee), "fee"), fact(clean(record.keyword, "체험"), "topic")],
+    searchText: "",
+  };
+}
+
+function normalizeLibrary(record, index) {
+  const days = Array.isArray(record.operating_days) ? record.operating_days : daysFromText(record.operating_days);
+  const ageGroups = Array.isArray(record.recommended_age) ? parseMuseumAgeGroups(record.recommended_age) : ["영아", "유아", "초등"];
+  const websiteUrl = clean(record.website_url);
+  const parkingAvailable = parseNullableBoolean(record.parking_available);
+  return {
+    id: `library-${clean(record.id, String(index + 1))}`,
+    category: "library",
+    categoryLabel: "도서관",
+    subtype: clean(record.library_type, "어린이도서관"),
+    name: clean(record.name, "어린이도서관"),
+    district: clean(record.district, "지역 확인 필요"),
+    summary: clean(record.summary, "그림책과 어린이 자료, 독서문화 프로그램을 함께 확인할 수 있는 어린이도서관입니다."),
+    ageLabel: ageGroups.join(", ") || "영아, 유아, 초등",
+    ageGroups,
+    operationLabel: days.length ? days.join(", ") : clean(record.operation_label, "운영일 확인 필요"),
+    days,
+    infoLabel: clean(record.info_label, "자료실 · 독서문화 프로그램"),
+    note: clean(record.note),
+    imageUrl: clean(record.image_url),
+    primaryUrl: websiteUrl,
+    secondaryUrl: "",
+    primaryLabel: websiteUrl ? "공식 페이지 →" : "",
+    secondaryLabel: "",
+    reservationType: websiteUrl ? "external" : "none",
+    reservationUrl: "",
+    lat: isValidCoordinate(record.lat) ? Number(record.lat) : null,
+    lng: isValidCoordinate(record.lng) ? Number(record.lng) : null,
+    theme: "도서관",
+    fee: "무료",
+    verificationStatus: clean(record.verification_status, "official_location"),
+    hasOfficialLink: Boolean(websiteUrl),
+    officialLinkReady: Boolean(websiteUrl),
+    hasReservation: false,
+    openSaturday: days.includes("토"),
+    openSunday: days.includes("일"),
+    parkingAvailable,
+    badges: [days.includes(TODAY_DAY) ? "오늘 운영" : "", "무료", parkingAvailable === true ? "주차 가능" : ""].filter(Boolean),
+    statusLabel: todayStatus(days),
+    facts: [
+      fact(ageGroups.join(", ") || "어린이", "age"),
+      fact("무료", "free"),
+      fact(parkingAvailable === true ? "주차 가능" : "주차 확인", "parking"),
+    ],
     searchText: "",
   };
 }
@@ -348,9 +421,7 @@ function fillSelect(select, values) {
 }
 
 function updateCounts() {
-  elements.countAll.textContent = state.places.length.toLocaleString("ko-KR");
-  elements.countKids.textContent = state.places.filter((place) => place.category === "kids_cafe").length.toLocaleString("ko-KR");
-  elements.countMuseums.textContent = state.places.filter((place) => place.category === "museum").length.toLocaleString("ko-KR");
+  // Counts were intentionally removed from the category tabs for mobile space.
 }
 
 function initFilters() {
@@ -369,8 +440,8 @@ function initFilters() {
 }
 
 function updateFilterPanel(open) {
-  elements.filterToggle.textContent = open ? "필터 닫기" : "필터";
   elements.filterToggle.setAttribute("aria-expanded", String(open));
+  elements.filterToggle.setAttribute("aria-label", open ? "필터 닫기" : "필터 열기");
   elements.filterPanel.hidden = !open;
   elements.filterPanel.classList.toggle("is-collapsed", !open);
 }
@@ -381,8 +452,8 @@ function updateCategoryTabs() {
     button.classList.toggle("is-active", isActive);
     button.setAttribute("aria-pressed", String(isActive));
   });
-  const showMuseumFilters = state.category !== "kids_cafe";
-  const showKidsFilters = state.category !== "museum";
+  const showMuseumFilters = state.category === "all" || state.category === "museum";
+  const showKidsFilters = state.category === "all" || state.category === "kids_cafe";
   document.querySelectorAll(".museum-only").forEach((item) => {
     item.hidden = !showMuseumFilters;
   });
@@ -425,7 +496,7 @@ function updateFilterSummaries() {
 function activeSummary() {
   const parts = [];
   if (state.quickFilters.size) parts.push([...state.quickFilters].map((value) => QUICK_FILTER_LABELS[value]).join(", "));
-  if (state.category !== "all") parts.push(state.category === "kids_cafe" ? "키즈카페" : "박물관·체험");
+  if (state.category !== "all") parts.push(CATEGORY_LABELS[state.category] || state.category);
   if (elements.searchInput.value.trim()) parts.push(`검색: ${elements.searchInput.value.trim()}`);
   if (elements.districtFilter.value) parts.push(`자치구: ${elements.districtFilter.value}`);
   if (state.selectedAges.size) parts.push(`연령: ${[...state.selectedAges].join(", ")}`);
@@ -458,7 +529,7 @@ function filterPlaces() {
       if (option === "today") return place.days.includes(TODAY_DAY);
       if (option === "free") return place.fee === "무료" || place.fee === "구민무료";
       if (option === "weekend") return place.days.includes("토") || place.days.includes("일") || place.openSaturday === true || place.openSunday === true;
-      if (option === "official") return place.officialLinkReady === true;
+      if (option === "parking") return place.parkingAvailable === true;
       if (option === "favorites") return state.favorites.has(place.id);
       return true;
     });
@@ -506,7 +577,12 @@ function initMap() {
 }
 
 function markerIcon(place) {
-  const color = place.category === "kids_cafe" ? "#e07b39" : place.verificationStatus === "police_station_proxy" ? "#6366f1" : "#2d6a4f";
+  const color =
+    place.category === "kids_cafe"
+      ? "#e07b39"
+      : place.category === "library" || place.verificationStatus === "police_station_proxy"
+        ? "#6366f1"
+        : "#2d6a4f";
   return L.divIcon({
     className: "place-marker",
     html: `<span style="background:${color}"></span>`,
@@ -677,9 +753,9 @@ function configureLink(anchor, url, label) {
     return;
   }
   anchor.removeAttribute("href");
-  anchor.textContent = label || "링크 없음";
+  anchor.textContent = "";
   anchor.setAttribute("aria-disabled", "true");
-  anchor.hidden = !label;
+  anchor.hidden = true;
 }
 
 function highlightActiveCard() {
@@ -747,6 +823,13 @@ function resetFilters() {
 }
 
 function bindEvents() {
+  elements.searchToggle.addEventListener("click", () => {
+    const open = !elements.topbar.classList.contains("is-search-open");
+    elements.topbar.classList.toggle("is-search-open", open);
+    elements.searchToggle.setAttribute("aria-expanded", String(open));
+    elements.searchToggle.setAttribute("aria-label", open ? "검색 닫기" : "검색 열기");
+    if (open) requestAnimationFrame(() => elements.searchInput.focus());
+  });
   elements.searchInput.addEventListener("input", filterPlaces);
   elements.districtFilter.addEventListener("change", filterPlaces);
   elements.themeFilter.addEventListener("change", filterPlaces);
@@ -808,10 +891,15 @@ async function main() {
   initMap();
   bindEvents();
   try {
-    const [kidsRaw, museumsRaw] = await Promise.all([loadJson(DATA_URLS.kids), loadJson(DATA_URLS.museums)]);
+    const [kidsRaw, museumsRaw, librariesRaw] = await Promise.all([
+      loadJson(DATA_URLS.kids),
+      loadJson(DATA_URLS.museums),
+      loadJson(DATA_URLS.libraries).catch(() => []),
+    ]);
     const kids = kidsRaw.map(normalizeKidsCafe);
     const museums = museumsRaw.map(normalizeMuseum);
-    state.places = [...kids, ...museums].map(finalizePlace);
+    const libraries = librariesRaw.map(normalizeLibrary);
+    state.places = [...kids, ...museums, ...libraries].map(finalizePlace);
     updateCounts();
     initFilters();
     updateCategoryTabs();

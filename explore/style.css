@@ -53,6 +53,12 @@ select {
   font: inherit;
 }
 
+[hidden],
+.primary-link[hidden],
+.secondary-link[hidden] {
+  display: none !important;
+}
+
 .page-shell {
   min-height: 100vh;
   max-width: 1400px;
@@ -73,9 +79,9 @@ select {
 }
 
 .topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 42px;
+  align-items: start;
   gap: 12px;
   padding: 12px 14px;
 }
@@ -110,9 +116,29 @@ h1 em {
 
 .search-shell {
   position: relative;
+  display: none;
+  grid-column: 1 / -1;
   flex: 1 1 320px;
   max-width: 560px;
   min-width: 220px;
+}
+
+.topbar.is-search-open .search-shell {
+  display: block;
+}
+
+.search-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  border-radius: var(--r2);
+  background: #fff;
+  color: var(--ink);
+  font-size: 1.24rem;
+  font-weight: 900;
+  cursor: pointer;
 }
 
 .search-shell span {
@@ -174,21 +200,38 @@ h1 em {
 
 .filter-toggle {
   flex: 0 0 auto;
+  justify-content: center;
+  width: 48px;
+  padding: 0;
   border: 1.5px solid var(--border);
   border-radius: var(--r2);
   background: #fff;
   color: var(--text);
   cursor: pointer;
+  font-size: 0;
+}
+
+.filter-toggle::before {
+  content: "";
+  width: 17px;
+  height: 15px;
+  background: currentColor;
+  clip-path: polygon(0 0, 100% 0, 62% 52%, 62% 100%, 38% 100%, 38% 52%);
 }
 
 .mode-tabs {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   gap: 0;
   margin: 8px 0 0;
   padding: 0 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
   border-radius: var(--r) var(--r) 0 0;
   border-bottom: 0;
+}
+
+.mode-tabs::-webkit-scrollbar {
+  display: none;
 }
 
 .quick-filters {
@@ -244,7 +287,10 @@ h1 em {
 }
 
 .mode-tab {
+  flex: 0 0 auto;
   min-height: 36px;
+  min-width: 88px;
+  padding: 0 10px;
   border: 1px solid transparent;
   border-bottom: 2.5px solid transparent;
   border-radius: 0;
@@ -270,6 +316,11 @@ h1 em {
 .mode-tab[data-category="museum"].is-active {
   color: var(--museum-strong);
   border-bottom-color: var(--museum);
+}
+
+.mode-tab[data-category="library"].is-active {
+  color: var(--purple);
+  border-bottom-color: var(--purple);
 }
 
 .mode-tab[data-category="kids_cafe"].is-active {
@@ -458,6 +509,10 @@ h1 em {
   background: var(--museum);
 }
 
+.dot.library {
+  background: var(--purple);
+}
+
 #map {
   width: 100%;
   height: calc(100vh - 238px);
@@ -520,6 +575,10 @@ h1 em {
 
 .place-card[data-category="kids_cafe"] .thumb-wrap {
   background: linear-gradient(135deg, #e8f5ed, #d0ebd8);
+}
+
+.place-card[data-category="library"] .thumb-wrap {
+  background: linear-gradient(135deg, #fff7ed, #fef3c7);
 }
 
 .thumb {
@@ -768,6 +827,13 @@ h1 em {
 .place-card[data-category="kids_cafe"] .secondary-link {
   border-color: var(--kids);
   background: var(--kids);
+  color: #fff;
+}
+
+.place-card[data-category="library"] .primary-link {
+  border-color: var(--purple);
+  background: var(--purple);
+  color: #fff;
 }
 
 .secondary-link {
@@ -927,7 +993,7 @@ h1 em {
   }
 
   .topbar {
-    display: grid;
+    grid-template-columns: minmax(0, 1fr) 42px;
     gap: 8px;
     padding: 10px;
   }
@@ -945,12 +1011,12 @@ h1 em {
   }
 
   .mode-tabs {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 4px;
     padding: 5px;
   }
 
   .mode-tab {
+    min-width: 92px;
     min-height: 42px;
     padding: 6px 4px;
     font-size: 0.86rem;
