@@ -173,7 +173,7 @@ function feeLabel(fee) {
 
 function todayStatus(days) {
   if (!days.length) return "운영 확인";
-  return days.includes(TODAY_DAY) ? "오늘 운영" : "오늘 휴무";
+  return days.includes(TODAY_DAY) ? "🟢 오늘 운영" : "⚫ 오늘 휴무";
 }
 
 function fact(label, tone = "") {
@@ -220,7 +220,7 @@ function normalizeKidsCafe(record, index) {
     primaryUrl: clean(record.detail_url),
     secondaryUrl: clean(record.reserve_url),
     primaryLabel: "이용안내",
-    secondaryLabel: "예약",
+    secondaryLabel: "예약하기 →",
     reservationType: "umppa",
     reservationUrl: clean(record.reserve_url),
     lat: isValidCoordinate(record.lat) ? Number(record.lat) : null,
@@ -299,7 +299,7 @@ function normalizeMuseum(record, index) {
     imageUrl: clean(record.image_url),
     primaryUrl: websiteUrl || officialSearchUrl(placeName, clean(record.district, "서울")),
     secondaryUrl: "",
-    primaryLabel: hasOfficialLink ? "공식 페이지" : "공식 검색",
+    primaryLabel: hasOfficialLink ? "공식 페이지 →" : "공식 검색",
     secondaryLabel: "",
     reservationType: hasOfficialLink ? "external" : "none",
     reservationUrl: "",
@@ -502,7 +502,7 @@ function initMap() {
 }
 
 function markerIcon(place) {
-  const color = place.category === "kids_cafe" ? "#d96c2d" : place.verificationStatus === "police_station_proxy" ? "#2f6f8f" : "#19755d";
+  const color = place.category === "kids_cafe" ? "#e07b39" : place.verificationStatus === "police_station_proxy" ? "#6366f1" : "#2d6a4f";
   return L.divIcon({
     className: "place-marker",
     html: `<span style="background:${color}"></span>`,
@@ -520,7 +520,7 @@ function popupHtml(place) {
     .map((item) => `<span>${escapeHtml(item.label)}</span>`)
     .join("");
   const directUrl = place.secondaryUrl || place.primaryUrl;
-  const directLabel = place.secondaryUrl ? "예약" : place.primaryUrl ? place.primaryLabel || "공식 페이지" : "";
+  const directLabel = place.secondaryUrl ? "예약하기 →" : place.primaryUrl ? place.primaryLabel || "공식 페이지 →" : "";
   const directAction = directUrl
     ? `<a class="popup-action primary" href="${escapeHtml(directUrl)}" target="_blank" rel="noreferrer noopener">${escapeHtml(directLabel)}</a>`
     : "";
@@ -608,7 +608,7 @@ function renderCards() {
     subtypeChip.textContent = place.subtype;
     districtChip.textContent = place.district;
     statusChip.textContent = place.statusLabel || "운영 확인";
-    statusChip.classList.toggle("is-closed", place.statusLabel === "오늘 휴무");
+    statusChip.classList.toggle("is-closed", place.statusLabel.includes("휴무"));
     favoriteButton.textContent = state.favorites.has(place.id) ? "♥" : "♡";
     favoriteButton.setAttribute("aria-label", state.favorites.has(place.id) ? "즐겨찾기 해제" : "즐겨찾기 저장");
     name.textContent = place.name;
