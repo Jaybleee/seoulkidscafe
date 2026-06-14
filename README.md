@@ -2,7 +2,7 @@
 
 서울형 키즈카페 지점 정보를 크롤링해 `JSON`으로 저장하고, Leaflet + OpenStreetMap 기반 정적 웹페이지로 보여주는 프로젝트입니다. 서버 없이 동작하는 정적 구조이며, 저장소 루트에서 바로 GitHub Pages 배포가 가능하도록 구성했습니다.
 
-추가로 `서울미래아이 365` PDF 기반의 어린이 박물관·체험 콘텐츠 지도 초안을 `museums/` 경로에 분리해 두었습니다.
+추가로 `서울미래아이 365` PDF 기반의 어린이 박물관·체험 콘텐츠 지도 초안을 `museums/` 경로에 분리해 두었습니다. 키즈카페와 박물관·체험을 함께 탐색하는 통합 실험 페이지는 `explore/` 경로에 별도로 둡니다.
 
 현재는 아래 두 카테고리를 함께 수집합니다.
 
@@ -45,6 +45,10 @@
 │  ├─ geocode_cache.json
 │  └─ geocode_failures.csv
 ├─ museums/
+│  ├─ index.html
+│  ├─ style.css
+│  └─ script.js
+├─ explore/
 │  ├─ index.html
 │  ├─ style.css
 │  └─ script.js
@@ -120,10 +124,17 @@ python -m http.server 8000
 http://localhost:8000/museums/
 ```
 
+키즈카페와 박물관·체험 통합 실험 페이지는 아래 경로로 접속합니다.
+
+```text
+http://localhost:8000/explore/
+```
+
 GitHub Pages 배포 후에는 아래 경로에서 볼 수 있습니다.
 
 ```text
 https://jaybleee.github.io/seoulkidscafe/museums/
+https://jaybleee.github.io/seoulkidscafe/explore/
 ```
 
 ## GitHub Pages 배포 방법

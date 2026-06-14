@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>서울 아이랑 갈 곳 지도</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="title-area">
+          <p class="eyebrow">Seoul Kids Map</p>
+          <h1>서울 아이랑 갈 곳 지도</h1>
+          <p class="intro">서울형 키즈카페와 서울미래아이 박물관·체험 콘텐츠를 한 지도에서 찾아보세요.</p>
+        </div>
+        <div class="toolbar">
+          <div id="active-filters" class="active-filters" hidden></div>
+          <div id="result-count" class="result-count">0개 장소</div>
+          <button id="filter-toggle" class="filter-toggle" type="button" aria-expanded="false">필터 열기</button>
+        </div>
+      </header>
+
+      <section class="mode-tabs" aria-label="콘텐츠 유형">
+        <button class="mode-tab is-active" type="button" data-category="all">전체 <strong id="count-all">0</strong></button>
+        <button class="mode-tab" type="button" data-category="kids_cafe">키즈카페 <strong id="count-kids">0</strong></button>
+        <button class="mode-tab" type="button" data-category="museum">박물관·체험 <strong id="count-museums">0</strong></button>
+      </section>
+
+      <div id="filter-panel" class="filter-panel is-collapsed" hidden>
+        <div class="filter-grid">
+          <label class="field field-search">
+            <span>검색</span>
+            <input id="search-input" type="search" placeholder="장소명, 키워드, 특징 검색" />
+          </label>
+          <label class="field">
+            <span>자치구</span>
+            <select id="district-filter">
+              <option value="">전체 자치구</option>
+            </select>
+          </label>
+          <section class="field">
+            <div class="field-head">
+              <span>연령</span>
+              <small id="age-summary">전체</small>
+            </div>
+            <div id="age-filter" class="chip-row" role="group" aria-label="연령 필터">
+              <button class="filter-chip" type="button" data-age="영아">영아</button>
+              <button class="filter-chip" type="button" data-age="유아">유아</button>
+              <button class="filter-chip" type="button" data-age="초등">초등</button>
+            </div>
+          </section>
+          <section class="field">
+            <div class="field-head">
+              <span>운영요일</span>
+              <small id="day-summary">전체</small>
+            </div>
+            <div id="day-filter" class="chip-row" role="group" aria-label="운영요일 필터">
+              <button class="filter-chip compact" type="button" data-day="월">월</button>
+              <button class="filter-chip compact" type="button" data-day="화">화</button>
+              <button class="filter-chip compact" type="button" data-day="수">수</button>
+              <button class="filter-chip compact" type="button" data-day="목">목</button>
+              <button class="filter-chip compact" type="button" data-day="금">금</button>
+              <button class="filter-chip compact" type="button" data-day="토">토</button>
+              <button class="filter-chip compact" type="button" data-day="일">일</button>
+            </div>
+          </section>
+          <label class="field museum-only">
+            <span>박물관 주제</span>
+            <select id="theme-filter">
+              <option value="">전체 주제</option>
+            </select>
+          </label>
+          <label class="field museum-only">
+            <span>요금</span>
+            <select id="fee-filter">
+              <option value="">전체 요금</option>
+            </select>
+          </label>
+          <section class="field kids-only">
+            <div class="field-head">
+              <span>키즈카페 옵션</span>
+              <small id="kids-option-summary">전체</small>
+            </div>
+            <div id="kids-option-filter" class="chip-row" role="group" aria-label="키즈카페 옵션">
+              <button class="filter-chip" type="button" data-kids-option="weekend">주말 운영</button>
+              <button class="filter-chip" type="button" data-kids-option="parking">주차 가능</button>
+            </div>
+          </section>
+          <button id="reset-filters" class="reset-button" type="button">초기화</button>
+        </div>
+      </div>
+
+      <div class="mobile-view-toggle" role="tablist" aria-label="모바일 보기 전환">
+        <button id="map-view-toggle" class="view-toggle-button is-active" type="button" role="tab" aria-selected="true">
+          지도
+        </button>
+        <button id="list-view-toggle" class="view-toggle-button" type="button" role="tab" aria-selected="false">
+          목록
+        </button>
+      </div>
+
+      <main class="content" data-mobile-view="map">
+        <section class="map-panel" data-view="map">
+          <div class="panel-header">
+            <p class="panel-eyebrow">Map</p>
+            <div class="legend">
+              <span><i class="dot kids"></i>키즈카페</span>
+              <span><i class="dot museum"></i>박물관·체험</span>
+            </div>
+          </div>
+          <div id="map" aria-label="서울 아이랑 갈 곳 지도"></div>
+        </section>
+        <aside class="list-panel" data-view="list">
+          <div class="panel-header list-header">
+            <p class="panel-eyebrow">List</p>
+            <p id="list-hint">선택한 장소</p>
+          </div>
+          <div id="card-list" class="card-list" aria-live="polite"></div>
+        </aside>
+      </main>
+    </div>
+
+    <template id="place-card-template">
+      <article class="place-card" tabindex="0" role="button">
+        <div class="thumb-wrap">
+          <img class="thumb" alt="" loading="lazy" />
+          <div class="thumb placeholder"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-chips">
+            <span class="category-chip"></span>
+            <span class="subtype-chip"></span>
+            <span class="district-chip"></span>
+          </div>
+          <h2 class="name"></h2>
+          <p class="summary"></p>
+          <dl class="meta">
+            <div>
+              <dt>연령</dt>
+              <dd class="age"></dd>
+            </div>
+            <div>
+              <dt>운영</dt>
+              <dd class="operation"></dd>
+            </div>
+            <div>
+              <dt>정보</dt>
+              <dd class="info"></dd>
+            </div>
+          </dl>
+          <p class="note"></p>
+          <div class="card-footer">
+            <button class="map-button" type="button">지도에서 보기</button>
+            <div class="card-actions">
+              <a class="primary-link" target="_blank" rel="noreferrer noopener">자세히 보기</a>
+              <a class="secondary-link" target="_blank" rel="noreferrer noopener">예약</a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
