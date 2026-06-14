@@ -1092,5 +1092,32 @@
   },
   "서울 중랑구 동일로124길 26, 서울, 대한민국": null,
   "중화어린이도서관, 중랑구, 서울, 대한민국": null,
-  "중화어린이도서관, 서울, 대한민국": null
+  "중화어린이도서관, 서울, 대한민국": null,
+  ", 서울, 대한민국": {
+    "place_id": 223534344,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "relation",
+    "osm_id": 2297418,
+    "lat": "37.5666791",
+    "lon": "126.9782914",
+    "category": "boundary",
+    "type": "administrative",
+    "place_rank": 7,
+    "importance": 0.7778382871785516,
+    "addresstype": "city",
+    "name": "서울특별시",
+    "display_name": "서울특별시, 대한민국",
+    "address": {
+      "city": "서울특별시",
+      "ISO3166-2-lvl4": "KR-11",
+      "country": "대한민국",
+      "country_code": "kr"
+    },
+    "boundingbox": [
+      "37.4285424",
+      "37.7014794",
+      "126.7644328",
+      "127.1837702"
+    ]
+  }
 }

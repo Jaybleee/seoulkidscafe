@@ -54,6 +54,7 @@ select {
 }
 
 [hidden],
+.naver-link[hidden],
 .primary-link[hidden],
 .secondary-link[hidden] {
   display: none !important;
@@ -293,6 +294,12 @@ h1 em {
   border-color: var(--red);
   background: #fef2f2;
   color: var(--red);
+}
+
+.quick-chip.icon-only {
+  min-width: 36px;
+  justify-content: center;
+  padding-inline: 9px;
 }
 
 .quick-divider {
@@ -815,6 +822,7 @@ h1 em {
 }
 
 .map-button,
+.naver-link,
 .primary-link,
 .secondary-link {
   display: inline-flex;
@@ -843,6 +851,13 @@ h1 em {
   color: #fff;
 }
 
+.naver-link {
+  flex: 0 1 72px;
+  border: 1px solid #03c75a;
+  background: #effaf3;
+  color: #138a45;
+}
+
 .place-card[data-category="kids_cafe"] .primary-link,
 .place-card[data-category="kids_cafe"] .secondary-link {
   border-color: var(--kids);
@@ -864,6 +879,7 @@ h1 em {
 }
 
 .primary-link[aria-disabled="true"],
+.naver-link[aria-disabled="true"],
 .secondary-link[aria-disabled="true"] {
   border-color: var(--line);
   background: #edf1ee;
@@ -1109,6 +1125,7 @@ h1 em {
   }
 
   .map-button,
+  .naver-link,
   .primary-link,
   .secondary-link {
     flex: 1 1 92px;

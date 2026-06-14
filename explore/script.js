@@ -197,6 +197,11 @@ function officialSearchUrl(name, district) {
   return `https://search.naver.com/search.naver?query=${query}`;
 }
 
+function naverMapUrl(place) {
+  const query = encodeURIComponent([place.name, place.address, place.district].filter(Boolean).join(" "));
+  return `https://map.naver.com/p/search/${query}`;
+}
+
 function feeLabel(fee) {
   const value = clean(fee);
   if (!value) return "요금 확인";
@@ -699,6 +704,7 @@ function renderCards() {
     const info = fragment.querySelector(".info");
     const note = fragment.querySelector(".note");
     const mapButton = fragment.querySelector(".map-button");
+    const naverLink = fragment.querySelector(".naver-link");
     const primaryLink = fragment.querySelector(".primary-link");
     const secondaryLink = fragment.querySelector(".secondary-link");
 
@@ -743,6 +749,7 @@ function renderCards() {
       });
     }
 
+    configureLink(naverLink, naverMapUrl(place), "네이버");
     configureLink(primaryLink, place.primaryUrl, place.primaryLabel || "자세히 보기");
     configureLink(secondaryLink, place.secondaryUrl, place.secondaryLabel || "");
 
