@@ -35,6 +35,7 @@ const state = {
   places: [],
   filtered: [],
   activeId: "",
+  pinActiveToTop: false,
   category: "all",
   quickFilters: new Set(),
   selectedAges: new Set(),
@@ -472,7 +473,10 @@ function filterPlaces() {
     return categoryMatch && queryMatch && districtMatch && ageMatch && dayMatch && themeMatch && feeMatch && quickMatch && kidsOptionMatch;
   });
 
-  if (!state.filtered.some((place) => place.id === state.activeId)) state.activeId = "";
+  if (!state.filtered.some((place) => place.id === state.activeId)) {
+    state.activeId = "";
+    state.pinActiveToTop = false;
+  }
   elements.resultCount.textContent = `${state.filtered.length.toLocaleString("ko-KR")}곳 표시 중`;
   const summary = activeSummary();
   elements.activeFilters.hidden = summary.length === 0;
@@ -549,7 +553,7 @@ function updateMarkers() {
     if (place.lat === null || place.lng === null) return;
     const marker = L.marker([place.lat, place.lng], { icon: markerIcon(place) }).addTo(state.map);
     marker.bindPopup(popupHtml(place));
-    marker.on("click", () => setActivePlace(place.id, true));
+    marker.on("click", () => setActivePlace(place.id, { openPopup: true, pinToTop: true }));
     state.markers.set(place.id, marker);
     bounds.push([place.lat, place.lng]);
   });
@@ -561,7 +565,7 @@ function updateMarkers() {
 }
 
 function orderedPlacesForCards() {
-  if (!state.activeId) return state.filtered;
+  if (!state.activeId || !state.pinActiveToTop) return state.filtered;
   return [...state.filtered].sort((a, b) => {
     if (a.id === state.activeId) return -1;
     if (b.id === state.activeId) return 1;
@@ -646,15 +650,15 @@ function renderCards() {
 
     card.addEventListener("click", (event) => {
       if (event.target.closest("a, button")) return;
-      setActivePlace(place.id, true);
+      setActivePlace(place.id, { openPopup: false, pinToTop: false });
     });
     card.addEventListener("keydown", (event) => {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
-        setActivePlace(place.id, true);
+        setActivePlace(place.id, { openPopup: false, pinToTop: false });
       }
     });
-    mapButton.addEventListener("click", () => setActivePlace(place.id, true));
+    mapButton.addEventListener("click", () => setActivePlace(place.id, { openPopup: true, pinToTop: false, switchToMap: true }));
     favoriteButton.addEventListener("click", (event) => {
       event.preventDefault();
       event.stopPropagation();
@@ -693,17 +697,21 @@ function focusActiveCard() {
 function showPlaceCardInList(placeId = state.activeId) {
   if (!placeId) return;
   state.activeId = placeId;
+  state.pinActiveToTop = true;
   renderCards();
   updateMobilePanel("list");
   requestAnimationFrame(focusActiveCard);
 }
 
-function setActivePlace(placeId, openPopup = false) {
+function setActivePlace(placeId, options = {}) {
+  const { openPopup = false, pinToTop = false, switchToMap = false } = options;
   state.activeId = placeId;
+  state.pinActiveToTop = pinToTop;
   renderCards();
   const place = state.filtered.find((item) => item.id === placeId);
   const marker = state.markers.get(placeId);
   if (place && marker && place.lat !== null && place.lng !== null) {
+    if (switchToMap) updateMobilePanel("map");
     const zoom = 14;
     const target = L.latLng(place.lat, place.lng);
     const offset = window.innerWidth <= 640 ? 150 : 110;
@@ -733,6 +741,7 @@ function resetFilters() {
   state.selectedDays.clear();
   state.selectedKidsOptions.clear();
   state.activeId = "";
+  state.pinActiveToTop = false;
   updateFilterSummaries();
   filterPlaces();
 }

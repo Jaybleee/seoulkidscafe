@@ -819,6 +819,10 @@ h1 em {
   background: linear-gradient(135deg, #eef2ff, #e0e7ff);
 }
 
+.popup-placeholder[hidden] {
+  display: none;
+}
+
 .popup-placeholder {
   display: grid;
   place-items: center;
