@@ -63,12 +63,9 @@ select {
   min-height: 100vh;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 16px;
+  padding: 0 16px 16px;
 }
 
-.topbar,
-.mode-tabs,
-.quick-filters,
 .filter-panel,
 .map-panel,
 .list-panel {
@@ -83,7 +80,12 @@ select {
   grid-template-columns: minmax(0, 1fr) 42px;
   align-items: start;
   gap: 12px;
-  padding: 12px 14px;
+  padding: 12px 8px 8px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--panel);
+  box-shadow: none;
 }
 
 .eyebrow {
@@ -130,11 +132,11 @@ h1 em {
 .search-toggle {
   display: inline-grid;
   place-items: center;
-  width: 42px;
-  height: 42px;
-  border: 1px solid var(--line);
+  width: 36px;
+  height: 36px;
+  border: 0;
   border-radius: var(--r2);
-  background: #fff;
+  background: transparent;
   color: var(--ink);
   font-size: 1.24rem;
   font-weight: 900;
@@ -222,12 +224,15 @@ h1 em {
 .mode-tabs {
   display: flex;
   gap: 0;
-  margin: 8px 0 0;
-  padding: 0 12px;
+  margin: 0;
+  padding: 0 8px;
   overflow-x: auto;
   scrollbar-width: none;
-  border-radius: var(--r) var(--r) 0 0;
-  border-bottom: 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--panel);
+  box-shadow: none;
 }
 
 .mode-tabs::-webkit-scrollbar {
@@ -238,11 +243,15 @@ h1 em {
   display: flex;
   align-items: center;
   gap: 7px;
-  margin: 0 0 8px;
-  padding: 8px;
+  margin: 0;
+  padding: 7px 8px;
   overflow-x: auto;
   scrollbar-width: none;
-  border-radius: 0 0 var(--r) var(--r);
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--panel);
+  box-shadow: none;
 }
 
 .quick-filters::-webkit-scrollbar {
@@ -288,7 +297,7 @@ h1 em {
 
 .mode-tab {
   flex: 0 0 auto;
-  min-height: 36px;
+  min-height: 34px;
   min-width: 88px;
   padding: 0 10px;
   border: 1px solid transparent;
@@ -335,8 +344,10 @@ h1 em {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 8px;
-  padding: 8px 4px;
+  margin: 0 0 8px;
+  padding: 8px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
 }
 
 .filter-panel {
@@ -989,21 +1000,21 @@ h1 em {
 
 @media (max-width: 900px) {
   .page-shell {
-    padding: 8px;
+    padding: 0 0 8px;
   }
 
   .topbar {
     grid-template-columns: minmax(0, 1fr) 42px;
-    gap: 8px;
-    padding: 10px;
+    gap: 6px;
+    padding: 10px 12px 8px;
   }
 
   h1 {
-    font-size: 1.2rem;
+    font-size: 1.18rem;
   }
 
   .intro {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
   }
 
   .search-shell {
@@ -1011,26 +1022,39 @@ h1 em {
   }
 
   .mode-tabs {
-    gap: 4px;
-    padding: 5px;
+    gap: 0;
+    padding: 0 12px;
   }
 
   .mode-tab {
-    min-width: 92px;
-    min-height: 42px;
-    padding: 6px 4px;
-    font-size: 0.86rem;
+    min-width: 86px;
+    min-height: 38px;
+    padding: 5px 4px;
+    font-size: 0.82rem;
   }
 
   .filter-grid {
     grid-template-columns: 1fr;
   }
 
+  .map-panel,
+  .list-panel {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .panel-header {
+    min-height: 36px;
+    padding: 7px 12px;
+  }
+
   .quick-filters {
     position: sticky;
     top: 0;
     z-index: 500;
-    margin-bottom: 8px;
+    padding-inline: 12px;
+    margin-bottom: 0;
   }
 
   .mobile-view-toggle {
@@ -1040,19 +1064,21 @@ h1 em {
 
   .result-row {
     position: sticky;
-    top: 56px;
+    top: 47px;
     z-index: 490;
-    min-height: 44px;
-    padding: 6px 8px;
-    border: 1px solid var(--line);
-    border-radius: 8px;
+    min-height: 42px;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
     background: var(--panel);
-    box-shadow: var(--shadow);
+    box-shadow: none;
   }
 
   #map {
-    height: calc(100svh - 235px);
-    min-height: 430px;
+    height: calc(100svh - 198px);
+    min-height: 460px;
   }
 
   .card-list {
