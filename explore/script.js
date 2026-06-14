@@ -47,6 +47,25 @@ const MUSEUM_LINK_OVERRIDES = {
   키즈오토파크: "https://www.kidsautopark.org/",
   "키즈오토파크(서울)": "https://www.kidsautopark.org/",
 };
+const MUSEUM_PARKING_AVAILABLE_NAMES = new Set([
+  "국립중앙박물관 어린이박물관",
+  "국립항공박물관",
+  "전쟁기념관 어린이박물관",
+  "서대문자연사박물관",
+  "서울기록원",
+  "서울생활사박물관",
+  "서울역사박물관 어린이박물관",
+  "서울시립과학관",
+  "서울에너지드림센터",
+  "서울하수도과학관",
+  "서울새활용플라자",
+  "서울식물원",
+  "송파책박물관",
+  "은평역사한옥박물관",
+  "허준박물관",
+  "국립현대미술관 서울",
+  "국회박물관",
+]);
 
 const state = {
   places: [],
@@ -293,13 +312,18 @@ function normalizeMuseum(record, index) {
   const websiteUrl = MUSEUM_LINK_OVERRIDES[placeName] || (useSearchFallback ? "" : clean(record.website_url));
   const hasOfficialLink = Boolean(websiteUrl);
   const fee = clean(record.fee);
+  const parkingAvailable = MUSEUM_PARKING_AVAILABLE_NAMES.has(placeName);
   const badges = [
     days.includes(TODAY_DAY) ? "오늘 운영" : "",
     feeLabel(fee),
+    parkingAvailable ? "주차 가능" : "",
     needsLinkReview ? "링크 확인" : "",
     record.verification_status === "police_station_proxy" ? "위치 재확인" : "",
   ].filter(Boolean);
   const ageLabel = Array.isArray(record.recommended_age) ? record.recommended_age.join(", ") : "연령 확인";
+  const facts = [fact(ageLabel, "age"), fact(feeLabel(fee), "fee")];
+  if (parkingAvailable) facts.push(fact("주차 가능", "parking"));
+  facts.push(fact(clean(record.keyword, "체험"), "topic"));
   return {
     id: `museum-${clean(record.id, String(index + 1))}`,
     category: "museum",
@@ -335,9 +359,10 @@ function normalizeMuseum(record, index) {
     hasOfficialLink,
     officialLinkReady: hasOfficialLink && !needsLinkReview,
     hasReservation: false,
+    parkingAvailable,
     badges,
     statusLabel: todayStatus(days),
-    facts: [fact(ageLabel, "age"), fact(feeLabel(fee), "fee"), fact(clean(record.keyword, "체험"), "topic")],
+    facts,
     searchText: "",
   };
 }
@@ -382,11 +407,9 @@ function normalizeLibrary(record, index) {
     parkingAvailable,
     badges: [days.includes(TODAY_DAY) ? "오늘 운영" : "", "무료", parkingAvailable === true ? "주차 가능" : ""].filter(Boolean),
     statusLabel: todayStatus(days),
-    facts: [
-      fact(ageGroups.join(", ") || "어린이", "age"),
-      fact("무료", "free"),
-      fact(parkingAvailable === true ? "주차 가능" : "주차 확인", "parking"),
-    ],
+    facts: [fact(ageGroups.join(", ") || "어린이", "age"), fact("무료", "free")].concat(
+      parkingAvailable === true ? [fact("주차 가능", "parking")] : []
+    ),
     searchText: "",
   };
 }
