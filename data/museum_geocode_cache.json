@@ -1,0 +1,1334 @@
+{
+  "_images": {
+    "https://www.gogung.go.kr/": "https://www.gogung.go.kr/resources/gogung/images/common/ogImage.png",
+    "https://www.nmkpg.go.kr/": "https://www.nmkpg.go.kr/resources/images/common/ogimage_01.png",
+    "https://www.nfm.go.kr/kids/": "",
+    "https://www.museum.go.kr/site/child/home": "https://www.museum.go.kr/design/common/images/nmk_sns_logo.png",
+    "https://sphh.sscmc.or.kr/": "https://sphh.sscmc.or.kr/images/main/visual_foot.png",
+    "https://edumuseum.sen.go.kr/": "",
+    "https://archives.seoul.go.kr/": "",
+    "https://baekjemuseum.seoul.go.kr/dreamvillage/": "https://baekjemuseum.seoul.go.kr/new3/images/children_contents/main_edu_info01.png",
+    "https://museum.seoul.go.kr/sulm/index.do": "https://museum.seoul.go.kr/upload/banner/2023/9/25/fdc2dd80-863c-4f9a-b522-701e2d311511.jpg",
+    "https://museum.ddm.go.kr/": "https://museum.ddm.go.kr/upload/2024/12/67515f6db0a7e.jpg",
+    "https://museum.seoul.go.kr/": "",
+    "https://museum.yongsan.go.kr/": "https://museum.yongsan.go.kr:443/images/common/bg/back_img_02.jpg",
+    "https://museum.ep.go.kr/": "https://museum.ep.go.kr/img/og-img_2025.png",
+    "https://www.warmemo.or.kr/kids/": "",
+    "https://museum.seoul.go.kr/cgcm/index.do": "https://museum.seoul.go.kr/upload/banner/2023/9/25/dc334794-59a1-4ce9-a252-e19074a3ded6.jpg",
+    "https://museum.seoul.go.kr/scwm/index.do": "https://museum.seoul.go.kr/upload/banner/2023/9/25/0b4254e1-a9d6-4f2e-910c-c8f29427d43c.jpg",
+    "https://www.heojunmuseum.go.kr/": "",
+    "https://www.csc.go.kr/": "",
+    "https://www.aviation.or.kr/": "http://aviation.or.kr/contents/home/images/logo-black.png",
+    "https://www.nowon.kr/math": "",
+    "https://namu.sdm.go.kr/": "https://namu.sdm.go.kr/design/theme/namu/images/logo-200x200.gif",
+    "https://science.seoul.go.kr/": "https://science.seoul.go.kr/resources/img/main/61f8b69c-e447-4006-96d2-b90d39d6571c.png",
+    "https://seouledc.or.kr/": "https://seouledc.or.kr/data/skin/respon_default/images/skin/main_intro.png",
+    "https://sssmuseum.org/": "https://sssmuseum.org/design/default/img/main/i_seoul_u_img02.png",
+    "https://museum.assembly.go.kr/": "https://museum.assembly.go.kr/og_assembly_museum.png",
+    "https://www.bok.or.kr/museum/": "",
+    "https://www.mmca.go.kr/": "https://www.mmca.go.kr/asset/images/common/preview_logo.png",
+    "https://craftmuseum.seoul.go.kr/": "https://craftmuseum.seoul.go.kr/images/common/og_images.png",
+    "https://sema.seoul.go.kr/": "",
+    "https://gomuseum.seoul.go.kr/": "",
+    "http://www.agrimuseum.or.kr/": "http://www.agrimuseum.or.kr/images/main/logo_new.png",
+    "https://botanicpark.seoul.go.kr/": "https://botanicpark.seoul.go.kr/img/upload/mainTab/tab_2026061011164971.jpg",
+    "https://www.seoulchildrensmuseum.org/": "https://www.seoulchildrensmuseum.org/z00_images/common/sns_sImg.png",
+    "http://www.nlcy.go.kr/": "http://www.nlcy.go.kr/resource/templete/nlcy/common/img/common/favicon.png",
+    "https://www.bookmuseum.go.kr/": "http://www.bookmuseum.go.kr/images/logo.png",
+    "https://www.presseum.or.kr/": "https://www.presseum.or.kr/media/images/medialounge_main.original.jpg"
+  },
+  "국립고궁박물관 종로구 서울": {
+    "place_id": 223426531,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "relation",
+    "osm_id": 2270998,
+    "lat": "37.5765671",
+    "lon": "126.9749691",
+    "class": "tourism",
+    "type": "museum",
+    "place_rank": 30,
+    "importance": 0.39635455236634,
+    "addresstype": "tourism",
+    "name": "국립고궁박물관",
+    "display_name": "국립고궁박물관, 12, 효자로, 창성동, 청운효자동, 종로구, 서울특별시, 03045, 대한민국",
+    "extratags": {
+      "phone": "+82 2 3701 7500",
+      "website": "https://www.gogung.go.kr/main.do",
+      "building": "yes",
+      "wikidata": "Q335998",
+      "wikipedia": "ko:국립고궁박물관",
+      "building:levels:underground": "-3"
+    },
+    "namedetails": {
+      "name": "국립고궁박물관",
+      "name:en": "National Palace Museum of Korea",
+      "name:ja": "国立故宮博物館",
+      "name:ko": "국립고궁박물관",
+      "name:zh": "国立古宫博物馆"
+    },
+    "boundingbox": [
+      "37.5761986",
+      "37.5769755",
+      "126.9744343",
+      "126.9755162"
+    ]
+  },
+  "국립대한민국임시정부기념관 서대문구 서울": {
+    "place_id": 220422434,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 196065376,
+    "lat": "37.5760624",
+    "lon": "126.9543843",
+    "class": "tourism",
+    "type": "museum",
+    "place_rank": 30,
+    "importance": 0.32901661879114147,
+    "addresstype": "tourism",
+    "name": "국립대한민국임시정부기념관",
+    "display_name": "국립대한민국임시정부기념관, 279-24, 통일로, 현저동, 천연동, 서대문구, 서울특별시, 03732, 대한민국",
+    "extratags": {
+      "museum": "history",
+      "building": "yes",
+      "memorial": "building",
+      "wikidata": "Q55729081",
+      "wikipedia": "ko:국립대한민국임시정부기념관",
+      "building:levels": "4"
+    },
+    "namedetails": {
+      "name": "국립대한민국임시정부기념관",
+      "name:en": "National Memorial of the Korean Provisional Government",
+      "name:ja": "国立大韓民国臨時政府記念館",
+      "name:ko": "국립대한민국임시정부기념관"
+    },
+    "boundingbox": [
+      "37.5758700",
+      "37.5762580",
+      "126.9541529",
+      "126.9546142"
+    ]
+  },
+  "국립민속박물관 어린이박물관 종로구 서울": {
+    "place_id": 221528476,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 4392456392,
+    "lat": "37.5819050",
+    "lon": "126.9787649",
+    "class": "tourism",
+    "type": "museum",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "tourism",
+    "name": "국립민속박물관 어린이박물관",
+    "display_name": "국립민속박물관 어린이박물관, 청와대로, 궁정동, 청운효자동, 종로구, 서울특별시, 03054, 대한민국",
+    "extratags": {
+      "fee": "no",
+      "phone": "+82 2 3704 4540",
+      "website": "www.kidsnfm.go.kr"
+    },
+    "namedetails": {
+      "name": "국립민속박물관 어린이박물관",
+      "name:en": "National Folk Museum of Korea Children’s Museum",
+      "name:ja": "国立民俗博物館，こども博物館",
+      "name:ko": "국립민속박물관 어린이박물관"
+    },
+    "boundingbox": [
+      "37.5818550",
+      "37.5819550",
+      "126.9787149",
+      "126.9788149"
+    ]
+  },
+  "국립중앙박물관 어린이박물관 용산구 서울": {
+    "place_id": 223622397,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 2669761339,
+    "lat": "37.5238304",
+    "lon": "126.9783367",
+    "class": "tourism",
+    "type": "museum",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "tourism",
+    "name": "국립중앙박물관 어린이박물관",
+    "display_name": "국립중앙박물관 어린이박물관, 137, 서빙고로, 용산동6가, 서빙고동, 용산구, 서울특별시, 04383, 대한민국",
+    "extratags": {
+      "fee": "no",
+      "phone": "+82 02-2077-9000",
+      "website": "child.museum.go.kr",
+      "wheelchair": "yes",
+      "opening_hours": "Mo-Su 09:00-18:00"
+    },
+    "namedetails": {
+      "name": "국립중앙박물관 어린이박물관",
+      "name:en": "Children’s Museum of National Museum of Korea",
+      "name:ja": "国立中央博物館 こども博物館",
+      "name:ko": "국립중앙박물관 어린이박물관",
+      "alt_name:ko": "어린이박물관"
+    },
+    "boundingbox": [
+      "37.5237804",
+      "37.5238804",
+      "126.9782867",
+      "126.9783867"
+    ]
+  },
+  "서대문형무소역사관 서대문구 서울": {
+    "place_id": 223231138,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 368871454,
+    "lat": "37.5745368",
+    "lon": "126.9563173",
+    "class": "tourism",
+    "type": "museum",
+    "place_rank": 30,
+    "importance": 0.3897107592752421,
+    "addresstype": "tourism",
+    "name": "서대문형무소역사관",
+    "display_name": "서대문형무소역사관, 251, 통일로, 현저동, 천연동, 서대문구, 서울특별시, 03732, 대한민국",
+    "extratags": {
+      "phone": "+82 2 360 8590",
+      "website": "http://www.sscmc.or.kr/newhistory/index_culture.asp",
+      "wikidata": "Q488571",
+      "wikipedia": "en:Seodaemun Prison",
+      "opening_hours": "Tu-Su 09:00-18:00",
+      "description:en": "Museum and former prison (1908-1897),"
+    },
+    "namedetails": {
+      "name": "서대문형무소역사관",
+      "name:en": "Seodaemun Prison History Hall",
+      "name:ja": "西大門刑務所歴史館",
+      "name:ko": "서대문형무소역사관",
+      "name:ko-Latn": "Seodaemunhyeongmusoyeoksagwan"
+    },
+    "boundingbox": [
+      "37.5744868",
+      "37.5745868",
+      "126.9562673",
+      "126.9563673"
+    ]
+  },
+  "서울교육박물관 종로구 서울": {
+    "place_id": 222633160,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 301282717,
+    "lat": "37.5797536",
+    "lon": "126.9832856",
+    "class": "tourism",
+    "type": "museum",
+    "place_rank": 30,
+    "importance": 0.35049604782988514,
+    "addresstype": "tourism",
+    "name": "서울교육박물관",
+    "display_name": "서울교육박물관, 48, 북촌로5길, 소격동, 삼청동, 종로구, 서울특별시, 03055, 대한민국",
+    "extratags": {
+      "phone": "+82 02-2011-5780",
+      "website": "www.edumuseum.seoul.kr",
+      "building": "yes",
+      "wikidata": "Q7451652"
+    },
+    "namedetails": {
+      "name": "서울교육박물관",
+      "name:en": "Seoul Museum of Education",
+      "name:ja": "ソウル教育博物館",
+      "name:ko": "서울교육박물관"
+    },
+    "boundingbox": [
+      "37.5796906",
+      "37.5798485",
+      "126.9829649",
+      "126.9836030"
+    ]
+  },
+  "서울기록원 은평구 서울": {
+    "place_id": 223446071,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 377780548,
+    "lat": "37.6074413",
+    "lon": "126.9350404",
+    "class": "office",
+    "type": "government",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "office",
+    "name": "서울기록원",
+    "display_name": "서울기록원, 통일로62길, 녹번동, 은평구, 서울특별시, 03382, 대한민국",
+    "extratags": {
+      "building": "office"
+    },
+    "namedetails": {
+      "name": "서울기록원"
+    },
+    "boundingbox": [
+      "37.6070386",
+      "37.6077880",
+      "126.9344040",
+      "126.9353245"
+    ]
+  },
+  "서울백제어린이박물관 송파구 서울": null,
+  "서울생활사박물관 노원구 서울": {
+    "place_id": 222987315,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 1126563219,
+    "lat": "37.6198533",
+    "lon": "127.0768809",
+    "class": "tourism",
+    "type": "museum",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "tourism",
+    "name": "서울생활사박물관",
+    "display_name": "서울생활사박물관, 27, 동일로174길, 공릉1동, 노원구, 서울특별시, 01849, 대한민국",
+    "extratags": {
+      "museum": "history",
+      "website": "https://museum.seoul.go.kr/sulm/index.do",
+      "building": "yes",
+      "opening_hours": "Th-Tu 09:00-17:30",
+      "building:levels": "4"
+    },
+    "namedetails": {
+      "name": "서울생활사박물관",
+      "name:en": "Seoul Urban Life Museum",
+      "name:ja": "ソウル生活史博物館",
+      "name:ko": "서울생활사박물관"
+    },
+    "boundingbox": [
+      "37.6196142",
+      "37.6201224",
+      "127.0766926",
+      "127.0773068"
+    ]
+  },
+  "서울약령시 한의약박물관 동대문구 서울": null,
+  "서울역사박물관 어린이박물관 종로구 서울": null,
+  "용산역사박물관 용산구 서울": {
+    "place_id": 222667334,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 854222054,
+    "lat": "37.5250845",
+    "lon": "126.9658047",
+    "class": "tourism",
+    "type": "museum",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "tourism",
+    "name": "용산역사박물관",
+    "display_name": "용산역사박물관, 한강대로14길, 한강로3가, 한강로동, 용산구, 서울특별시, 04388, 대한민국",
+    "extratags": {
+      "museum": "history",
+      "website": "https://museum.yongsan.go.kr/",
+      "operator": "용산구청",
+      "operator:type": "government"
+    },
+    "namedetails": {
+      "name": "용산역사박물관",
+      "name:en": "Yongsan History Museum",
+      "name:ja": "龍山歴史博物館",
+      "name:ko": "용산역사박물관"
+    },
+    "boundingbox": [
+      "37.5243879",
+      "37.5259194",
+      "126.9652754",
+      "126.9664027"
+    ]
+  },
+  "은평역사한옥박물관 은평구 서울": {
+    "place_id": 223496528,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 976970948,
+    "lat": "37.6403189",
+    "lon": "126.9380387",
+    "class": "tourism",
+    "type": "museum",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "tourism",
+    "name": "은평역사한옥박물관",
+    "display_name": "은평역사한옥박물관, 8, 연서로50길, 은평한옥마을, 진관동, 은평구, 서울특별시, 03308, 대한민국",
+    "extratags": {
+      "museum": "history",
+      "website": "https://museum.ep.go.kr/",
+      "building": "yes",
+      "operator": "은평구",
+      "operator:type": "public"
+    },
+    "namedetails": {
+      "name": "은평역사한옥박물관",
+      "name:en": "Eunpyeong History & Hanok Museum",
+      "name:ja": "恩平歴史韓屋博物館",
+      "name:ko": "은평역사한옥박물관"
+    },
+    "boundingbox": [
+      "37.6400427",
+      "37.6405971",
+      "126.9377235",
+      "126.9383485"
+    ]
+  },
+  "전쟁기념관 어린이박물관 용산구 서울": null,
+  "청계천박물관 성동구 서울": {
+    "place_id": 223075910,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 487580779,
+    "lat": "37.5712842",
+    "lon": "127.0351045",
+    "class": "tourism",
+    "type": "museum",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "tourism",
+    "name": "청계천박물관",
+    "display_name": "청계천박물관, 530, 청계천로, 마장동, 왕십리도선동, 성동구, 서울특별시, 04704, 대한민국",
+    "extratags": {
+      "phone": "+82 2 2286 3410",
+      "website": "http://www.museum.seoul.kr/cgcm/index.do",
+      "building": "yes",
+      "opening_hours": "Tu-Su 10:00-19:00",
+      "building:levels": "4"
+    },
+    "namedetails": {
+      "name": "청계천박물관",
+      "name:en": "Cheonggyecheon Museum",
+      "name:ja": "清渓川博物館",
+      "name:ko": "청계천박물관"
+    },
+    "boundingbox": [
+      "37.5709769",
+      "37.5715488",
+      "127.0345252",
+      "127.0355418"
+    ]
+  },
+  "한양도성박물관 종로구 서울": {
+    "place_id": 222902900,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 3546635153,
+    "lat": "37.5727362",
+    "lon": "127.0085690",
+    "class": "tourism",
+    "type": "museum",
+    "place_rank": 30,
+    "importance": 0.33935777253266924,
+    "addresstype": "tourism",
+    "name": "한양도성박물관",
+    "display_name": "한양도성박물관, 283, 율곡로, 종로6가, 종로5·6가동, 종로구, 서울특별시, 03098, 대한민국",
+    "extratags": {
+      "phone": "+82 02-724-0243",
+      "website": "www.museum.seoul.kr/scwm/NR_index.do",
+      "wikidata": "Q21060745"
+    },
+    "namedetails": {
+      "name": "한양도성박물관",
+      "name:en": "Seoul City Wall Museum",
+      "name:ja": "韓陽都城博物館",
+      "name:ko": "한양도성박물관",
+      "name:zh": "汉阳都城博物馆"
+    },
+    "boundingbox": [
+      "37.5726862",
+      "37.5727862",
+      "127.0085190",
+      "127.0086190"
+    ]
+  },
+  "허준박물관 강서구 서울": {
+    "place_id": 222717797,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 523175495,
+    "lat": "37.5678654",
+    "lon": "126.8510375",
+    "class": "tourism",
+    "type": "museum",
+    "place_rank": 30,
+    "importance": 0.3538242275522032,
+    "addresstype": "tourism",
+    "name": "허준 박물관",
+    "display_name": "허준 박물관, 87, 허준로, 가양동, 가양2동, 강서구, 서울특별시, 07525, 대한민국",
+    "extratags": {
+      "building": "yes",
+      "wikidata": "Q5731573"
+    },
+    "namedetails": {
+      "name": "허준 박물관",
+      "name:en": "Heo Jun museum",
+      "name:ja": "許浚博物館",
+      "name:ko": "허준박물관"
+    },
+    "boundingbox": [
+      "37.5676207",
+      "37.5681634",
+      "126.8506915",
+      "126.8513846"
+    ]
+  },
+  "G밸리산업박물관 구로구 서울": {
+    "place_id": 222807820,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 11560132534,
+    "lat": "37.4807391",
+    "lon": "126.8956772",
+    "class": "highway",
+    "type": "bus_stop",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "highway",
+    "name": "에이스하이엔드타워2차.G밸리산업박물관",
+    "display_name": "에이스하이엔드타워2차.G밸리산업박물관, 디지털로26길, 서울디지털국가산업단지 1단지, 구로3동, 구로구, 서울특별시, 08393, 대한민국",
+    "extratags": {
+      "bus": "yes",
+      "public_transport": "platform"
+    },
+    "namedetails": {
+      "name": "에이스하이엔드타워2차.G밸리산업박물관"
+    },
+    "boundingbox": [
+      "37.4806891",
+      "37.4807891",
+      "126.8956272",
+      "126.8957272"
+    ]
+  },
+  "국립기상박물관 종로구 서울": null,
+  "국립어린이과학관 종로구 서울": {
+    "place_id": 223696311,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 12372972788,
+    "lat": "37.5819473",
+    "lon": "126.9973679",
+    "class": "amenity",
+    "type": "bicycle_rental",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "amenity",
+    "name": "국립어린이과학관",
+    "display_name": "국립어린이과학관, 창경궁로, 명륜2가, 종로1·2·3·4가동, 종로구, 서울특별시, 03074, 대한민국",
+    "extratags": {
+      "fee": "yes",
+      "access": "customers",
+      "network": "서울자전거 따릉이",
+      "brand:en": "Seoul Bike",
+      "brand:ko": "서울자전거 따릉이",
+      "capacity": "14",
+      "operator": "서울시설공단",
+      "network:en": "Seoul Bike",
+      "network:ko": "서울자전거 따릉이",
+      "operator:en": "Seoul Facilities Corporation",
+      "operator:ko": "서울시설공단",
+      "payment:app": "yes",
+      "brand:website": "https://www.bikeseoul.com/",
+      "operator:type": "public",
+      "bicycle_rental": "docking_station",
+      "brand:wikidata": "Q28127084",
+      "authentication:app": "true"
+    },
+    "namedetails": {
+      "ref": "3419",
+      "name": "국립어린이과학관",
+      "brand": "서울자전거 따릉이",
+      "name:ko": "국립어린이과학관"
+    },
+    "boundingbox": [
+      "37.5818973",
+      "37.5819973",
+      "126.9973179",
+      "126.9974179"
+    ]
+  },
+  "국립항공박물관 강서구 서울": {
+    "place_id": 223657414,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 264039950,
+    "lat": "37.5566519",
+    "lon": "126.8084640",
+    "class": "tourism",
+    "type": "museum",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "tourism",
+    "name": "국립항공박물관",
+    "display_name": "국립항공박물관, 177, 하늘길, 공항동, 강서구, 서울특별시, 07505, 대한민국",
+    "extratags": {
+      "fee": "no",
+      "museum": "technology",
+      "website": "https://www.aviation.or.kr",
+      "building": "yes",
+      "operator": "한국공항공사",
+      "opening_hours": "Tu-Su 10:00-18:00",
+      "operator:type": "government",
+      "building:levels": "4"
+    },
+    "namedetails": {
+      "name": "국립항공박물관",
+      "name:en": "National Aviation Museum of Korea",
+      "name:ja": "国立航空博物館",
+      "name:ko": "국립항공박물관"
+    },
+    "boundingbox": [
+      "37.5562476",
+      "37.5570455",
+      "126.8079603",
+      "126.8089682"
+    ]
+  },
+  "기생충박물관 강서구 서울": null,
+  "노원수학문화관 노원구 서울": {
+    "place_id": 418738695,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 1524578124,
+    "lat": "37.6575957",
+    "lon": "127.0722549",
+    "class": "tourism",
+    "type": "museum",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "tourism",
+    "name": "노원수학문화관",
+    "display_name": "노원수학문화관, 한글비석로19길, 중계4동, 노원구, 서울특별시, 01699, 대한민국",
+    "extratags": {
+      "museum": "science",
+      "website": "https://www.nowon.kr/math",
+      "building": "yes",
+      "operator": "노원구",
+      "wheelchair": "yes",
+      "opening_hours": "Tu-Su 08:00-17:30",
+      "operator:type": "government",
+      "toilets:wheelchair": "yes"
+    },
+    "namedetails": {
+      "name": "노원수학문화관"
+    },
+    "boundingbox": [
+      "37.6574539",
+      "37.6579879",
+      "127.0721309",
+      "127.0725245"
+    ]
+  },
+  "서대문자연사박물관 서대문구 서울": {
+    "place_id": 222745114,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 174109593,
+    "lat": "37.5765532",
+    "lon": "126.9374913",
+    "class": "tourism",
+    "type": "museum",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "tourism",
+    "name": "서대문 자연사박물관",
+    "display_name": "서대문 자연사박물관, 연희로32길, 연희동, 서대문구, 서울특별시, 03718, 대한민국",
+    "extratags": null,
+    "namedetails": {
+      "name": "서대문 자연사박물관",
+      "name:ko": "서대문 자연사박물관",
+      "alt_name:ko": "서대문자연사박물관"
+    },
+    "boundingbox": [
+      "37.5761027",
+      "37.5770801",
+      "126.9366659",
+      "126.9383794"
+    ]
+  },
+  "서울로봇인공지능과학관 도봉구 서울": {
+    "place_id": 220556191,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 474937198,
+    "lat": "37.6555437",
+    "lon": "127.0494310",
+    "class": "tourism",
+    "type": "museum",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "tourism",
+    "name": "서울로봇인공지능과학관",
+    "display_name": "서울로봇인공지능과학관, 56, 마들로13길, 창4동, 도봉구, 서울특별시, 01411, 대한민국",
+    "extratags": {
+      "museum": "technology",
+      "building": "yes",
+      "opening_hours": "Mo-Su 09:30-17:30"
+    },
+    "namedetails": {
+      "name": "서울로봇인공지능과학관",
+      "name:ja": "ソウルロボット人工知能科学館",
+      "name:ko": "서울로봇인공지능과학관"
+    },
+    "boundingbox": [
+      "37.6552294",
+      "37.6558086",
+      "127.0490178",
+      "127.0498616"
+    ]
+  },
+  "서울시립과학관 노원구 서울": {
+    "place_id": 222099799,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 545592753,
+    "lat": "37.6418659",
+    "lon": "127.0772692",
+    "class": "tourism",
+    "type": "museum",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "tourism",
+    "name": "서울시립과학관",
+    "display_name": "서울시립과학관, 160, 한글비석로, 하계동, 하계1동, 노원구, 서울특별시, 01792, 대한민국",
+    "extratags": {
+      "website": "https://science.seoul.go.kr/",
+      "building": "yes",
+      "opening_hours": "Mo-Su 09:30-17:30"
+    },
+    "namedetails": {
+      "name": "서울시립과학관",
+      "name:en": "Seoul Science Center",
+      "name:ja": "ソウル市立科学館",
+      "name:ko": "서울시립과학관"
+    },
+    "boundingbox": [
+      "37.6416281",
+      "37.6424708",
+      "127.0765954",
+      "127.0780633"
+    ]
+  },
+  "서울에너지드림센터 마포구 서울": {
+    "place_id": 223258962,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 267915920,
+    "lat": "37.5627476",
+    "lon": "126.8912017",
+    "class": "amenity",
+    "type": "public_building",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "amenity",
+    "name": "서울에너지드림센터",
+    "display_name": "서울에너지드림센터, 메트로폴리스길, 상암동, 마포구, 서울특별시, 03954, 대한민국",
+    "extratags": {
+      "website": "https://www.seouledc.or.kr/Main.do"
+    },
+    "namedetails": {
+      "name": "서울에너지드림센터",
+      "name:en": "Seoul Energy Dream Center",
+      "name:ko": "서울에너지드림센터"
+    },
+    "boundingbox": [
+      "37.5625450",
+      "37.5629502",
+      "126.8909622",
+      "126.8914411"
+    ]
+  },
+  "서울퓨처랩 강서구 서울": null,
+  "서울하수도과학관 성동구 서울": {
+    "place_id": 222555510,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 894634598,
+    "lat": "37.5574992",
+    "lon": "127.0576261",
+    "class": "tourism",
+    "type": "museum",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "tourism",
+    "name": "서울하수도과학관",
+    "display_name": "서울하수도과학관, 64, 자동차시장3길, 장안평자동차용품거리, 용답동, 성동구, 서울특별시, 04809, 대한민국",
+    "extratags": {
+      "museum": "science",
+      "website": "https://sssmuseum.org/",
+      "building": "yes",
+      "start_date": "2017-09-05"
+    },
+    "namedetails": {
+      "name": "서울하수도과학관",
+      "name:en": "Seoul Sewerage Science Museum",
+      "name:ja": "ソウル下水道科学館",
+      "name:ko": "서울하수도과학관"
+    },
+    "boundingbox": [
+      "37.5571471",
+      "37.5578228",
+      "127.0574043",
+      "127.0582962"
+    ]
+  },
+  "국립경찰박물관 종로구 서울": null,
+  "국회박물관 영등포구 서울": {
+    "place_id": 221495301,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 682332395,
+    "lat": "37.5319897",
+    "lon": "126.9190673",
+    "class": "office",
+    "type": "government",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "office",
+    "name": "국회박물관",
+    "display_name": "국회박물관, 여의서로, 여의도동, 여의동, 영등포구, 서울특별시, 07238, 대한민국",
+    "extratags": {
+      "height": "12",
+      "tourism": "museum",
+      "website": "http://memorial.na.go.kr/",
+      "building": "public",
+      "building:levels": "3"
+    },
+    "namedetails": {
+      "name": "국회박물관",
+      "name:en": "National Assembly Museum",
+      "name:ja": "国会博物館",
+      "name:ko": "국회박물관"
+    },
+    "boundingbox": [
+      "37.5315808",
+      "37.5324805",
+      "126.9186276",
+      "126.9194554"
+    ]
+  },
+  "대법원 법원전시관 서초구 서울": null,
+  "외교부 외교사료관 서초구 서울": null,
+  "유니세프 어린이지구촌체험관 마포구 서울": null,
+  "강동 청소년경찰학교 강동구 서울": null,
+  "강북 청소년경찰학교 강북구 서울": null,
+  "강서 청소년경찰학교 강서구 서울": null,
+  "관악 청소년경찰학교 관악구 서울": null,
+  "광진 청소년경찰학교 광진구 서울": null,
+  "구로 청소년경찰학교 구로구 서울": null,
+  "노원 청소년경찰학교 노원구 서울": null,
+  "도봉 청소년경찰학교 도봉구 서울": null,
+  "동작 청소년경찰학교 동작구 서울": null,
+  "서초 청소년경찰학교 서초구 서울": null,
+  "송파 청소년경찰학교 송파구 서울": null,
+  "한국은행 화폐박물관 중구 서울": {
+    "place_id": 223495931,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 348489095,
+    "lat": "37.5620469",
+    "lon": "126.9803694",
+    "class": "tourism",
+    "type": "museum",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "tourism",
+    "name": "한국은행 화폐박물관",
+    "display_name": "한국은행 화폐박물관, 소공로, 소공동, 중구, 서울특별시, 04532, 대한민국",
+    "extratags": {
+      "website": "http://museum.bok.or.kr/",
+      "building": "yes",
+      "operator": "한국은행",
+      "wikidata": "Q128325",
+      "wikipedia": "ko:한국은행 화폐박물관",
+      "wheelchair": "yes",
+      "building:levels": "2"
+    },
+    "namedetails": {
+      "name": "한국은행 화폐박물관",
+      "name:en": "Bank of Korea Money Museum",
+      "name:ja": "韓国銀行貨幣博物館",
+      "name:ko": "한국은행 화폐박물관",
+      "old_name": "한국은행 화폐금융박물관",
+      "old_name:ja": "韓国銀行貨幣金融博物館"
+    },
+    "boundingbox": [
+      "37.5617144",
+      "37.5623743",
+      "126.9797962",
+      "126.9808762"
+    ]
+  },
+  "헌법재판소 전시관 종로구 서울": null,
+  "KBS 견학홀 영등포구 서울": null,
+  "국립국악원 서초구 서울": {
+    "place_id": 223408941,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "relation",
+    "osm_id": 4050012,
+    "lat": "37.4775049",
+    "lon": "127.0085657",
+    "class": "amenity",
+    "type": "arts_centre",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "amenity",
+    "name": "국립국악원",
+    "display_name": "국립국악원, 남부순환로, 서초3동, 서초구, 서울특별시, 06713, 대한민국",
+    "extratags": null,
+    "namedetails": {
+      "name": "국립국악원",
+      "name:en": "National Gugak Center",
+      "name:ja": "国立国楽院",
+      "name:ko": "국립국악원"
+    },
+    "boundingbox": [
+      "37.4771384",
+      "37.4784317",
+      "127.0080234",
+      "127.0097728"
+    ]
+  },
+  "국립극장공연예술박물관(서울) 중구 서울": null,
+  "국립현대미술관 서울 종로구 서울": {
+    "place_id": 223705321,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "relation",
+    "osm_id": 14956894,
+    "lat": "37.5795533",
+    "lon": "126.9804352",
+    "class": "tourism",
+    "type": "gallery",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "tourism",
+    "name": "국립현대미술관",
+    "display_name": "국립현대미술관, 북촌로5길, 소격동, 삼청동, 종로구, 서울특별시, 03062, 대한민국",
+    "extratags": {
+      "building": "yes"
+    },
+    "namedetails": {
+      "name": "국립현대미술관",
+      "name:en": "National Museum of Modern and Contemporary Art",
+      "name:ja": "国立現代美術館",
+      "name:ko": "국립현대미술관"
+    },
+    "boundingbox": [
+      "37.5792687",
+      "37.5798449",
+      "126.9801856",
+      "126.9815353"
+    ]
+  },
+  "답십리영화미디어아트센터 동대문구 서울": null,
+  "서울공예박물관 종로구 서울": {
+    "place_id": 223133569,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 237615585,
+    "lat": "37.5765519",
+    "lon": "126.9834467",
+    "class": "tourism",
+    "type": "museum",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "tourism",
+    "name": "서울공예박물관",
+    "display_name": "서울공예박물관, 4, 율곡로3길, 안국동, 삼청동, 종로구, 서울특별시, 03061, 대한민국",
+    "extratags": {
+      "fee": "no",
+      "operator": "서울특별시",
+      "opening_hours": "Mo-Su 10:00-18:00"
+    },
+    "namedetails": {
+      "name": "서울공예박물관",
+      "name:en": "Seoul Museum of Craft Art",
+      "name:ja": "ソウル工芸博物館",
+      "name:ko": "서울공예박물관"
+    },
+    "boundingbox": [
+      "37.5758854",
+      "37.5773242",
+      "126.9825357",
+      "126.9842036"
+    ]
+  },
+  "서울시립미술관 중구;노원구;관악구 서울": null,
+  "서울아트책보고 구로구 서울": null,
+  "서울우리소리박물관 종로구 서울": null,
+  "농업박물관 중구 서울": {
+    "place_id": 223649187,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 921242698,
+    "lat": "37.5666878",
+    "lon": "126.9682528",
+    "class": "tourism",
+    "type": "museum",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "tourism",
+    "name": "농업박물관",
+    "display_name": "농업박물관, 새문안로, 충정로1가, 소공동, 중구, 서울특별시, 03181, 대한민국",
+    "extratags": {
+      "museum": "agriculture",
+      "website": "http://www.agrimuseum.or.kr/",
+      "operator": "농업",
+      "opening_hours": "Tu-Su 09:30-17:30",
+      "contact:instagram": "nh_agrimuseum"
+    },
+    "namedetails": {
+      "name": "농업박물관",
+      "name:en": "Agricultural Museum",
+      "name:ja": "農業博物館",
+      "name:ko": "농업박물관"
+    },
+    "boundingbox": [
+      "37.5666378",
+      "37.5667378",
+      "126.9682028",
+      "126.9683028"
+    ]
+  },
+  "서울물재생체험관 강서구 서울": null,
+  "서울새활용플라자 성동구 서울": {
+    "place_id": 222630524,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 894634599,
+    "lat": "37.5585178",
+    "lon": "127.0577640",
+    "class": "amenity",
+    "type": "recycling",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "amenity",
+    "name": "서울새활용플라자",
+    "display_name": "서울새활용플라자, 자동차시장길, 용답동, 성동구, 서울특별시, 04804, 대한민국",
+    "extratags": {
+      "building": "yes",
+      "recycling_type": "centre"
+    },
+    "namedetails": {
+      "name": "서울새활용플라자"
+    },
+    "boundingbox": [
+      "37.5581694",
+      "37.5588691",
+      "127.0574126",
+      "127.0583542"
+    ]
+  },
+  "서울식물원 강서구 서울": {
+    "place_id": 222776410,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 465318366,
+    "lat": "37.5710656",
+    "lon": "126.8346641",
+    "class": "leisure",
+    "type": "garden",
+    "place_rank": 25,
+    "importance": 0.34397419227863374,
+    "addresstype": "garden",
+    "name": "서울식물원",
+    "display_name": "서울식물원, 가양1동, 강서구, 서울특별시, 07789, 대한민국",
+    "extratags": {
+      "wikidata": "Q47524353",
+      "garden:type": "botanical",
+      "opening_date": "2018-10-01"
+    },
+    "namedetails": {
+      "name": "서울식물원",
+      "name:en": "Seoul Botanical Garden",
+      "name:ja": "ソウル植物園",
+      "name:ko": "서울식물원",
+      "name:zh": "首尔植物园"
+    },
+    "boundingbox": [
+      "37.5638811",
+      "37.5782498",
+      "126.8277702",
+      "126.8377950"
+    ]
+  },
+  "아리수나라 광진구 서울": null,
+  "청계천 생태학교 성동구 서울": null,
+  "키즈마린파크 송파구 서울": null,
+  "YDP곤충체험학습관 영등포구 서울": null,
+  "광나루안전체험관 광진구 서울": {
+    "place_id": 222363315,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 12372983078,
+    "lat": "37.5513382",
+    "lon": "127.0767136",
+    "class": "amenity",
+    "type": "bicycle_rental",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "amenity",
+    "name": "광나루안전체험관",
+    "display_name": "광나루안전체험관, 능동로, 능동, 광진구, 서울특별시, 05006, 대한민국",
+    "extratags": {
+      "fee": "yes",
+      "access": "customers",
+      "network": "서울자전거 따릉이",
+      "brand:en": "Seoul Bike",
+      "brand:ko": "서울자전거 따릉이",
+      "capacity": "15",
+      "operator": "서울시설공단",
+      "network:en": "Seoul Bike",
+      "network:ko": "서울자전거 따릉이",
+      "operator:en": "Seoul Facilities Corporation",
+      "operator:ko": "서울시설공단",
+      "payment:app": "yes",
+      "brand:website": "https://www.bikeseoul.com/",
+      "operator:type": "public",
+      "bicycle_rental": "docking_station",
+      "brand:wikidata": "Q28127084",
+      "authentication:app": "true"
+    },
+    "namedetails": {
+      "ref": "3573",
+      "name": "광나루안전체험관",
+      "brand": "서울자전거 따릉이",
+      "name:ko": "광나루안전체험관"
+    },
+    "boundingbox": [
+      "37.5512882",
+      "37.5513882",
+      "127.0766636",
+      "127.0767636"
+    ]
+  },
+  "구로재난안전체험장 구로구 서울": null,
+  "롯데스위트파크 강서구 서울": null,
+  "마곡안전체험관 강서구 서울": {
+    "place_id": 223119941,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 1490417894,
+    "lat": "37.5552920",
+    "lon": "126.8248639",
+    "class": "building",
+    "type": "yes",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "building",
+    "name": "마곡안전체험관",
+    "display_name": "마곡안전체험관, 13, 마곡중앙로, 외발산동, 발산1동, 강서구, 서울특별시, 07630, 대한민국",
+    "extratags": null,
+    "namedetails": {
+      "name": "마곡안전체험관"
+    },
+    "boundingbox": [
+      "37.5549841",
+      "37.5555047",
+      "126.8246871",
+      "126.8250509"
+    ]
+  },
+  "목동재난체험관 양천구 서울": null,
+  "보라매안전체험관 동작구 서울": {
+    "place_id": 221234163,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 12969296390,
+    "lat": "37.4928644",
+    "lon": "126.9171186",
+    "class": "tourism",
+    "type": "museum",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "tourism",
+    "name": "보라매안전체험관",
+    "display_name": "보라매안전체험관, 16, 여의대방로20나길, 신대방동, 신대방2동, 동작구, 서울특별시, 07062, 대한민국",
+    "extratags": {
+      "fee": "no",
+      "opening_hours": "Mo-Su 10:00-17:00"
+    },
+    "namedetails": {
+      "name": "보라매안전체험관",
+      "name:en": "Boramae Safety Experience Center",
+      "name:ja": "ボラメ安全体験館",
+      "name:ko": "보라매안전체험관"
+    },
+    "boundingbox": [
+      "37.4928144",
+      "37.4929144",
+      "126.9170686",
+      "126.9171686"
+    ]
+  },
+  "키즈오토파크(서울) 광진구 서울": {
+    "place_id": 222996524,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 629148412,
+    "lat": "37.5516720",
+    "lon": "127.0784757",
+    "class": "building",
+    "type": "yes",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "building",
+    "name": "키즈오토파크",
+    "display_name": "키즈오토파크, 능동로24길, 능동, 광진구, 서울특별시, 04990, 대한민국",
+    "extratags": null,
+    "namedetails": {
+      "name": "키즈오토파크",
+      "name:en": "Kids Auto Park",
+      "name:ko": "키즈오토파크"
+    },
+    "boundingbox": [
+      "37.5514844",
+      "37.5518367",
+      "127.0783049",
+      "127.0786465"
+    ]
+  },
+  "서울상상나라 광진구 서울": {
+    "place_id": 222766731,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 629148394,
+    "lat": "37.5507529",
+    "lon": "127.0776369",
+    "class": "building",
+    "type": "yes",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "building",
+    "name": "서울상상나라",
+    "display_name": "서울상상나라, 능동로, 능동, 광진구, 서울특별시, 05006, 대한민국",
+    "extratags": {
+      "website": "https://seoulchildrensmuseum.org/"
+    },
+    "namedetails": {
+      "name": "서울상상나라",
+      "name:en": "Seoul Childrens' Museum",
+      "name:ja": "ソウル想像の国",
+      "name:ko": "서울상상나라"
+    },
+    "boundingbox": [
+      "37.5502596",
+      "37.5510676",
+      "127.0770764",
+      "127.0779723"
+    ]
+  },
+  "서울아이발달지원센터 동작구 서울": null,
+  "어깨동무스토리움 마포구 서울": null,
+  "어린이대공원 팔각당 키즈카페 광진구 서울": null,
+  "더불어숲 체험학습장 노원구 서울": null,
+  "서대문키즈헬스케어센터 아이랑 서대문구 서울": null,
+  "서울특별시 산악문화체험센터 마포구 서울": null,
+  "스마트 스포츠체험관 송파구 서울": null,
+  "우이동 산악문화HUB 강북구 서울": null,
+  "국립어린이청소년도서관 강남구 서울": {
+    "place_id": 222945800,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 306374820,
+    "lat": "37.5009614",
+    "lon": "127.0296222",
+    "class": "amenity",
+    "type": "library",
+    "place_rank": 30,
+    "importance": 0.37484064555151964,
+    "addresstype": "amenity",
+    "name": "국립어린이청소년도서관",
+    "display_name": "국립어린이청소년도서관, 테헤란로7길, 역삼1동, 강남구, 서울특별시, 06130, 대한민국",
+    "extratags": {
+      "website": "http://www.nlcy.go.kr/",
+      "building": "yes",
+      "wikidata": "Q16094699"
+    },
+    "namedetails": {
+      "name": "국립어린이청소년도서관",
+      "name:en": "National Children Youth Library",
+      "name:ja": "国立こども青少年図書館",
+      "name:ko": "국립어린이청소년도서관",
+      "name:ko-Latn": "Gungnipeorinicheongsonyeondoseogwan"
+    },
+    "boundingbox": [
+      "37.5006720",
+      "37.5011696",
+      "127.0292962",
+      "127.0300086"
+    ]
+  },
+  "송파책박물관 송파구 서울": {
+    "place_id": 223174207,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 690415744,
+    "lat": "37.4988875",
+    "lon": "127.1044813",
+    "class": "tourism",
+    "type": "museum",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "tourism",
+    "name": "송파책박물관",
+    "display_name": "송파책박물관, 77, 송파대로37길, 석촌동, 가락1동, 송파구, 서울특별시, 05698, 대한민국",
+    "extratags": {
+      "fee": "no",
+      "website": "https://www.bookmuseum.go.kr",
+      "building": "yes",
+      "check_date": "2025-11-09",
+      "wheelchair": "yes",
+      "opening_hours": "Mo,PH off; Tu-Su 10:00-18:00",
+      "internet_access": "wlan",
+      "internet_access:fee": "no"
+    },
+    "namedetails": {
+      "name": "송파책박물관",
+      "name:en": "Songpa Book Museum",
+      "name:ja": "松坡本博物館",
+      "name:ko": "송파책박물관"
+    },
+    "boundingbox": [
+      "37.4985849",
+      "37.4991900",
+      "127.1040819",
+      "127.1048806"
+    ]
+  },
+  "신문박물관 PRESSEUM 종로구 서울": {
+    "place_id": 221515954,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 368734210,
+    "lat": "37.5697760",
+    "lon": "126.9776053",
+    "class": "tourism",
+    "type": "museum",
+    "place_rank": 30,
+    "importance": 7.29800869763793e-05,
+    "addresstype": "tourism",
+    "name": "신문박물관 PRESSEUM",
+    "display_name": "신문박물관 PRESSEUM, 종로 자전거 전용로, 종로1가, 서린동, 종로1·2·3·4가동, 종로구, 서울특별시, 03188, 대한민국",
+    "extratags": {
+      "fee": "yes",
+      "opening_hours": "Mo-Fr 11:00-18:30; Sa,Su 00:00-18:30"
+    },
+    "namedetails": {
+      "name": "신문박물관 PRESSEUM",
+      "name:en": "PRESSEUM (Newspaper Museum)",
+      "name:ja": "新聞博物館",
+      "name:ko": "신문박물관",
+      "name:zh": "报纸博物馆",
+      "name:ko-Latn": "Sinmunbangmulgwan"
+    },
+    "boundingbox": [
+      "37.5697260",
+      "37.5698260",
+      "126.9775553",
+      "126.9776553"
+    ]
+  }
+}

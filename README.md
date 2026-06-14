@@ -1,6 +1,8 @@
-# 서울형 키즈카페 지도 MVP
+# 서울형 키즈카페 / 서울미래아이 콘텐츠 지도 MVP
 
 서울형 키즈카페 지점 정보를 크롤링해 `JSON`으로 저장하고, Leaflet + OpenStreetMap 기반 정적 웹페이지로 보여주는 프로젝트입니다. 서버 없이 동작하는 정적 구조이며, 저장소 루트에서 바로 GitHub Pages 배포가 가능하도록 구성했습니다.
+
+추가로 `서울미래아이 365` PDF 기반의 어린이 박물관·체험 콘텐츠 지도 초안을 `museums/` 경로에 분리해 두었습니다.
 
 현재는 아래 두 카테고리를 함께 수집합니다.
 
@@ -31,13 +33,21 @@
 ├─ crawler/
 │  ├─ crawler.py
 │  ├─ enrich_geocode.py
+│  ├─ enrich_museums.py
 │  └─ requirements.txt
 ├─ data/
 │  ├─ kids_cafes_raw.csv
 │  ├─ kids_cafes.csv
 │  ├─ kids_cafes.json
+│  ├─ museums_seed.csv
+│  ├─ museums.csv
+│  ├─ museums.json
 │  ├─ geocode_cache.json
 │  └─ geocode_failures.csv
+├─ museums/
+│  ├─ index.html
+│  ├─ style.css
+│  └─ script.js
 ├─ web/
 │  ├─ index.html
 │  ├─ style.css
@@ -104,6 +114,18 @@ python -m http.server 8000
 
 모바일 화면에서는 상단 토글로 `지도` / `목록`을 전환할 수 있습니다.
 
+박물관·체험 지도 초안은 아래 경로로 접속합니다.
+
+```text
+http://localhost:8000/museums/
+```
+
+GitHub Pages 배포 후에는 아래 경로에서 볼 수 있습니다.
+
+```text
+https://jaybleee.github.io/seoulkidscafe/museums/
+```
+
 ## GitHub Pages 배포 방법
 
 1. 저장소를 GitHub에 push 합니다.
@@ -124,6 +146,19 @@ python -m http.server 8000
 4. 정적 페이지 재배포
 
 비개발자 협업을 위해 주소 컬럼은 CSV에도 유지되며, 위경도는 `kids_cafes.csv`에서 수동 보정 가능합니다.
+
+박물관·체험 지도 데이터는 아래 명령으로 갱신합니다.
+
+```bash
+python crawler/enrich_museums.py
+```
+
+생성 결과:
+
+- `data/museums.csv`
+- `data/museums.json`
+- `data/museum_geocode_cache.json`
+- `data/museum_naver_location_cache.json`
 
 ## 주요 데이터 필드
 

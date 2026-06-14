@@ -1,0 +1,2320 @@
+[
+  {
+    "id": "국립고궁박물관",
+    "name": "국립고궁박물관",
+    "theme": "시간여행자",
+    "keyword": "전통문화",
+    "district": "종로구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "월",
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "국립고궁박물관, 12, 효자로, 창성동, 청운효자동, 종로구, 서울특별시, 03045, 대한민국",
+    "lat": 37.5765671,
+    "lng": 126.9749691,
+    "website_url": "https://www.gogung.go.kr/",
+    "image_url": "https://www.gogung.go.kr/resources/gogung/images/common/ogImage.png",
+    "source_pdf_page": "12",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "국립대한민국임시정부기념관",
+    "name": "국립대한민국임시정부기념관",
+    "theme": "시간여행자",
+    "keyword": "독립운동",
+    "district": "서대문구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "국립대한민국임시정부기념관, 279-24, 통일로, 현저동, 천연동, 서대문구, 서울특별시, 03732, 대한민국",
+    "lat": 37.5760624,
+    "lng": 126.9543843,
+    "website_url": "https://www.nmkpg.go.kr/",
+    "image_url": "https://www.nmkpg.go.kr/resources/images/common/ogimage_01.png",
+    "source_pdf_page": "12",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "국립민속박물관-어린이박물관",
+    "name": "국립민속박물관 어린이박물관",
+    "theme": "시간여행자",
+    "keyword": "전통문화",
+    "district": "종로구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "월",
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "국립민속박물관 어린이박물관, 청와대로, 궁정동, 청운효자동, 종로구, 서울특별시, 03054, 대한민국",
+    "lat": 37.581905,
+    "lng": 126.9787649,
+    "website_url": "https://www.nfm.go.kr/kids/",
+    "image_url": "",
+    "source_pdf_page": "12",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "국립중앙박물관-어린이박물관",
+    "name": "국립중앙박물관 어린이박물관",
+    "theme": "시간여행자",
+    "keyword": "문화유산",
+    "district": "용산구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "월",
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "국립중앙박물관 어린이박물관, 137, 서빙고로, 용산동6가, 서빙고동, 용산구, 서울특별시, 04383, 대한민국",
+    "lat": 37.5238304,
+    "lng": 126.9783367,
+    "website_url": "https://www.museum.go.kr/site/child/home",
+    "image_url": "https://www.museum.go.kr/design/common/images/nmk_sns_logo.png",
+    "source_pdf_page": "12",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "서대문형무소역사관",
+    "name": "서대문형무소역사관",
+    "theme": "시간여행자",
+    "keyword": "독립운동",
+    "district": "서대문구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "유료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "서대문형무소역사관, 251, 통일로, 현저동, 천연동, 서대문구, 서울특별시, 03732, 대한민국",
+    "lat": 37.5745368,
+    "lng": 126.9563173,
+    "website_url": "https://sphh.sscmc.or.kr/",
+    "image_url": "https://sphh.sscmc.or.kr/images/main/visual_foot.png",
+    "source_pdf_page": "12",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "서울교육박물관",
+    "name": "서울교육박물관",
+    "theme": "시간여행자",
+    "keyword": "교육역사",
+    "district": "종로구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "월",
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "서울교육박물관, 48, 북촌로5길, 소격동, 삼청동, 종로구, 서울특별시, 03055, 대한민국",
+    "lat": 37.5797536,
+    "lng": 126.9832856,
+    "website_url": "https://edumuseum.sen.go.kr/",
+    "image_url": "",
+    "source_pdf_page": "12",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "서울기록원",
+    "name": "서울기록원",
+    "theme": "시간여행자",
+    "keyword": "아카이브",
+    "district": "은평구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "서울기록원, 통일로62길, 녹번동, 은평구, 서울특별시, 03382, 대한민국",
+    "lat": 37.6074413,
+    "lng": 126.9350404,
+    "website_url": "https://archives.seoul.go.kr/",
+    "image_url": "",
+    "source_pdf_page": "12",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "서울백제어린이박물관",
+    "name": "서울백제어린이박물관",
+    "theme": "시간여행자",
+    "keyword": "백제문화",
+    "district": "송파구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "서울 송파구 올림픽로 424 서울백제어린이박물관",
+    "lat": 37.5238986,
+    "lng": 127.1243041,
+    "website_url": "https://baekjemuseum.seoul.go.kr/dreamvillage/",
+    "image_url": "https://baekjemuseum.seoul.go.kr/new3/images/children_contents/main_edu_info01.png",
+    "source_pdf_page": "12",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "서울생활사박물관",
+    "name": "서울생활사박물관",
+    "theme": "시간여행자",
+    "keyword": "생활역사",
+    "district": "노원구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "서울생활사박물관, 27, 동일로174길, 공릉1동, 노원구, 서울특별시, 01849, 대한민국",
+    "lat": 37.6198533,
+    "lng": 127.0768809,
+    "website_url": "https://museum.seoul.go.kr/sulm/index.do",
+    "image_url": "https://museum.seoul.go.kr/upload/banner/2023/9/25/fdc2dd80-863c-4f9a-b522-701e2d311511.jpg",
+    "source_pdf_page": "12",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "서울약령시-한의약박물관",
+    "name": "서울약령시 한의약박물관",
+    "theme": "시간여행자",
+    "keyword": "한방문화",
+    "district": "동대문구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "유료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "서울 동대문구 약령중앙로 26",
+    "lat": 37.5805678,
+    "lng": 127.0376678,
+    "website_url": "https://museum.ddm.go.kr/",
+    "image_url": "https://museum.ddm.go.kr/upload/2024/12/67515f6db0a7e.jpg",
+    "source_pdf_page": "12",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "서울역사박물관-어린이박물관",
+    "name": "서울역사박물관 어린이박물관",
+    "theme": "시간여행자",
+    "keyword": "도시역사",
+    "district": "종로구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "새문안로 55",
+    "lat": 37.5701433,
+    "lng": 126.9704375,
+    "website_url": "https://museum.seoul.go.kr/",
+    "image_url": "",
+    "source_pdf_page": "12",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "용산역사박물관",
+    "name": "용산역사박물관",
+    "theme": "시간여행자",
+    "keyword": "지역역사",
+    "district": "용산구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "용산역사박물관, 한강대로14길, 한강로3가, 한강로동, 용산구, 서울특별시, 04388, 대한민국",
+    "lat": 37.5250845,
+    "lng": 126.9658047,
+    "website_url": "https://museum.yongsan.go.kr/",
+    "image_url": "https://museum.yongsan.go.kr:443/images/common/bg/back_img_02.jpg",
+    "source_pdf_page": "12",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "은평역사한옥박물관",
+    "name": "은평역사한옥박물관",
+    "theme": "시간여행자",
+    "keyword": "전통건축",
+    "district": "은평구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "유료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "은평역사한옥박물관, 8, 연서로50길, 은평한옥마을, 진관동, 은평구, 서울특별시, 03308, 대한민국",
+    "lat": 37.6403189,
+    "lng": 126.9380387,
+    "website_url": "https://museum.ep.go.kr/",
+    "image_url": "https://museum.ep.go.kr/img/og-img_2025.png",
+    "source_pdf_page": "12",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "전쟁기념관-어린이박물관",
+    "name": "전쟁기념관 어린이박물관",
+    "theme": "시간여행자",
+    "keyword": "전쟁평화",
+    "district": "용산구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "서울 용산구 이태원로 29",
+    "lat": 37.5374691,
+    "lng": 126.9784811,
+    "website_url": "https://www.warmemo.or.kr/kids/",
+    "image_url": "",
+    "source_pdf_page": "12",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "청계천박물관",
+    "name": "청계천박물관",
+    "theme": "시간여행자",
+    "keyword": "도시재생",
+    "district": "성동구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "청계천박물관, 530, 청계천로, 마장동, 왕십리도선동, 성동구, 서울특별시, 04704, 대한민국",
+    "lat": 37.5712842,
+    "lng": 127.0351045,
+    "website_url": "https://museum.seoul.go.kr/cgcm/index.do",
+    "image_url": "https://museum.seoul.go.kr/upload/banner/2023/9/25/dc334794-59a1-4ce9-a252-e19074a3ded6.jpg",
+    "source_pdf_page": "12",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "한양도성박물관",
+    "name": "한양도성박물관",
+    "theme": "시간여행자",
+    "keyword": "문화유산",
+    "district": "종로구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "한양도성박물관, 283, 율곡로, 종로6가, 종로5·6가동, 종로구, 서울특별시, 03098, 대한민국",
+    "lat": 37.5727362,
+    "lng": 127.008569,
+    "website_url": "https://museum.seoul.go.kr/scwm/index.do",
+    "image_url": "https://museum.seoul.go.kr/upload/banner/2023/9/25/0b4254e1-a9d6-4f2e-910c-c8f29427d43c.jpg",
+    "source_pdf_page": "12",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "허준박물관",
+    "name": "허준박물관",
+    "theme": "시간여행자",
+    "keyword": "한방문화",
+    "district": "강서구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "유료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "허준 박물관, 87, 허준로, 가양동, 가양2동, 강서구, 서울특별시, 07525, 대한민국",
+    "lat": 37.5678654,
+    "lng": 126.8510375,
+    "website_url": "https://www.heojunmuseum.go.kr/",
+    "image_url": "",
+    "source_pdf_page": "12",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "g밸리산업박물관",
+    "name": "G밸리산업박물관",
+    "theme": "호기심박사",
+    "keyword": "산업기술",
+    "district": "구로구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토"
+    ],
+    "address": "에이스하이엔드타워2차.G밸리산업박물관, 디지털로26길, 서울디지털국가산업단지 1단지, 구로3동, 구로구, 서울특별시, 08393, 대한민국",
+    "lat": 37.4807391,
+    "lng": 126.8956772,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "13",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": "요일 표기 공식 사이트 재검증 필요"
+  },
+  {
+    "id": "국립기상박물관",
+    "name": "국립기상박물관",
+    "theme": "호기심박사",
+    "keyword": "기상과학",
+    "district": "종로구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "송월길 52",
+    "lat": 37.5714027,
+    "lng": 126.966296,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "13",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "국립어린이과학관",
+    "name": "국립어린이과학관",
+    "theme": "호기심박사",
+    "keyword": "과학기술",
+    "district": "종로구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "유료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "국립어린이과학관, 창경궁로, 명륜2가, 종로1·2·3·4가동, 종로구, 서울특별시, 03074, 대한민국",
+    "lat": 37.5819473,
+    "lng": 126.9973679,
+    "website_url": "https://www.csc.go.kr/",
+    "image_url": "",
+    "source_pdf_page": "13",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "국립항공박물관",
+    "name": "국립항공박물관",
+    "theme": "호기심박사",
+    "keyword": "항공기술",
+    "district": "강서구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "일부유료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "국립항공박물관, 177, 하늘길, 공항동, 강서구, 서울특별시, 07505, 대한민국",
+    "lat": 37.5566519,
+    "lng": 126.808464,
+    "website_url": "https://www.aviation.or.kr/",
+    "image_url": "http://aviation.or.kr/contents/home/images/logo-black.png",
+    "source_pdf_page": "13",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "기생충박물관",
+    "name": "기생충박물관",
+    "theme": "호기심박사",
+    "keyword": "생명과학",
+    "district": "강서구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "월",
+      "화",
+      "수",
+      "목",
+      "금",
+      "토"
+    ],
+    "address": "화곡로 333",
+    "lat": 37.5536022,
+    "lng": 126.8507763,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "13",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "노원수학문화관",
+    "name": "노원수학문화관",
+    "theme": "호기심박사",
+    "keyword": "놀이수학",
+    "district": "노원구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "구민무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "노원수학문화관, 한글비석로19길, 중계4동, 노원구, 서울특별시, 01699, 대한민국",
+    "lat": 37.6575957,
+    "lng": 127.0722549,
+    "website_url": "https://www.nowon.kr/math",
+    "image_url": "",
+    "source_pdf_page": "13",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "서대문자연사박물관",
+    "name": "서대문자연사박물관",
+    "theme": "호기심박사",
+    "keyword": "생태계",
+    "district": "서대문구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "유료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "서대문 자연사박물관, 연희로32길, 연희동, 서대문구, 서울특별시, 03718, 대한민국",
+    "lat": 37.5765532,
+    "lng": 126.9374913,
+    "website_url": "https://namu.sdm.go.kr/",
+    "image_url": "https://namu.sdm.go.kr/design/theme/namu/images/logo-200x200.gif",
+    "source_pdf_page": "13",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "서울로봇인공지능과학관",
+    "name": "서울로봇인공지능과학관",
+    "theme": "호기심박사",
+    "keyword": "미래기술",
+    "district": "도봉구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "일부유료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "서울로봇인공지능과학관, 56, 마들로13길, 창4동, 도봉구, 서울특별시, 01411, 대한민국",
+    "lat": 37.6555437,
+    "lng": 127.049431,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "13",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "서울시립과학관",
+    "name": "서울시립과학관",
+    "theme": "호기심박사",
+    "keyword": "과학기술",
+    "district": "노원구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "일부유료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "서울시립과학관, 160, 한글비석로, 하계동, 하계1동, 노원구, 서울특별시, 01792, 대한민국",
+    "lat": 37.6418659,
+    "lng": 127.0772692,
+    "website_url": "https://science.seoul.go.kr/",
+    "image_url": "https://science.seoul.go.kr/resources/img/main/61f8b69c-e447-4006-96d2-b90d39d6571c.png",
+    "source_pdf_page": "13",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "서울에너지드림센터",
+    "name": "서울에너지드림센터",
+    "theme": "호기심박사",
+    "keyword": "탄소중립",
+    "district": "마포구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "서울에너지드림센터, 메트로폴리스길, 상암동, 마포구, 서울특별시, 03954, 대한민국",
+    "lat": 37.5627476,
+    "lng": 126.8912017,
+    "website_url": "https://seouledc.or.kr/",
+    "image_url": "https://seouledc.or.kr/data/skin/respon_default/images/skin/main_intro.png",
+    "source_pdf_page": "13",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "서울퓨처랩",
+    "name": "서울퓨처랩",
+    "theme": "호기심박사",
+    "keyword": "미래기술",
+    "district": "강서구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "마곡중앙5로 9 지하1층 마곡광장 상가 3~5, 11~13호",
+    "lat": 37.5661346,
+    "lng": 126.8267745,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "13",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "서울하수도과학관",
+    "name": "서울하수도과학관",
+    "theme": "호기심박사",
+    "keyword": "물재생",
+    "district": "성동구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "서울하수도과학관, 64, 자동차시장3길, 장안평자동차용품거리, 용답동, 성동구, 서울특별시, 04809, 대한민국",
+    "lat": 37.5574992,
+    "lng": 127.0576261,
+    "website_url": "https://sssmuseum.org/",
+    "image_url": "https://sssmuseum.org/design/default/img/main/i_seoul_u_img02.png",
+    "source_pdf_page": "13",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "국립경찰박물관",
+    "name": "국립경찰박물관",
+    "theme": "미래탐험대",
+    "keyword": "사회질서",
+    "district": "종로구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "서울 종로구 송월길 162",
+    "lat": 37.5721071,
+    "lng": 126.9622123,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "14",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "국회박물관",
+    "name": "국회박물관",
+    "theme": "미래탐험대",
+    "keyword": "민주주의",
+    "district": "영등포구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "월",
+      "화",
+      "수",
+      "목",
+      "금",
+      "토"
+    ],
+    "address": "국회박물관, 여의서로, 여의도동, 여의동, 영등포구, 서울특별시, 07238, 대한민국",
+    "lat": 37.5319897,
+    "lng": 126.9190673,
+    "website_url": "https://museum.assembly.go.kr/",
+    "image_url": "https://museum.assembly.go.kr/og_assembly_museum.png",
+    "source_pdf_page": "14",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": "요일 표기 공식 사이트 재검증 필요"
+  },
+  {
+    "id": "대법원-법원전시관",
+    "name": "대법원 법원전시관",
+    "theme": "미래탐험대",
+    "keyword": "법재판",
+    "district": "서초구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "월",
+      "화",
+      "수",
+      "목",
+      "금"
+    ],
+    "address": "서초대로 219 대법원 청사 동관 1층",
+    "lat": 37.4923989,
+    "lng": 127.0056733,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "14",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "외교부-외교사료관",
+    "name": "외교부 외교사료관",
+    "theme": "미래탐험대",
+    "keyword": "국제관계",
+    "district": "서초구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "월",
+      "화",
+      "수",
+      "목",
+      "금"
+    ],
+    "address": "남부순환로 2572 외교사료관",
+    "lat": 37.4821825,
+    "lng": 127.0294733,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "14",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "유니세프-어린이지구촌체험관",
+    "name": "유니세프 어린이지구촌체험관",
+    "theme": "미래탐험대",
+    "keyword": "아동인권",
+    "district": "마포구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "월",
+      "화",
+      "수",
+      "목",
+      "금"
+    ],
+    "address": "서강로 60 유니세프한국위원회",
+    "lat": 37.5486196,
+    "lng": 126.9320495,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "14",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "강동-청소년경찰학교",
+    "name": "강동 청소년경찰학교",
+    "theme": "안전지킴이",
+    "keyword": "사회질서",
+    "district": "강동구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "자치구별 확인"
+    ],
+    "address": "성내로 57 강동경찰서",
+    "lat": 37.5284841,
+    "lng": 127.1269289,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "14",
+    "source_type": "expanded",
+    "verification_status": "police_station_proxy",
+    "notes": "다지점 콘텐츠; PDF의 청소년경찰학교(서울)를 11개 자치구 시설로 확장; 청소년경찰학교 별도 주소 미확인: 관할 경찰서 대표 위치로 표시"
+  },
+  {
+    "id": "강북-청소년경찰학교",
+    "name": "강북 청소년경찰학교",
+    "theme": "안전지킴이",
+    "keyword": "사회질서",
+    "district": "강북구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "자치구별 확인"
+    ],
+    "address": "오패산로 406 서울강북경찰서",
+    "lat": 37.6374118,
+    "lng": 127.0273396,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "14",
+    "source_type": "expanded",
+    "verification_status": "police_station_proxy",
+    "notes": "다지점 콘텐츠; PDF의 청소년경찰학교(서울)를 11개 자치구 시설로 확장; 청소년경찰학교 별도 주소 미확인: 관할 경찰서 대표 위치로 표시"
+  },
+  {
+    "id": "강서-청소년경찰학교",
+    "name": "강서 청소년경찰학교",
+    "theme": "안전지킴이",
+    "keyword": "사회질서",
+    "district": "강서구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "자치구별 확인"
+    ],
+    "address": "화곡로 308 서울강서경찰서",
+    "lat": 37.5513653,
+    "lng": 126.8499771,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "14",
+    "source_type": "expanded",
+    "verification_status": "police_station_proxy",
+    "notes": "다지점 콘텐츠; PDF의 청소년경찰학교(서울)를 11개 자치구 시설로 확장; 청소년경찰학교 별도 주소 미확인: 관할 경찰서 대표 위치로 표시"
+  },
+  {
+    "id": "관악-청소년경찰학교",
+    "name": "관악 청소년경찰학교",
+    "theme": "안전지킴이",
+    "keyword": "사회질서",
+    "district": "관악구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "자치구별 확인"
+    ],
+    "address": "봉천로 269",
+    "lat": 37.4882661,
+    "lng": 126.9314002,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "14",
+    "source_type": "expanded",
+    "verification_status": "police_station_proxy",
+    "notes": "다지점 콘텐츠; PDF의 청소년경찰학교(서울)를 11개 자치구 시설로 확장; 청소년경찰학교 별도 주소 미확인: 관할 경찰서 대표 위치로 표시"
+  },
+  {
+    "id": "광진-청소년경찰학교",
+    "name": "광진 청소년경찰학교",
+    "theme": "안전지킴이",
+    "keyword": "사회질서",
+    "district": "광진구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "자치구별 확인"
+    ],
+    "address": "자양로 167",
+    "lat": 37.5428366,
+    "lng": 127.0838752,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "14",
+    "source_type": "expanded",
+    "verification_status": "police_station_proxy",
+    "notes": "다지점 콘텐츠; PDF의 청소년경찰학교(서울)를 11개 자치구 시설로 확장; 청소년경찰학교 별도 주소 미확인: 관할 경찰서 대표 위치로 표시"
+  },
+  {
+    "id": "구로-청소년경찰학교",
+    "name": "구로 청소년경찰학교",
+    "theme": "안전지킴이",
+    "keyword": "사회질서",
+    "district": "구로구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "자치구별 확인"
+    ],
+    "address": "새말로 97 신도림 테크노마트 5층",
+    "lat": 37.5070143,
+    "lng": 126.8902633,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "14",
+    "source_type": "expanded",
+    "verification_status": "police_station_proxy",
+    "notes": "다지점 콘텐츠; PDF의 청소년경찰학교(서울)를 11개 자치구 시설로 확장; 청소년경찰학교 별도 주소 미확인: 관할 경찰서 대표 위치로 표시"
+  },
+  {
+    "id": "노원-청소년경찰학교",
+    "name": "노원 청소년경찰학교",
+    "theme": "안전지킴이",
+    "keyword": "사회질서",
+    "district": "노원구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "자치구별 확인"
+    ],
+    "address": "노원로 283 노원경찰서",
+    "lat": 37.6423349,
+    "lng": 127.0714083,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "14",
+    "source_type": "expanded",
+    "verification_status": "police_station_proxy",
+    "notes": "다지점 콘텐츠; PDF의 청소년경찰학교(서울)를 11개 자치구 시설로 확장; 청소년경찰학교 별도 주소 미확인: 관할 경찰서 대표 위치로 표시"
+  },
+  {
+    "id": "도봉-청소년경찰학교",
+    "name": "도봉 청소년경찰학교",
+    "theme": "안전지킴이",
+    "keyword": "사회질서",
+    "district": "도봉구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "자치구별 확인"
+    ],
+    "address": "노해로 403 도봉경찰서",
+    "lat": 37.6534487,
+    "lng": 127.052775,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "14",
+    "source_type": "expanded",
+    "verification_status": "police_station_proxy",
+    "notes": "다지점 콘텐츠; PDF의 청소년경찰학교(서울)를 11개 자치구 시설로 확장; 청소년경찰학교 별도 주소 미확인: 관할 경찰서 대표 위치로 표시"
+  },
+  {
+    "id": "동작-청소년경찰학교",
+    "name": "동작 청소년경찰학교",
+    "theme": "안전지킴이",
+    "keyword": "사회질서",
+    "district": "동작구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "자치구별 확인"
+    ],
+    "address": "노량진로 148 동작경찰서",
+    "lat": 37.5131459,
+    "lng": 126.9428596,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "14",
+    "source_type": "expanded",
+    "verification_status": "police_station_proxy",
+    "notes": "다지점 콘텐츠; PDF의 청소년경찰학교(서울)를 11개 자치구 시설로 확장; 청소년경찰학교 별도 주소 미확인: 관할 경찰서 대표 위치로 표시"
+  },
+  {
+    "id": "서초-청소년경찰학교",
+    "name": "서초 청소년경찰학교",
+    "theme": "안전지킴이",
+    "keyword": "사회질서",
+    "district": "서초구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "자치구별 확인"
+    ],
+    "address": "반포대로 179 서초경찰서",
+    "lat": 37.4956273,
+    "lng": 127.0052267,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "14",
+    "source_type": "expanded",
+    "verification_status": "police_station_proxy",
+    "notes": "다지점 콘텐츠; PDF의 청소년경찰학교(서울)를 11개 자치구 시설로 확장; 청소년경찰학교 별도 주소 미확인: 관할 경찰서 대표 위치로 표시"
+  },
+  {
+    "id": "송파-청소년경찰학교",
+    "name": "송파 청소년경찰학교",
+    "theme": "안전지킴이",
+    "keyword": "사회질서",
+    "district": "송파구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "자치구별 확인"
+    ],
+    "address": "중대로 221 송파경찰서",
+    "lat": 37.5018531,
+    "lng": 127.1269643,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "14",
+    "source_type": "expanded",
+    "verification_status": "police_station_proxy",
+    "notes": "다지점 콘텐츠; PDF의 청소년경찰학교(서울)를 11개 자치구 시설로 확장; 청소년경찰학교 별도 주소 미확인: 관할 경찰서 대표 위치로 표시"
+  },
+  {
+    "id": "한국은행-화폐박물관",
+    "name": "한국은행 화폐박물관",
+    "theme": "미래탐험대",
+    "keyword": "금융경제",
+    "district": "중구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "한국은행 화폐박물관, 소공로, 소공동, 중구, 서울특별시, 04532, 대한민국",
+    "lat": 37.5620469,
+    "lng": 126.9803694,
+    "website_url": "https://www.bok.or.kr/museum/",
+    "image_url": "",
+    "source_pdf_page": "14",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "헌법재판소-전시관",
+    "name": "헌법재판소 전시관",
+    "theme": "미래탐험대",
+    "keyword": "법재판",
+    "district": "종로구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "월",
+      "화",
+      "수",
+      "목",
+      "금"
+    ],
+    "address": "북촌로 15",
+    "lat": 37.5781261,
+    "lng": 126.9847141,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "14",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "kbs-견학홀",
+    "name": "KBS 견학홀",
+    "theme": "미래탐험대",
+    "keyword": "방송언론",
+    "district": "영등포구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "월",
+      "화",
+      "수",
+      "목",
+      "금"
+    ],
+    "address": "여의공원로 13 한국방송공사 본관",
+    "lat": 37.5242944,
+    "lng": 126.9165496,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "14",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "국립국악원",
+    "name": "국립국악원",
+    "theme": "창의예술가",
+    "keyword": "전통음악",
+    "district": "서초구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "일부유료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "국립국악원, 남부순환로, 서초3동, 서초구, 서울특별시, 06713, 대한민국",
+    "lat": 37.4775049,
+    "lng": 127.0085657,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "14",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "국립극장공연예술박물관-서울",
+    "name": "국립극장공연예술박물관(서울)",
+    "theme": "창의예술가",
+    "keyword": "무대예술",
+    "district": "중구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "일부유료",
+    "pdf_operating_days": [
+      "월",
+      "화",
+      "수",
+      "목",
+      "금",
+      "토"
+    ],
+    "address": "장충단로 59 별관 지하1층",
+    "lat": 37.5539297,
+    "lng": 127.0006405,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "14",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": "요일 표기 공식 사이트 재검증 필요"
+  },
+  {
+    "id": "국립현대미술관-서울",
+    "name": "국립현대미술관 서울",
+    "theme": "창의예술가",
+    "keyword": "시각예술",
+    "district": "종로구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "유료",
+    "pdf_operating_days": [
+      "월",
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "국립현대미술관, 북촌로5길, 소격동, 삼청동, 종로구, 서울특별시, 03062, 대한민국",
+    "lat": 37.5795533,
+    "lng": 126.9804352,
+    "website_url": "https://www.mmca.go.kr/",
+    "image_url": "https://www.mmca.go.kr/asset/images/common/preview_logo.png",
+    "source_pdf_page": "14",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "답십리영화미디어아트센터",
+    "name": "답십리영화미디어아트센터",
+    "theme": "창의예술가",
+    "keyword": "영상문화",
+    "district": "동대문구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "일부유료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "답십리로 210-9",
+    "lat": 37.5718455,
+    "lng": 127.0637086,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "14",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "서울공예박물관",
+    "name": "서울공예박물관",
+    "theme": "창의예술가",
+    "keyword": "창작공예",
+    "district": "종로구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "일부유료",
+    "pdf_operating_days": [
+      "월",
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "서울공예박물관, 4, 율곡로3길, 안국동, 삼청동, 종로구, 서울특별시, 03061, 대한민국",
+    "lat": 37.5765519,
+    "lng": 126.9834467,
+    "website_url": "https://craftmuseum.seoul.go.kr/",
+    "image_url": "https://craftmuseum.seoul.go.kr/images/common/og_images.png",
+    "source_pdf_page": "14",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "서울시립미술관",
+    "name": "서울시립미술관",
+    "theme": "창의예술가",
+    "keyword": "시각예술",
+    "district": "중구;노원구;관악구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "서울 중구 덕수궁길 61",
+    "lat": 37.5642066,
+    "lng": 126.9737733,
+    "website_url": "https://sema.seoul.go.kr/",
+    "image_url": "",
+    "source_pdf_page": "14",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": "다지점 콘텐츠"
+  },
+  {
+    "id": "서울아트책보고",
+    "name": "서울아트책보고",
+    "theme": "창의예술가",
+    "keyword": "예술도서",
+    "district": "구로구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "경인로 430 고척스카이돔 지하1층",
+    "lat": 37.4991271,
+    "lng": 126.8673636,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "14",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "서울우리소리박물관",
+    "name": "서울우리소리박물관",
+    "theme": "창의예술가",
+    "keyword": "전통음악",
+    "district": "종로구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "율곡로 96",
+    "lat": 37.5771717,
+    "lng": 126.9896013,
+    "website_url": "https://gomuseum.seoul.go.kr/",
+    "image_url": "",
+    "source_pdf_page": "14",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "농업박물관",
+    "name": "농업박물관",
+    "theme": "생태탐험가",
+    "keyword": "농경문화",
+    "district": "중구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "일부유료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "농업박물관, 새문안로, 충정로1가, 소공동, 중구, 서울특별시, 03181, 대한민국",
+    "lat": 37.5666878,
+    "lng": 126.9682528,
+    "website_url": "http://www.agrimuseum.or.kr/",
+    "image_url": "http://www.agrimuseum.or.kr/images/main/logo_new.png",
+    "source_pdf_page": "15",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "서울물재생체험관",
+    "name": "서울물재생체험관",
+    "theme": "생태탐험가",
+    "keyword": "친환경",
+    "district": "강서구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "서울 강서구 양천로 201 서남물재생센터 내 서울물재생체험관",
+    "lat": 37.5777536,
+    "lng": 126.8210622,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "15",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "서울새활용플라자",
+    "name": "서울새활용플라자",
+    "theme": "생태탐험가",
+    "keyword": "업사이클링",
+    "district": "성동구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "서울새활용플라자, 자동차시장길, 용답동, 성동구, 서울특별시, 04804, 대한민국",
+    "lat": 37.5585178,
+    "lng": 127.057764,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "15",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "서울식물원",
+    "name": "서울식물원",
+    "theme": "생태탐험가",
+    "keyword": "식물정원",
+    "district": "강서구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "유료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "서울식물원, 가양1동, 강서구, 서울특별시, 07789, 대한민국",
+    "lat": 37.5710656,
+    "lng": 126.8346641,
+    "website_url": "https://botanicpark.seoul.go.kr/",
+    "image_url": "https://botanicpark.seoul.go.kr/img/upload/mainTab/tab_2026061011164971.jpg",
+    "source_pdf_page": "15",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "아리수나라",
+    "name": "아리수나라",
+    "theme": "생태탐험가",
+    "keyword": "친환경",
+    "district": "광진구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "서울 광진구 능동로 216 아리수나라",
+    "lat": 37.5513171,
+    "lng": 127.0776395,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "15",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "청계천-생태학교",
+    "name": "청계천 생태학교",
+    "theme": "생태탐험가",
+    "keyword": "생태계",
+    "district": "성동구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "유료",
+    "pdf_operating_days": [
+      "체험별 확인"
+    ],
+    "address": "살곶이길 69",
+    "lat": 37.5697634,
+    "lng": 127.0450969,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "15",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "키즈마린파크",
+    "name": "키즈마린파크",
+    "theme": "생태탐험가",
+    "keyword": "해양생태계",
+    "district": "송파구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "서울 송파구 송파대로28길 28 1층 키즈마린파크",
+    "lat": 37.4945486,
+    "lng": 127.121036,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "15",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "ydp곤충체험학습관",
+    "name": "YDP곤충체험학습관",
+    "theme": "생태탐험가",
+    "keyword": "생태계",
+    "district": "영등포구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "유료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "선유동1로 80 영등포구청 별관청사 YDP 곤충체험학습관",
+    "lat": 37.5283321,
+    "lng": 126.8938801,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "15",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "광나루안전체험관",
+    "name": "광나루안전체험관",
+    "theme": "안전지킴이",
+    "keyword": "재난대비",
+    "district": "광진구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "광나루안전체험관, 능동로, 능동, 광진구, 서울특별시, 05006, 대한민국",
+    "lat": 37.5513382,
+    "lng": 127.0767136,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "15",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "구로재난안전체험장",
+    "name": "구로재난안전체험장",
+    "theme": "안전지킴이",
+    "keyword": "재난대비",
+    "district": "구로구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "월",
+      "화",
+      "수",
+      "목",
+      "금"
+    ],
+    "address": "안양천로 909",
+    "lat": 37.5268904,
+    "lng": 126.8783221,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "15",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "롯데스위트파크",
+    "name": "롯데스위트파크",
+    "theme": "안전지킴이",
+    "keyword": "식품건강",
+    "district": "강서구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "월",
+      "화",
+      "수",
+      "목",
+      "금"
+    ],
+    "address": "마곡중앙로 201 롯데중앙연구소 1층",
+    "lat": 37.5714144,
+    "lng": 126.8277334,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "15",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "마곡안전체험관",
+    "name": "마곡안전체험관",
+    "theme": "안전지킴이",
+    "keyword": "통합안전",
+    "district": "강서구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토"
+    ],
+    "address": "마곡안전체험관, 13, 마곡중앙로, 외발산동, 발산1동, 강서구, 서울특별시, 07630, 대한민국",
+    "lat": 37.555292,
+    "lng": 126.8248639,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "15",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "목동재난체험관",
+    "name": "목동재난체험관",
+    "theme": "안전지킴이",
+    "keyword": "재난대비",
+    "district": "양천구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토"
+    ],
+    "address": "안양천로 909",
+    "lat": 37.5268904,
+    "lng": 126.8783221,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "15",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "보라매안전체험관",
+    "name": "보라매안전체험관",
+    "theme": "안전지킴이",
+    "keyword": "통합안전",
+    "district": "동작구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "보라매안전체험관, 16, 여의대방로20나길, 신대방동, 신대방2동, 동작구, 서울특별시, 07062, 대한민국",
+    "lat": 37.4928644,
+    "lng": 126.9171186,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "15",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "키즈오토파크-서울",
+    "name": "키즈오토파크(서울)",
+    "theme": "안전지킴이",
+    "keyword": "교통안전",
+    "district": "광진구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "키즈오토파크, 능동로24길, 능동, 광진구, 서울특별시, 04990, 대한민국",
+    "lat": 37.551672,
+    "lng": 127.0784757,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "15",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "서울상상나라",
+    "name": "서울상상나라",
+    "theme": "쑥쑥성장대장",
+    "keyword": "창의놀이",
+    "district": "광진구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "유료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "서울상상나라, 능동로, 능동, 광진구, 서울특별시, 05006, 대한민국",
+    "lat": 37.5507529,
+    "lng": 127.0776369,
+    "website_url": "https://www.seoulchildrensmuseum.org/",
+    "image_url": "https://www.seoulchildrensmuseum.org/z00_images/common/sns_sImg.png",
+    "source_pdf_page": "16",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "서울아이발달지원센터",
+    "name": "서울아이발달지원센터",
+    "theme": "쑥쑥성장대장",
+    "keyword": "성장지원",
+    "district": "동작구",
+    "recommended_age": [
+      "유아"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "월",
+      "화",
+      "수",
+      "목",
+      "금",
+      "토"
+    ],
+    "address": "노량진로 10 서울가족플라자 2층",
+    "lat": 37.5124459,
+    "lng": 126.9273055,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "16",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "어깨동무스토리움",
+    "name": "어깨동무스토리움",
+    "theme": "쑥쑥성장대장",
+    "keyword": "창의놀이",
+    "district": "마포구",
+    "recommended_age": [
+      "유아"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "서울 마포구 월드컵로 386",
+    "lat": 37.5749728,
+    "lng": 126.8866957,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "16",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "어린이대공원-팔각당-키즈카페",
+    "name": "어린이대공원 팔각당 키즈카페",
+    "theme": "쑥쑥성장대장",
+    "keyword": "창의놀이",
+    "district": "광진구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "유료",
+    "pdf_operating_days": [
+      "월",
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "능동로 216",
+    "lat": 37.5498248,
+    "lng": 127.082423,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "16",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "더불어숲-체험학습장",
+    "name": "더불어숲 체험학습장",
+    "theme": "스포츠마스터",
+    "keyword": "실외모험",
+    "district": "노원구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "유료",
+    "pdf_operating_days": [
+      "월",
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "한글비석로4길 93-40 더불어숲",
+    "lat": 37.6400991,
+    "lng": 127.0817978,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "16",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "서대문키즈헬스케어센터-아이랑",
+    "name": "서대문키즈헬스케어센터 아이랑",
+    "theme": "스포츠마스터",
+    "keyword": "건강체력",
+    "district": "서대문구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "유료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "백련사길 39 서대문문화체육회관 본관1층 gate 2",
+    "lat": 37.5807597,
+    "lng": 126.9315574,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "16",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "서울특별시-산악문화체험센터",
+    "name": "서울특별시 산악문화체험센터",
+    "theme": "스포츠마스터",
+    "keyword": "레저·산악",
+    "district": "마포구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "일부유료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "하늘공원로 112 서울 산악문화체험센터",
+    "lat": 37.5692764,
+    "lng": 126.8799527,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "16",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "스마트-스포츠체험관",
+    "name": "스마트 스포츠체험관",
+    "theme": "스포츠마스터",
+    "keyword": "실내스포츠",
+    "district": "송파구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "유료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "올림픽로 448 서울올림픽파크텔 지하 1층 스마트스포츠체험관",
+    "lat": 37.5225253,
+    "lng": 127.1166398,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "16",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "우이동-산악문화hub",
+    "name": "우이동 산악문화HUB",
+    "theme": "스포츠마스터",
+    "keyword": "레저·산악",
+    "district": "강북구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "일부유료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "서울 강북구 삼양로 689-1 지하 2층",
+    "lat": 37.6643538,
+    "lng": 127.0109323,
+    "website_url": "",
+    "image_url": "",
+    "source_pdf_page": "16",
+    "source_type": "pdf",
+    "verification_status": "naver_search",
+    "notes": ""
+  },
+  {
+    "id": "국립어린이청소년도서관",
+    "name": "국립어린이청소년도서관",
+    "theme": "이야기수집가",
+    "keyword": "독서문화",
+    "district": "강남구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "무료",
+    "pdf_operating_days": [
+      "월",
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "국립어린이청소년도서관, 테헤란로7길, 역삼1동, 강남구, 서울특별시, 06130, 대한민국",
+    "lat": 37.5009614,
+    "lng": 127.0296222,
+    "website_url": "http://www.nlcy.go.kr/",
+    "image_url": "http://www.nlcy.go.kr/resource/templete/nlcy/common/img/common/favicon.png",
+    "source_pdf_page": "16",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "송파책박물관",
+    "name": "송파책박물관",
+    "theme": "이야기수집가",
+    "keyword": "독서문화",
+    "district": "송파구",
+    "recommended_age": [
+      "유아",
+      "초등"
+    ],
+    "fee": "일부유료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "송파책박물관, 77, 송파대로37길, 석촌동, 가락1동, 송파구, 서울특별시, 05698, 대한민국",
+    "lat": 37.4988875,
+    "lng": 127.1044813,
+    "website_url": "https://www.bookmuseum.go.kr/",
+    "image_url": "http://www.bookmuseum.go.kr/images/logo.png",
+    "source_pdf_page": "16",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  },
+  {
+    "id": "신문박물관-presseum",
+    "name": "신문박물관 PRESSEUM",
+    "theme": "이야기수집가",
+    "keyword": "신문언론",
+    "district": "종로구",
+    "recommended_age": [
+      "초등"
+    ],
+    "fee": "유료",
+    "pdf_operating_days": [
+      "화",
+      "수",
+      "목",
+      "금",
+      "토",
+      "일"
+    ],
+    "address": "신문박물관 PRESSEUM, 종로 자전거 전용로, 종로1가, 서린동, 종로1·2·3·4가동, 종로구, 서울특별시, 03188, 대한민국",
+    "lat": 37.569776,
+    "lng": 126.9776053,
+    "website_url": "https://www.presseum.or.kr/",
+    "image_url": "https://www.presseum.or.kr/media/images/medialounge_main.original.jpg",
+    "source_pdf_page": "16",
+    "source_type": "pdf",
+    "verification_status": "geocoded",
+    "notes": ""
+  }
+]
