@@ -227,6 +227,129 @@ function fact(label, tone = "") {
   return { label, tone };
 }
 
+function kidsCafeExperienceSummary(record, index) {
+  const name = clean(record.name);
+  const feature = clean(record.feature_summary);
+  const isParkType = clean(record.cafe_type).includes("여기저기") || feature.includes("공원형");
+  const lowerAddress = clean(record.address);
+  if (name.includes("공예마을")) {
+    return "공예마을 콘셉트에 맞춰 만들기와 감각놀이를 함께 기대할 수 있는 실내 놀이공간입니다. 조용한 놀이와 몸을 쓰는 활동을 균형 있게 찾는 가족에게 어울립니다.";
+  }
+  if (name.includes("뚝섬자벌레")) {
+    return "뚝섬 자벌레 공간 안에서 한강 나들이와 실내 놀이를 함께 묶기 좋은 지점입니다. 바깥 산책 전후로 아이가 몸을 풀 수 있는 활동형 공간으로 보기 좋습니다.";
+  }
+  if (name.includes("서울상상나라")) {
+    return "서울상상나라 관람 동선과 이어지는 실내 놀이 거점입니다. 전시 체험 후 아이가 한 번 더 움직이며 놀 수 있는 공간으로 묶어 방문하기 좋습니다.";
+  }
+  if (name.includes("서울식물원")) {
+    return "식물원 나들이와 실내 놀이를 함께 계획하기 좋은 지점입니다. 자연 관찰 후 아이가 몸을 움직이며 쉬어갈 수 있는 활동형 공간으로 활용하기 좋습니다.";
+  }
+  if (name.includes("아리수나라")) {
+    return "물과 생활을 주제로 한 아리수나라 방문과 함께 들르기 좋은 놀이공간입니다. 전시형 체험 뒤 실내에서 몸을 쓰며 마무리하기 좋습니다.";
+  }
+  if (name.includes("백제") || name.includes("한성백제")) {
+    return "박물관 나들이와 실내 놀이를 함께 묶을 수 있는 지점입니다. 역사 전시를 본 뒤 아이가 몸을 움직이며 쉬어갈 수 있는 공간으로 활용하기 좋습니다.";
+  }
+  if (name.includes("보라매공원") || lowerAddress.includes("공원") || isParkType) {
+    return "공원 나들이와 함께 이용하기 좋은 놀이 거점입니다. 바깥 활동 전후로 아이가 실내외 분위기를 바꿔가며 에너지를 풀 수 있는 공간입니다.";
+  }
+  if (name.includes("상도2동")) {
+    return "대형 놀이 구조물과 오르내리기 요소가 있는 활동형 실내 놀이터입니다. 몸을 많이 움직이고 싶은 유아가 에너지를 풀기 좋은 키즈카페입니다.";
+  }
+  if (name.includes("옴팡")) {
+    return "캐릭터형 분위기의 실내 놀이공간으로 아이가 친근하게 접근하기 좋습니다. 짧은 놀이보다 역할놀이와 신체활동을 함께 기대하는 가족에게 어울립니다.";
+  }
+  const templates = [
+    "대형 놀이 구조물과 오르내리기 요소를 중심으로 몸을 쓰며 놀기 좋은 실내 놀이터입니다. 활동량이 많은 아이가 에너지를 풀 수 있는 공간으로 보기 좋습니다.",
+    "미끄럼과 기어오르기, 매트형 놀이가 어우러진 활동형 실내 공간입니다. 날씨와 상관없이 아이가 뛰고 움직이는 시간을 만들기 좋습니다.",
+    "역할놀이와 신체놀이를 함께 기대할 수 있는 서울형 키즈카페입니다. 집 근처에서 짧고 집중도 높은 놀이 시간을 만들고 싶을 때 살펴보기 좋습니다.",
+    "유아가 안전하게 움직일 수 있는 실내 놀이 구성이 중심인 공간입니다. 보호자가 가까이서 지켜보며 아이의 자유놀이를 돕기 좋습니다.",
+  ];
+  return templates[index % templates.length];
+}
+
+function museumExperienceSummary(record) {
+  const name = clean(record.name);
+  const keyword = clean(record.keyword);
+  if (record.verification_status === "police_station_proxy" || name.includes("청소년경찰학교")) {
+    return "경찰관 직업과 교통·생활안전 상황을 역할극처럼 익히는 체험형 프로그램입니다. 제복, 장비, 모의 상황을 통해 안전 규칙을 몸으로 배워보는 구성입니다.";
+  }
+  if (name.includes("어린이박물관")) {
+    return "전시물을 눈으로만 보는 대신 만지고 조작하며 주제를 익히는 어린이 전용 체험관입니다. 퍼즐, 모형, 역할놀이형 전시가 섞여 박물관을 놀이처럼 접하기 좋습니다.";
+  }
+  if (keyword.includes("독립운동")) {
+    return "독립운동의 공간과 기록을 따라가며 역사 속 선택을 생각해보는 관람지입니다. 초등 아이와 인물, 감옥, 태극기 같은 구체 장면을 짚어보기 좋습니다.";
+  }
+  if (keyword.includes("전통문화") || keyword.includes("문화유산")) {
+    return "전통 유물과 생활문화를 모형, 영상, 전시물로 살펴보는 공간입니다. 아이가 옛 물건의 쓰임을 비교하며 역사 이야기를 시작하기 좋습니다.";
+  }
+  if (keyword.includes("한방")) {
+    return "약재와 한의학 도구를 통해 몸과 건강 이야기를 풀어볼 수 있는 전시공간입니다. 냄새, 재료, 옛 치료도구처럼 감각적인 관찰 포인트가 있습니다.";
+  }
+  if (keyword.includes("과학") || keyword.includes("기술") || keyword.includes("미래")) {
+    return "과학 원리와 기술을 전시 장치로 살펴보는 호기심형 체험 공간입니다. 버튼을 눌러보고 관찰하는 활동을 좋아하는 아이에게 잘 맞습니다.";
+  }
+  if (keyword.includes("생태") || keyword.includes("자연") || keyword.includes("동물") || keyword.includes("식물")) {
+    return "동식물과 생태 환경을 표본, 모형, 관찰 전시로 만나는 공간입니다. 자연을 좋아하는 아이가 질문을 이어가기 좋은 관찰 포인트가 많습니다.";
+  }
+  if (keyword.includes("재난") || keyword.includes("안전")) {
+    return "재난과 생활안전 상황을 아이 눈높이에서 익히는 체험형 공간입니다. 위험 상황을 말로만 설명하기보다 직접 보고 따라 해보며 이해하기 좋습니다.";
+  }
+  if (keyword.includes("예술") || keyword.includes("음악") || keyword.includes("창의")) {
+    return "색, 소리, 만들기 같은 감각 활동으로 예술을 접하는 공간입니다. 조용한 감상보다 아이가 표현하고 반응하는 경험을 만들기 좋습니다.";
+  }
+  if (keyword.includes("스포츠") || keyword.includes("레저") || keyword.includes("산악")) {
+    return "몸의 움직임과 스포츠 문화를 전시·체험 요소로 만나는 공간입니다. 활동적인 아이가 관람과 체험을 함께 즐기기 좋은 후보입니다.";
+  }
+  if (keyword.includes("독서") || keyword.includes("이야기")) {
+    return "책과 이야기를 바탕으로 상상력을 넓히는 문화 공간입니다. 읽기 활동을 전시나 체험과 연결해보고 싶은 가족에게 어울립니다.";
+  }
+  return `${keyword || "전시 주제"}를 아이 눈높이에서 살펴볼 수 있는 체험형 공간입니다. 전시물의 모양, 쓰임, 이야기를 함께 관찰하며 대화를 이어가기 좋습니다.`;
+}
+
+function libraryExperienceSummary(record) {
+  const name = clean(record.name);
+  const type = clean(record.library_type);
+  const current = clean(record.summary);
+  if (name.includes("한옥") || current.includes("한옥")) {
+    return "한옥 건물의 마루와 낮은 서가에서 그림책을 읽을 수 있는 어린이도서관입니다. 공간 자체가 아늑해 아이가 책 읽는 분위기를 자연스럽게 경험하기 좋습니다.";
+  }
+  if (type.includes("영어") || name.includes("영어") || current.includes("영어")) {
+    return "영어 그림책과 원서를 중심으로 책을 고를 수 있는 어린이 영어도서관입니다. 영어를 공부처럼 시작하기보다 그림책과 소리로 접하게 하기 좋습니다.";
+  }
+  if (current.includes("도담도담")) {
+    return "마루형 책놀이터와 잔디 정원이 함께 있어 책 읽기와 산책을 묶기 좋은 도서관입니다. 아이가 앉거나 기대어 그림책을 넘기기 편한 분위기입니다.";
+  }
+  if (current.includes("한강")) {
+    return "한강 조망이 있는 어린이·유아자료실에서 책을 읽을 수 있는 도서관입니다. 수유실과 놀이책 코너가 분리되어 어린 동생과 함께 가기 좋습니다.";
+  }
+  if (current.includes("숲") || current.includes("자연")) {
+    return "숲과 가까운 분위기에서 어린이자료실을 이용할 수 있는 도서관입니다. 책 읽기 뒤 산책까지 이어가기 좋아 조용한 반나절 코스로 어울립니다.";
+  }
+  if (current.includes("이야기방") || current.includes("가족자료실")) {
+    return "가족자료실과 이야기방을 갖춘 도서관으로 부모가 아이에게 소리 내어 책을 읽어주기 좋습니다. 그림책을 함께 고르고 머무르는 경험에 강점이 있습니다.";
+  }
+  if (current.includes("그림책소행성")) {
+    return "우주 테마의 그림책 특화 공간에서 책을 놀이처럼 접할 수 있는 도서관입니다. 시각적인 공간 연출이 있어 첫 도서관 경험으로도 좋습니다.";
+  }
+  if (current.includes("새싹마루")) {
+    return "영유아 전용 실내 공간인 새싹마루를 중심으로 그림책을 편하게 볼 수 있는 도서관입니다. 어린 아이가 책과 놀이를 함께 경험하기 좋습니다.";
+  }
+  if (current.includes("마루") || current.includes("좌식")) {
+    return "신발을 벗고 앉아 그림책을 볼 수 있는 마루형 어린이 공간이 강점입니다. 오래 앉기 어려운 아이도 자세를 바꿔가며 책을 접하기 좋습니다.";
+  }
+  if (current.includes("수유실") || current.includes("유아 화장실")) {
+    return "어린이자료실 주변 편의시설이 잘 갖춰져 영유아와 함께 머무르기 좋은 도서관입니다. 그림책을 읽고 쉬어가는 동선이 비교적 편합니다.";
+  }
+  if (name.includes("기적의도서관")) {
+    return "어린이 중심으로 설계된 열린 독서 공간에서 그림책과 이야기 활동을 접할 수 있습니다. 책을 조용히만 읽기보다 탐색하듯 고르기 좋습니다.";
+  }
+  if (type.includes("청소년")) {
+    return "어린이와 청소년 자료를 함께 살펴볼 수 있는 전문 도서관입니다. 형제자매가 각자 읽을 책을 고르면서 같은 공간에 머물기 좋습니다.";
+  }
+  return "낮은 서가와 어린이 자료를 중심으로 아이가 직접 책을 고르기 좋은 도서관입니다. 그림책을 살펴보고 독서 프로그램까지 이어보기 좋습니다.";
+}
+
 function daysFromText(value) {
   const text = clean(value);
   if (!text) return [];
@@ -251,13 +374,6 @@ function normalizeKidsCafe(record, index) {
   if (openSunday === true && !days.includes("일")) days.push("일");
   const ageLabel = compactKidsAgeLabel(record.age);
   const parkingAvailable = parseNullableBoolean(record.parking_available);
-  const parkingLabel = parkingAvailable === true ? "주차 가능" : parkingAvailable === false ? "주차 제한" : "주차 확인";
-  const originalSummary = clean(record.feature_summary);
-  const parentSummary = [
-    `${ageLabel} 아이가 예약제로 이용하는 서울형 실내 놀이공간입니다.`,
-    originalSummary ? originalSummary.replaceAll(" · ", ", ") : "운영 조건과 준비물을 확인해 방문 계획을 세우기 좋습니다.",
-    `${parkingLabel}이며, 휴관일과 결제 방식은 방문 전 확인하세요.`,
-  ].join(" ");
   return {
     id: `kids-${clean(record.id, String(index + 1))}`,
     category: "kids_cafe",
@@ -265,7 +381,7 @@ function normalizeKidsCafe(record, index) {
     subtype: clean(record.cafe_type, "서울형 키즈카페"),
     name: clean(record.name, "이름 확인 필요").replace(/^서울형\s*키즈카페\s*/u, "").replace(/^일반형\s*키즈카페\s*/u, ""),
     district: clean(record.district, "지역 확인 필요"),
-    summary: parentSummary,
+    summary: kidsCafeExperienceSummary(record, index),
     ageLabel,
     ageGroups: parseKidsAgeGroups(record.age),
     operationLabel: operationDays,
@@ -305,15 +421,7 @@ function normalizeKidsCafe(record, index) {
 }
 
 function museumSummary(record) {
-  const theme = clean(record.theme, "서울미래아이");
-  const keyword = clean(record.keyword, "체험");
-  const age = Array.isArray(record.recommended_age) ? record.recommended_age.join(", ") : "아이";
-  const fee = feeLabel(record.fee);
-  const status =
-    record.verification_status === "police_station_proxy"
-      ? "청소년경찰학교는 관할 경찰서별 프로그램 여부를 먼저 확인하고 예약 문의가 필요합니다."
-      : "전시 구성과 체험 프로그램 일정을 공식 페이지에서 확인해 방문 시간을 정하기 좋습니다.";
-  return `${keyword}를 아이 눈높이로 접하는 ${theme}형 공간입니다. ${age} 아이와 ${fee}로 방문하기 좋은 후보이며, ${status}`;
+  return museumExperienceSummary(record);
 }
 
 function normalizeMuseum(record, index) {
@@ -393,7 +501,7 @@ function normalizeLibrary(record, index) {
     name: clean(record.name, "어린이도서관"),
     district: clean(record.district, "지역 확인 필요"),
     address: clean(record.address),
-    summary: clean(record.summary, "그림책과 어린이 자료, 독서문화 프로그램을 함께 확인할 수 있는 어린이도서관입니다."),
+    summary: libraryExperienceSummary(record),
     ageLabel: ageGroups.join(", ") || "영아, 유아, 초등",
     ageGroups,
     operationLabel: days.length ? days.join(", ") : clean(record.operation_label, "운영일 확인 필요"),
