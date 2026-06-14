@@ -607,8 +607,9 @@ function renderCards() {
     categoryChip.textContent = place.categoryLabel;
     subtypeChip.textContent = place.subtype;
     districtChip.textContent = place.district;
-    statusChip.textContent = place.statusLabel || "운영 확인";
-    statusChip.classList.toggle("is-closed", place.statusLabel.includes("휴무"));
+    const statusLabel = place.statusLabel || "운영 확인";
+    statusChip.textContent = statusLabel;
+    statusChip.classList.toggle("is-closed", statusLabel.includes("휴무"));
     favoriteButton.textContent = state.favorites.has(place.id) ? "♥" : "♡";
     favoriteButton.setAttribute("aria-label", state.favorites.has(place.id) ? "즐겨찾기 해제" : "즐겨찾기 저장");
     name.textContent = place.name;

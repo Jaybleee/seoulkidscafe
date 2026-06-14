@@ -472,8 +472,20 @@ h1 em {
   display: grid;
   gap: 10px;
   align-content: start;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 420px));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 420px));
   justify-content: center;
+}
+
+.content[data-mobile-view="list"] .list-panel {
+  overflow: visible;
+  min-height: 0;
+}
+
+.content[data-mobile-view="list"] .card-list {
+  min-height: 0;
+  height: auto;
+  overflow: visible;
+  padding-bottom: 28px;
 }
 
 .place-card {
@@ -968,14 +980,16 @@ h1 em {
     box-shadow: var(--shadow);
   }
 
-  #map,
-.card-list {
+  #map {
     height: calc(100svh - 235px);
     min-height: 430px;
   }
 
   .card-list {
     grid-template-columns: 1fr;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
   }
 
   .place-card {
