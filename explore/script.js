@@ -165,9 +165,7 @@ function compactKidsAgeLabel(ageText) {
   const text = clean(ageText);
   const match = text.match(/(\d+)\s*~\s*(\d+)\s*세/);
   if (!match) return text || "연령 확인";
-  const birthYears = [...text.matchAll(/20\d{2}/g)].map((item) => item[0].slice(2));
-  const suffix = birthYears.length >= 2 ? ` (${birthYears[0]}~${birthYears[birthYears.length - 1]}년생)` : "";
-  return `${match[1]}~${match[2]}세${suffix}`;
+  return `${match[1]}~${match[2]}세`;
 }
 
 function parseMuseumAgeGroups(value) {
