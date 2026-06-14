@@ -580,7 +580,7 @@ function markerIcon(place) {
   const color =
     place.category === "kids_cafe"
       ? "#e07b39"
-      : place.category === "library" || place.verificationStatus === "police_station_proxy"
+      : place.category === "library"
         ? "#6366f1"
         : "#2d6a4f";
   return L.divIcon({
