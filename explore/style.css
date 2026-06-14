@@ -814,6 +814,13 @@ h1 em {
   border-top: 1px solid var(--line);
 }
 
+.map-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  width: 100%;
+}
+
 .card-actions {
   display: flex;
   gap: 5px;
@@ -837,7 +844,6 @@ h1 em {
 }
 
 .map-button {
-  flex: 0 0 auto;
   border: 1px solid var(--line-strong);
   background: #fff;
   color: var(--text2);
@@ -852,7 +858,6 @@ h1 em {
 }
 
 .naver-link {
-  flex: 0 1 72px;
   border: 1px solid #03c75a;
   background: #effaf3;
   color: #138a45;
@@ -919,6 +924,18 @@ h1 em {
   border-radius: var(--r2);
   object-fit: cover;
   background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+}
+
+.popup-summary {
+  display: -webkit-box;
+  margin: 7px 0 0;
+  overflow: hidden;
+  color: var(--ink);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.4;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .popup-placeholder[hidden] {
@@ -989,6 +1006,12 @@ h1 em {
 .popup-action.primary {
   background: var(--green);
   color: #fff;
+}
+
+.popup-action.naver {
+  border: 1px solid #03c75a;
+  background: #effaf3;
+  color: #138a45;
 }
 
 .mobile-view-toggle {
@@ -1120,12 +1143,11 @@ h1 em {
   }
 
   .card-footer,
+  .map-actions,
   .card-actions {
     width: 100%;
   }
 
-  .map-button,
-  .naver-link,
   .primary-link,
   .secondary-link {
     flex: 1 1 92px;

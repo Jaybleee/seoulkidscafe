@@ -631,6 +631,7 @@ function popupHtml(place) {
   const directAction = directUrl
     ? `<a class="popup-action primary" href="${escapeHtml(directUrl)}" target="_blank" rel="noreferrer noopener">${escapeHtml(directLabel)}</a>`
     : "";
+  const naverAction = `<a class="popup-action naver" href="${escapeHtml(naverMapUrl(place))}" target="_blank" rel="noreferrer noopener">네이버지도 보기</a>`;
   return `
     <div class="popup-card">
       <div class="popup-meta">
@@ -639,9 +640,11 @@ function popupHtml(place) {
       </div>
       <h3>${escapeHtml(place.name)}</h3>
       ${image}
+      <p class="popup-summary">${escapeHtml(place.summary || "")}</p>
       <div class="popup-facts">${facts}</div>
       <div class="popup-actions">
-        <button type="button" class="popup-action" data-popup-action="show-list" data-place-id="${escapeHtml(place.id)}">목록 보기</button>
+        <button type="button" class="popup-action" data-popup-action="show-list" data-place-id="${escapeHtml(place.id)}">세부내용 보기</button>
+        ${naverAction}
         ${directAction}
       </div>
     </div>
@@ -749,7 +752,7 @@ function renderCards() {
       });
     }
 
-    configureLink(naverLink, naverMapUrl(place), "네이버");
+    configureLink(naverLink, naverMapUrl(place), "네이버지도 보기");
     configureLink(primaryLink, place.primaryUrl, place.primaryLabel || "자세히 보기");
     configureLink(secondaryLink, place.secondaryUrl, place.secondaryLabel || "");
 
