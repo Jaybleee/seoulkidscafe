@@ -33,6 +33,13 @@
         <button class="mode-tab" type="button" data-category="museum">박물관·체험 <strong id="count-museums">0</strong></button>
       </section>
 
+      <section class="quick-filters" aria-label="빠른 조건">
+        <button class="quick-chip" type="button" data-quick-filter="today">오늘 운영</button>
+        <button class="quick-chip" type="button" data-quick-filter="free">무료</button>
+        <button class="quick-chip" type="button" data-quick-filter="weekend">주말 가능</button>
+        <button class="quick-chip" type="button" data-quick-filter="official">공식 링크</button>
+      </section>
+
       <div id="filter-panel" class="filter-panel is-collapsed" hidden>
         <div class="filter-grid">
           <label class="field field-search">
@@ -139,6 +146,7 @@
             <span class="subtype-chip"></span>
             <span class="district-chip"></span>
           </div>
+          <div class="quick-facts"></div>
           <h2 class="name"></h2>
           <p class="summary"></p>
           <dl class="meta">

@@ -39,6 +39,7 @@ select {
 
 .topbar,
 .mode-tabs,
+.quick-filters,
 .filter-panel,
 .map-panel,
 .list-panel {
@@ -121,6 +122,37 @@ h1 {
   gap: 8px;
   margin: 12px 0;
   padding: 8px;
+}
+
+.quick-filters {
+  display: flex;
+  gap: 8px;
+  margin: 0 0 12px;
+  padding: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.quick-filters::-webkit-scrollbar {
+  display: none;
+}
+
+.quick-chip {
+  flex: 0 0 auto;
+  min-height: 40px;
+  padding: 8px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.quick-chip.is-selected {
+  border-color: rgba(25, 117, 93, 0.42);
+  background: var(--museum);
+  color: #fff;
 }
 
 .mode-tab {
@@ -390,6 +422,40 @@ h1 {
   margin-bottom: 6px;
 }
 
+.quick-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 8px;
+}
+
+.fact-badge {
+  display: inline-flex;
+  min-height: 24px;
+  align-items: center;
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: rgba(25, 117, 93, 0.1);
+  color: var(--museum-strong);
+  font-size: 0.74rem;
+  font-weight: 900;
+}
+
+.place-card[data-category="kids_cafe"] .fact-badge {
+  background: rgba(217, 108, 45, 0.12);
+  color: var(--kids-strong);
+}
+
+.fact-badge.free {
+  background: rgba(47, 111, 143, 0.12);
+  color: var(--blue);
+}
+
+.fact-badge.needs-check {
+  background: rgba(129, 88, 26, 0.12);
+  color: #81581a;
+}
+
 .category-chip,
 .subtype-chip,
 .district-chip {
@@ -591,23 +657,55 @@ h1 {
 
 @media (max-width: 900px) {
   .page-shell {
-    padding: 10px;
+    padding: 8px;
   }
 
   .topbar {
     display: grid;
+    gap: 10px;
+    padding: 13px;
+  }
+
+  h1 {
+    font-size: 1.35rem;
+  }
+
+  .intro {
+    font-size: 0.9rem;
   }
 
   .toolbar {
     justify-content: start;
+    gap: 8px;
   }
 
-  .mode-tabs,
+  .mode-tabs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4px;
+    padding: 5px;
+  }
+
+  .mode-tab {
+    min-height: 42px;
+    padding: 6px 4px;
+    font-size: 0.86rem;
+  }
+
   .filter-grid {
     grid-template-columns: 1fr;
   }
 
+  .quick-filters {
+    position: sticky;
+    top: 0;
+    z-index: 500;
+    margin-bottom: 10px;
+  }
+
   .mobile-view-toggle {
+    position: sticky;
+    top: 58px;
+    z-index: 490;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px;
@@ -639,15 +737,28 @@ h1 {
 
   #map,
   .card-list {
-    height: calc(100vh - 330px);
-    min-height: 420px;
+    height: calc(100svh - 285px);
+    min-height: 390px;
   }
 
   .place-card {
-    grid-template-columns: 96px minmax(0, 1fr);
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 10px;
+    padding: 10px;
   }
 
   .thumb-wrap {
-    height: 96px;
+    height: 92px;
+  }
+
+  .card-footer,
+  .card-actions {
+    width: 100%;
+  }
+
+  .map-button,
+  .primary-link,
+  .secondary-link {
+    flex: 1 1 92px;
   }
 }
