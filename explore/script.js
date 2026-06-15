@@ -37,6 +37,27 @@ const CATEGORY_LABELS = {
   museum: "박물관·체험",
   library: "도서관",
 };
+const KIDS_CAFE_OVERRIDES = {
+  "서초구 반포한강공원 서래섬": {
+    district: "서초구",
+    address: "서울특별시 서초구 반포동 1333-1 서래섬",
+    lat: 37.50707586037564,
+    lng: 126.98731877947318,
+    naverQuery: "서래섬",
+  },
+  "서울형키즈카페 시립 팔각당점": {
+    naverQuery: "어린이대공원 팔각당 키즈카페",
+  },
+  "서울형 키즈카페 송파구 잠실근린공원점(하하호호놀이터 송파구1호점)": {
+    naverQuery: "하하호호놀이터 송파구1호점",
+  },
+  "서울형키즈카페 용산구한강로동점(용산도담도담실내놀이터)": {
+    naverQuery: "용산도담도담실내놀이터 한강로동점",
+  },
+  "서울형 키즈카페 용산구 후암동점(후암 초록숲 키즈카페)": {
+    naverQuery: "후암 초록숲 키즈카페",
+  },
+};
 const MUSEUM_LINK_OVERRIDES = {
   G밸리산업박물관: "https://gvmuseum.seoul.go.kr/",
   국립경찰박물관: "https://www.policemuseum.go.kr/",
@@ -198,8 +219,33 @@ function officialSearchUrl(name, district) {
 }
 
 function naverMapUrl(place) {
-  const query = encodeURIComponent([place.name, place.address, place.district].filter(Boolean).join(" "));
+  const query = encodeURIComponent(place.naverQuery || [place.name, place.district].filter(Boolean).join(" "));
   return `https://map.naver.com/p/search/${query}`;
+}
+
+function compactBranchName(rawName, displayName) {
+  const withoutParen = rawName.replace(/\([^)]*\)/g, " ");
+  return clean(withoutParen)
+    .replace(/^서울형\s*키즈카페\s*/u, "")
+    .replace(/^서울형키즈카페\s*/u, "")
+    .replace(/^일반형\s*키즈카페\s*/u, "")
+    .replace(/^[가-힣]+구\s*/u, "")
+    .replace(/^시립\s*/u, "시립 ")
+    .trim() || displayName;
+}
+
+function kidsCafeNaverQuery(record, displayName, district) {
+  const rawName = clean(record.name);
+  const override = KIDS_CAFE_OVERRIDES[rawName];
+  if (override?.naverQuery) return override.naverQuery;
+  const paren = rawName.match(/\(([^()]*)\)\s*$/u);
+  if (paren) {
+    const brand = paren[1].replaceAll("아이·맘", "아이맘").trim();
+    const branch = compactBranchName(rawName, displayName);
+    if (brand && !brand.includes("주차")) return [brand, branch].filter(Boolean).join(" ");
+  }
+  if (clean(record.cafe_type).includes("여기저기")) return [displayName, district].filter(Boolean).join(" ");
+  return [displayName, "서울형 키즈카페", district].filter(Boolean).join(" ");
 }
 
 function popupDirectLabel(place) {
@@ -393,13 +439,19 @@ function normalizeKidsCafe(record, index) {
   const ageLabel = compactKidsAgeLabel(record.age);
   const parkingAvailable = parseNullableBoolean(record.parking_available);
   const reservationOptions = reservationOptionsFromRecord(record);
+  const rawName = clean(record.name, "이름 확인 필요");
+  const override = KIDS_CAFE_OVERRIDES[rawName] || {};
+  const displayName = rawName.replace(/^서울형\s*키즈카페\s*/u, "").replace(/^일반형\s*키즈카페\s*/u, "");
+  const district = clean(override.district, clean(record.district, "지역 확인 필요"));
   return {
     id: `kids-${clean(record.id, String(index + 1))}`,
     category: "kids_cafe",
     categoryLabel: "키즈카페",
     subtype: clean(record.cafe_type, "서울형 키즈카페"),
-    name: clean(record.name, "이름 확인 필요").replace(/^서울형\s*키즈카페\s*/u, "").replace(/^일반형\s*키즈카페\s*/u, ""),
-    district: clean(record.district, "지역 확인 필요"),
+    name: displayName,
+    district,
+    address: clean(override.address, clean(record.address)),
+    naverQuery: kidsCafeNaverQuery(record, displayName, district),
     summary: kidsCafeExperienceSummary(record, index),
     ageLabel,
     ageGroups: parseKidsAgeGroups(record.age),
@@ -415,8 +467,8 @@ function normalizeKidsCafe(record, index) {
     reservationType: "umppa",
     reservationUrl: clean(record.reserve_url),
     reservationOptions,
-    lat: isValidCoordinate(record.lat) ? Number(record.lat) : null,
-    lng: isValidCoordinate(record.lng) ? Number(record.lng) : null,
+    lat: isValidCoordinate(override.lat) ? Number(override.lat) : isValidCoordinate(record.lat) ? Number(record.lat) : null,
+    lng: isValidCoordinate(override.lng) ? Number(override.lng) : isValidCoordinate(record.lng) ? Number(record.lng) : null,
     openSaturday,
     openSunday,
     parkingAvailable,
@@ -473,6 +525,8 @@ function normalizeMuseum(record, index) {
     subtype: clean(record.theme, "서울미래아이"),
     name: placeName,
     district: clean(record.district, "지역 확인 필요"),
+    address: clean(record.address),
+    naverQuery: `${placeName} ${clean(record.district, "서울")}`,
     summary: museumSummary(record),
     ageLabel,
     ageGroups: parseMuseumAgeGroups(record.recommended_age),
@@ -522,6 +576,7 @@ function normalizeLibrary(record, index) {
     name: clean(record.name, "어린이도서관"),
     district: clean(record.district, "지역 확인 필요"),
     address: clean(record.address),
+    naverQuery: `${clean(record.name, "어린이도서관")} ${clean(record.district, "서울")}`,
     summary: libraryExperienceSummary(record),
     ageLabel: ageGroups.join(", ") || "영아, 유아, 초등",
     ageGroups,
