@@ -1130,7 +1130,7 @@ h1 em {
     grid-template-columns: 1fr 1fr;
   }
 
-  .popup-action.primary {
+  .popup-actions:not(.popup-actions-primary) .popup-action.primary {
     grid-column: span 2;
   }
 }
