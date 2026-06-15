@@ -945,6 +945,21 @@ h1 em {
   font-weight: 900;
 }
 
+.popup-kids_cafe {
+  --popup-main: var(--kids);
+  --popup-soft: var(--orange-bg);
+}
+
+.popup-museum {
+  --popup-main: var(--museum);
+  --popup-soft: var(--green-bg);
+}
+
+.popup-library {
+  --popup-main: var(--purple);
+  --popup-soft: var(--purple-bg);
+}
+
 .popup-meta,
 .popup-facts,
 .popup-actions {
@@ -961,7 +976,7 @@ h1 em {
 }
 
 .popup-meta strong {
-  color: var(--museum-strong);
+  color: var(--popup-main, var(--museum-strong));
 }
 
 .popup-facts {
@@ -973,7 +988,7 @@ h1 em {
   display: inline-flex;
   padding: 4px 6px;
   border-radius: 999px;
-  background: var(--purple-bg);
+  background: var(--popup-soft, var(--purple-bg));
   color: var(--ink);
   font-size: 0.68rem;
   font-weight: 800;
@@ -983,6 +998,11 @@ h1 em {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: 8px;
+}
+
+.popup-actions-secondary,
+.popup-actions-primary {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .popup-action {
@@ -1004,8 +1024,14 @@ h1 em {
 }
 
 .popup-action.primary {
-  background: var(--green);
+  background: var(--popup-main, var(--green));
   color: #fff;
+}
+
+.popup-action.guide {
+  border: 1px solid var(--popup-main, var(--green));
+  background: var(--popup-soft, var(--green-bg));
+  color: var(--popup-main, var(--green));
 }
 
 .popup-action.naver {

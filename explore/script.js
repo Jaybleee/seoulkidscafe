@@ -875,6 +875,7 @@ function markerIcon(place) {
 }
 
 function popupHtml(place) {
+  const popupClass = `popup-card popup-${place.category}`;
   const image = place.imageUrl
     ? `<img src="${escapeHtml(place.imageUrl)}" alt="${escapeHtml(place.name)}" onerror="this.hidden=true;this.nextElementSibling.hidden=false;" /><div class="popup-placeholder" hidden>${escapeHtml(place.categoryLabel)}</div>`
     : `<div class="popup-placeholder">${escapeHtml(place.categoryLabel)}</div>`;
@@ -890,8 +891,30 @@ function popupHtml(place) {
       ? `<a class="popup-action primary" href="${escapeHtml(directUrl)}" target="_blank" rel="noreferrer noopener">${escapeHtml(directLabel)}</a>`
       : "";
   const naverAction = `<a class="popup-action naver" href="${escapeHtml(naverMapUrl(place))}" target="_blank" rel="noreferrer noopener">네이버지도</a>`;
+  const guideAction = place.primaryUrl
+    ? `<a class="popup-action guide" href="${escapeHtml(place.primaryUrl)}" target="_blank" rel="noreferrer noopener">${escapeHtml(place.primaryLabel || "이용안내")}</a>`
+    : "";
+  const popupActions =
+    place.category === "kids_cafe"
+      ? `
+        <div class="popup-actions popup-actions-secondary">
+          <button type="button" class="popup-action" data-popup-action="show-list" data-place-id="${escapeHtml(place.id)}">세부내용</button>
+          ${naverAction}
+        </div>
+        <div class="popup-actions popup-actions-primary">
+          ${guideAction}
+          ${directAction}
+        </div>
+      `
+      : `
+        <div class="popup-actions">
+          <button type="button" class="popup-action" data-popup-action="show-list" data-place-id="${escapeHtml(place.id)}">세부내용</button>
+          ${naverAction}
+          ${directAction}
+        </div>
+      `;
   return `
-    <div class="popup-card">
+    <div class="${escapeHtml(popupClass)}">
       <div class="popup-meta">
         <span>${escapeHtml(place.district)}</span>
         <strong>${escapeHtml(place.categoryLabel)}</strong>
@@ -900,11 +923,7 @@ function popupHtml(place) {
       ${image}
       <p class="popup-summary">${escapeHtml(place.summary || "")}</p>
       <div class="popup-facts">${facts}</div>
-      <div class="popup-actions">
-        <button type="button" class="popup-action" data-popup-action="show-list" data-place-id="${escapeHtml(place.id)}">세부내용</button>
-        ${naverAction}
-        ${directAction}
-      </div>
+      ${popupActions}
     </div>
   `;
 }
