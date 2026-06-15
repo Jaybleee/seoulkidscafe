@@ -1,7 +1,8 @@
+const DATA_VERSION = "place-images-1";
 const DATA_URLS = {
-  kids: ["../data/kids_cafes.json", "./data/kids_cafes.json", "/data/kids_cafes.json"],
-  museums: ["../data/museums.json", "./data/museums.json", "/data/museums.json"],
-  libraries: ["../data/libraries.json", "./data/libraries.json", "/data/libraries.json"],
+  kids: ["../data/kids_cafes.json", "./data/kids_cafes.json", "/data/kids_cafes.json"].map((url) => `${url}?v=${DATA_VERSION}`),
+  museums: ["../data/museums.json", "./data/museums.json", "/data/museums.json"].map((url) => `${url}?v=${DATA_VERSION}`),
+  libraries: ["../data/libraries.json", "./data/libraries.json", "/data/libraries.json"].map((url) => `${url}?v=${DATA_VERSION}`),
 };
 const SEOUL_CENTER = [37.5665, 126.978];
 const DEFAULT_ZOOM = 11;
