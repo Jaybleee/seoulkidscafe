@@ -203,7 +203,7 @@ function naverMapUrl(place) {
 }
 
 function popupDirectLabel(place) {
-  if (place.secondaryUrl) return "예약하기";
+  if (place.reservationOptions?.length || place.secondaryUrl) return "예약하기";
   const label = clean(place.primaryLabel).replace(/\s*→$/, "");
   if (!label || label.includes("공식") || label.includes("검색")) return "공식 페이지";
   if (label.includes("예약")) return "예약";
@@ -227,11 +227,29 @@ function fact(label, tone = "") {
   return { label, tone };
 }
 
+function reservationOptionsFromRecord(record) {
+  if (!Array.isArray(record.reservation_options)) return [];
+  return record.reservation_options
+    .map((option) => ({
+      label: clean(option.label, "예약하기"),
+      detail: clean(option.detail),
+      age: clean(option.age),
+      capacity: clean(option.capacity),
+      url: clean(option.url),
+      detailUrl: clean(option.detail_url),
+      facilityId: clean(option.facility_id),
+    }))
+    .filter((option) => option.url);
+}
+
 function kidsCafeExperienceSummary(record, index) {
   const name = clean(record.name);
   const feature = clean(record.feature_summary);
   const isParkType = clean(record.cafe_type).includes("여기저기") || feature.includes("공원형");
   const lowerAddress = clean(record.address);
+  if (name.includes("역촌동점") && feature.includes("연령별 층 분리")) {
+    return "한 건물 안에서 연령대별 놀이공간이 층별로 나뉜 은평아이맘놀이터입니다. 영아, 유아, 초등 저학년이 각자 맞는 공간을 이용하기 좋습니다.";
+  }
   if (name.includes("공예마을")) {
     return "공예마을 콘셉트에 맞춰 만들기와 감각놀이를 함께 기대할 수 있는 실내 놀이공간입니다. 조용한 놀이와 몸을 쓰는 활동을 균형 있게 찾는 가족에게 어울립니다.";
   }
@@ -374,6 +392,7 @@ function normalizeKidsCafe(record, index) {
   if (openSunday === true && !days.includes("일")) days.push("일");
   const ageLabel = compactKidsAgeLabel(record.age);
   const parkingAvailable = parseNullableBoolean(record.parking_available);
+  const reservationOptions = reservationOptionsFromRecord(record);
   return {
     id: `kids-${clean(record.id, String(index + 1))}`,
     category: "kids_cafe",
@@ -390,11 +409,12 @@ function normalizeKidsCafe(record, index) {
     note: clean(record.closed_days) ? `휴관: ${clean(record.closed_days)}` : "",
     imageUrl: clean(record.image_url),
     primaryUrl: clean(record.detail_url),
-    secondaryUrl: clean(record.reserve_url),
+    secondaryUrl: reservationOptions.length ? "" : clean(record.reserve_url),
     primaryLabel: "이용안내",
-    secondaryLabel: "예약하기 →",
+    secondaryLabel: "예약하기",
     reservationType: "umppa",
     reservationUrl: clean(record.reserve_url),
+    reservationOptions,
     lat: isValidCoordinate(record.lat) ? Number(record.lat) : null,
     lng: isValidCoordinate(record.lng) ? Number(record.lng) : null,
     openSaturday,
@@ -404,7 +424,7 @@ function normalizeKidsCafe(record, index) {
     fee: "유료",
     hasOfficialLink: Boolean(clean(record.detail_url)),
     officialLinkReady: Boolean(clean(record.detail_url)),
-    hasReservation: Boolean(clean(record.reserve_url)),
+    hasReservation: reservationOptions.length > 0 || Boolean(clean(record.reserve_url)),
     badges: [
       days.includes(TODAY_DAY) ? "오늘 운영" : "",
       "예약 가능",
@@ -414,6 +434,7 @@ function normalizeKidsCafe(record, index) {
     facts: [
       fact(ageLabel, "age"),
       fact("유료", "fee"),
+      ...(reservationOptions.length ? [fact("연령별 공간", "topic")] : []),
       fact(parkingAvailable === true ? "주차 가능" : "주차 확인", "parking"),
     ],
     searchText: "",
@@ -700,6 +721,65 @@ function filterPlaces() {
   updateMarkers();
 }
 
+function ensureReservationSheet() {
+  let sheet = document.getElementById("reservation-sheet");
+  if (sheet) return sheet;
+  sheet = document.createElement("div");
+  sheet.id = "reservation-sheet";
+  sheet.className = "reservation-sheet-backdrop";
+  sheet.hidden = true;
+  sheet.innerHTML = `
+    <section class="reservation-sheet" role="dialog" aria-modal="true" aria-labelledby="reservation-sheet-title">
+      <button type="button" class="reservation-close" aria-label="닫기">×</button>
+      <p class="reservation-eyebrow">예약 선택</p>
+      <h2 id="reservation-sheet-title"></h2>
+      <p class="reservation-copy"></p>
+      <div class="reservation-options"></div>
+    </section>
+  `;
+  document.body.append(sheet);
+  sheet.addEventListener("click", (event) => {
+    if (event.target === sheet || event.target.closest(".reservation-close")) {
+      closeReservationSheet();
+    }
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !sheet.hidden) closeReservationSheet();
+  });
+  return sheet;
+}
+
+function closeReservationSheet() {
+  const sheet = document.getElementById("reservation-sheet");
+  if (sheet) sheet.hidden = true;
+  document.body.classList.remove("has-reservation-sheet");
+}
+
+function openReservationOptions(placeId) {
+  const place = state.places.find((item) => item.id === placeId);
+  if (!place?.reservationOptions?.length) return;
+  const sheet = ensureReservationSheet();
+  sheet.querySelector("#reservation-sheet-title").textContent = place.name;
+  sheet.querySelector(".reservation-copy").textContent = "아이 연령에 맞는 공간을 선택해 예약 페이지로 이동하세요.";
+  const options = sheet.querySelector(".reservation-options");
+  options.innerHTML = "";
+  place.reservationOptions.forEach((option) => {
+    const link = document.createElement("a");
+    link.className = "reservation-option";
+    link.href = option.url;
+    link.target = "_blank";
+    link.rel = "noreferrer noopener";
+    const detail = [option.detail, option.capacity].filter(Boolean).join(" · ");
+    link.innerHTML = `
+      <strong>${escapeHtml(option.label)}</strong>
+      ${detail ? `<span>${escapeHtml(detail)}</span>` : ""}
+    `;
+    options.append(link);
+  });
+  sheet.hidden = false;
+  document.body.classList.add("has-reservation-sheet");
+}
+
 function initMap() {
   state.map = L.map("map", { zoomControl: true, scrollWheelZoom: true }).setView(SEOUL_CENTER, DEFAULT_ZOOM);
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -707,16 +787,21 @@ function initMap() {
   }).addTo(state.map);
 
   const mapContainer = state.map.getContainer();
-  const handleShowList = (event) => {
-    const button = event.target.closest("[data-popup-action='show-list']");
+  const handlePopupAction = (event) => {
+    const button = event.target.closest("[data-popup-action]");
     if (!button) return;
     event.preventDefault();
     event.stopPropagation();
-    showPlaceCardInList(button.dataset.placeId || state.activeId);
-    state.map.closePopup();
+    if (button.dataset.popupAction === "show-list") {
+      showPlaceCardInList(button.dataset.placeId || state.activeId);
+      state.map.closePopup();
+    }
+    if (button.dataset.popupAction === "reservation-options") {
+      openReservationOptions(button.dataset.placeId || state.activeId);
+    }
   };
-  mapContainer.addEventListener("click", handleShowList, true);
-  mapContainer.addEventListener("pointerup", handleShowList, true);
+  mapContainer.addEventListener("click", handlePopupAction, true);
+  mapContainer.addEventListener("pointerup", handlePopupAction, true);
 }
 
 function markerIcon(place) {
@@ -743,10 +828,12 @@ function popupHtml(place) {
     .map((item) => `<span>${escapeHtml(item.label)}</span>`)
     .join("");
   const directUrl = place.secondaryUrl || place.primaryUrl;
-  const directLabel = directUrl ? popupDirectLabel(place) : "";
-  const directAction = directUrl
-    ? `<a class="popup-action primary" href="${escapeHtml(directUrl)}" target="_blank" rel="noreferrer noopener">${escapeHtml(directLabel)}</a>`
-    : "";
+  const directLabel = place.reservationOptions?.length ? popupDirectLabel(place) : directUrl ? popupDirectLabel(place) : "";
+  const directAction = place.reservationOptions?.length
+    ? `<button type="button" class="popup-action primary" data-popup-action="reservation-options" data-place-id="${escapeHtml(place.id)}">${escapeHtml(directLabel)}</button>`
+    : directUrl
+      ? `<a class="popup-action primary" href="${escapeHtml(directUrl)}" target="_blank" rel="noreferrer noopener">${escapeHtml(directLabel)}</a>`
+      : "";
   const naverAction = `<a class="popup-action naver" href="${escapeHtml(naverMapUrl(place))}" target="_blank" rel="noreferrer noopener">네이버지도</a>`;
   return `
     <div class="popup-card">
@@ -870,7 +957,11 @@ function renderCards() {
 
     configureLink(naverLink, naverMapUrl(place), "네이버지도 보기");
     configureLink(primaryLink, place.primaryUrl, place.primaryLabel || "자세히 보기");
-    configureLink(secondaryLink, place.secondaryUrl, place.secondaryLabel || "");
+    if (place.reservationOptions?.length) {
+      configureReservationOptionButton(secondaryLink, place);
+    } else {
+      configureLink(secondaryLink, place.secondaryUrl, place.secondaryLabel || "");
+    }
 
     card.addEventListener("click", (event) => {
       if (event.target.closest("a, button")) return;
@@ -892,12 +983,35 @@ function renderCards() {
   });
 }
 
+function configureReservationOptionButton(anchor, place) {
+  anchor.hidden = false;
+  anchor.removeAttribute("href");
+  anchor.removeAttribute("target");
+  anchor.removeAttribute("rel");
+  anchor.removeAttribute("aria-disabled");
+  anchor.setAttribute("role", "button");
+  anchor.setAttribute("tabindex", "0");
+  anchor.textContent = "예약하기";
+  anchor.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    openReservationOptions(place.id);
+  });
+  anchor.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    openReservationOptions(place.id);
+  });
+}
+
 function configureLink(anchor, url, label) {
   if (url && label) {
     anchor.href = url;
     anchor.textContent = label;
     anchor.hidden = false;
     anchor.removeAttribute("aria-disabled");
+    anchor.removeAttribute("role");
+    anchor.removeAttribute("tabindex");
     return;
   }
   anchor.removeAttribute("href");
