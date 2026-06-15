@@ -1,4 +1,4 @@
-const DATA_VERSION = "place-images-1";
+const DATA_VERSION = "place-images-2";
 const DATA_URLS = {
   kids: ["../data/kids_cafes.json", "./data/kids_cafes.json", "/data/kids_cafes.json"].map((url) => `${url}?v=${DATA_VERSION}`),
   museums: ["../data/museums.json", "./data/museums.json", "/data/museums.json"].map((url) => `${url}?v=${DATA_VERSION}`),

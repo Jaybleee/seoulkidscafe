@@ -13,26 +13,53 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_FILES = [ROOT / "data" / "museums.json", ROOT / "data" / "libraries.json"]
 CACHE_PATH = ROOT / "data" / "place_image_cache.json"
 USER_AGENT = "seoul-kids-map/1.0 (official image enrichment)"
+MAX_DETAIL_PAGES = 3
 
 LOW_QUALITY_WORDS = [
+    "og-image",
+    "og1",
+    "common/og",
     "logo",
     "favicon",
     "/ico",
     "ico_",
     "ic_",
     "sns_logo",
+    "sns",
     "preview_logo",
     "symbol",
+    "header_flag",
+    "vod_",
+    "child_web_access",
+    "onerror",
+    "access_",
+    "sss",
+    "recommendbook",
+    "quickmenu",
+    "quick_ico",
     "popup",
     "nuri",
     "close_btn",
     "img_closed",
+    "close.gif",
     "today_close",
     "waiting",
     "bookthumb",
     "shopping-phinf",
     "mark_holiday",
     "mobileinfo",
+    "mainep",
+    "mainvi.gif",
+    "img_map_library",
+    "img_slogan",
+    "p_slogan",
+    "facility_floor",
+    "bannerzone",
+    "fsite",
+    "i_sang",
+    "process_join",
+    "cal_example",
+    "map_",
     "map.png",
     "blank",
     "spacer",
@@ -40,7 +67,11 @@ LOW_QUALITY_WORDS = [
 ]
 
 SKIP_WORDS = [
+    "og-image",
+    "og1",
+    "common/og",
     "icon",
+    "sns",
     "/ico",
     "ico_",
     "ic_",
@@ -48,14 +79,36 @@ SKIP_WORDS = [
     "blank",
     "spacer",
     "popup",
+    "header_flag",
+    "vod_",
+    "child_web_access",
+    "onerror",
+    "access_",
+    "sss",
+    "recommendbook",
+    "quickmenu",
+    "quick_ico",
     "close_btn",
     "img_closed",
+    "close.gif",
     "today_close",
     "waiting",
     "bookthumb",
     "shopping-phinf",
     "mark_holiday",
     "mobileinfo",
+    "mainep",
+    "mainvi.gif",
+    "img_map_library",
+    "img_slogan",
+    "p_slogan",
+    "facility_floor",
+    "bannerzone",
+    "fsite",
+    "i_sang",
+    "process_join",
+    "cal_example",
+    "map_",
     "facebook",
     "instagram",
     "youtube",
@@ -81,6 +134,37 @@ PREFERRED_WORDS = [
     "museum",
     "exhibit",
     "space",
+    "facility",
+    "facilities",
+    "room",
+    "building",
+    "contents",
+    "mainvisual",
+]
+
+DETAIL_LINK_WORDS = [
+    "소개",
+    "시설",
+    "공간",
+    "자료실",
+    "어린이",
+    "전시",
+    "관람",
+    "이용",
+    "facility",
+    "facilities",
+    "intro",
+    "info",
+    "guide",
+    "space",
+    "room",
+    "child",
+    "children",
+    "kids",
+    "exhibit",
+    "museum",
+    "library",
+    "lib",
 ]
 
 
@@ -96,10 +180,24 @@ def save_cache(cache: dict) -> None:
 
 def request_text(url: str) -> str:
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=20) as response:
+    with urllib.request.urlopen(req, timeout=8) as response:
         raw = response.read()
         charset = response.headers.get_content_charset() or "utf-8"
     return raw.decode(charset, errors="replace")
+
+
+def normalize_text(value: str) -> str:
+    return re.sub(r"\s+", "", value).lower()
+
+
+def name_tokens(name: str) -> list[str]:
+    normalized = normalize_text(name)
+    tokens = [normalized]
+    for suffix in ["어린이박물관", "도서관", "박물관", "체험관", "기념관", "역사관"]:
+        if normalized.endswith(suffix):
+            tokens.append(normalized[: -len(suffix)])
+    tokens.extend(normalize_text(part) for part in re.split(r"[\s·()/-]+", name) if len(part) >= 2)
+    return [token for token in dict.fromkeys(tokens) if len(token) >= 2]
 
 
 def absolute_url(base_url: str, image_url: str) -> str:
@@ -108,6 +206,12 @@ def absolute_url(base_url: str, image_url: str) -> str:
         scheme = urllib.parse.urlparse(base_url).scheme or "https"
         return f"{scheme}:{image_url}"
     return urllib.parse.urljoin(base_url, image_url)
+
+
+def same_domain(base_url: str, next_url: str) -> bool:
+    base_host = urllib.parse.urlparse(base_url).netloc.lower().removeprefix("www.")
+    next_host = urllib.parse.urlparse(next_url).netloc.lower().removeprefix("www.")
+    return bool(base_host and next_host and (next_host == base_host or next_host.endswith("." + base_host)))
 
 
 def is_image_url(url: str) -> bool:
@@ -130,6 +234,8 @@ def score_image(url: str, kind: str) -> int:
     score = 0
     if kind == "og":
         score += 14
+    if kind == "detail":
+        score += 10
     if any(word in lowered for word in PREFERRED_WORDS):
         score += 8
     if re.search(r"(1920|1600|1440|1200|1080|960|800|720|640|560|480)", lowered):
@@ -162,7 +268,42 @@ def inline_images(base_url: str, page: str) -> list[str]:
     return [absolute_url(base_url, value) for value in found if value.strip() and not value.strip().startswith("data:")]
 
 
-def extract_image(site_url: str) -> str:
+def link_candidates(base_url: str, page: str, name: str) -> list[str]:
+    tokens = name_tokens(name)
+    candidates: list[tuple[int, str]] = []
+    for match in re.finditer(r'<a\b[^>]*href=["\']([^"\']+)["\'][^>]*>(.*?)</a>', page, flags=re.IGNORECASE | re.DOTALL):
+        href = html.unescape(match.group(1).strip())
+        if not href or href.startswith(("javascript:", "mailto:", "tel:", "#")):
+            continue
+        next_url = urllib.parse.urljoin(base_url, href)
+        if not same_domain(base_url, next_url):
+            continue
+        text = re.sub(r"<[^>]+>", "", match.group(2))
+        haystack = normalize_text(f"{text} {href} {urllib.parse.unquote(next_url)}")
+        score = 0
+        if any(token in haystack for token in tokens):
+            score += 30
+        if any(word in haystack for word in DETAIL_LINK_WORDS):
+            score += 10
+        if "search" in haystack or "login" in haystack or "calendar" in haystack:
+            score -= 12
+        if score > 0:
+            candidates.append((score, next_url.split("#", 1)[0]))
+
+    candidates.sort(key=lambda item: item[0], reverse=True)
+    deduped = []
+    seen = set()
+    for _, url in candidates:
+        if url in seen:
+            continue
+        seen.add(url)
+        deduped.append(url)
+        if len(deduped) >= MAX_DETAIL_PAGES:
+            break
+    return deduped
+
+
+def extract_image(site_url: str, name: str = "") -> str:
     if not site_url:
         return ""
     try:
@@ -175,6 +316,17 @@ def extract_image(site_url: str) -> str:
         scored.append((score_image(url, "og"), url))
     for url in inline_images(site_url, page):
         scored.append((score_image(url, "inline"), url))
+
+    for detail_url in link_candidates(site_url, page, name):
+        try:
+            detail_page = request_text(detail_url)
+        except (TimeoutError, socket.timeout, UnicodeDecodeError, urllib.error.URLError, urllib.error.HTTPError):
+            continue
+        for url in meta_images(detail_url, detail_page):
+            scored.append((score_image(url, "detail"), url))
+        for url in inline_images(detail_url, detail_page):
+            scored.append((score_image(url, "detail"), url))
+        time.sleep(0.12)
 
     scored = [(score, url) for score, url in scored if score > 0 and not is_low_quality(url)]
     if not scored:
@@ -203,12 +355,13 @@ def enrich_file(path: Path, cache: dict) -> tuple[int, int, int]:
         if not website:
             continue
 
-        if website not in cache or is_low_quality(cache.get(website) or ""):
-            cache[website] = extract_image(website)
+        cache_key = f"{website}#{item.get('name', '')}"
+        if cache_key not in cache or is_low_quality(cache.get(cache_key) or ""):
+            cache[cache_key] = extract_image(website, item.get("name", ""))
             save_cache(cache)
             time.sleep(0.25)
 
-        next_image = (cache.get(website) or "").strip()
+        next_image = (cache.get(cache_key) or "").strip()
         if not next_image and current and is_low_quality(current):
             item["image_url"] = ""
             changed += 1
