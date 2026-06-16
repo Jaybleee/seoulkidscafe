@@ -1,4 +1,4 @@
-const DATA_VERSION = "building-images-random-1";
+const DATA_VERSION = "place-cta-1";
 const DATA_URLS = {
   kids: ["../data/kids_cafes.json", "./data/kids_cafes.json", "/data/kids_cafes.json"].map((url) => `${url}?v=${DATA_VERSION}`),
   museums: ["../data/museums.json", "./data/museums.json", "/data/museums.json"].map((url) => `${url}?v=${DATA_VERSION}`),
@@ -896,6 +896,10 @@ function popupHtml(place) {
   const guideAction = place.primaryUrl
     ? `<a class="popup-action guide" href="${escapeHtml(place.primaryUrl)}" target="_blank" rel="noreferrer noopener">${escapeHtml(place.primaryLabel || "이용안내")}</a>`
     : "";
+  const officialPopupAction = place.primaryUrl
+    ? `<a class="popup-action guide" href="${escapeHtml(place.primaryUrl)}" target="_blank" rel="noreferrer noopener">공식 페이지</a>`
+    : `<span class="popup-action guide is-disabled" aria-disabled="true">공식 페이지</span>`;
+  const naverSearchPopupAction = `<a class="popup-action naver" href="${escapeHtml(naverMapUrl(place))}" target="_blank" rel="noreferrer noopener">네이버 검색</a>`;
   const popupActions =
     place.category === "kids_cafe"
       ? `
@@ -906,6 +910,13 @@ function popupHtml(place) {
         <div class="popup-actions popup-actions-primary">
           ${guideAction}
           ${directAction}
+        </div>
+      `
+      : place.category === "museum" || place.category === "library"
+        ? `
+        <div class="popup-actions popup-actions-primary">
+          ${officialPopupAction}
+          ${naverSearchPopupAction}
         </div>
       `
       : `
@@ -1032,8 +1043,16 @@ function renderCards() {
     }
 
     configureLink(naverLink, naverMapUrl(place), "네이버지도 보기");
-    configureLink(primaryLink, place.primaryUrl, place.primaryLabel || "자세히 보기");
-    if (place.reservationOptions?.length) {
+    if (place.category === "museum" || place.category === "library") {
+      naverLink.hidden = true;
+      configureOptionalLink(primaryLink, place.primaryUrl, "공식 페이지");
+      configureLink(secondaryLink, naverMapUrl(place), "네이버 검색");
+    } else {
+      configureLink(primaryLink, place.primaryUrl, place.primaryLabel || "자세히 보기");
+    }
+    if (place.category === "museum" || place.category === "library") {
+      // Category cards use the lower row for official/Naver actions.
+    } else if (place.reservationOptions?.length) {
       configureReservationOptionButton(secondaryLink, place);
     } else {
       configureLink(secondaryLink, place.secondaryUrl, place.secondaryLabel || "");
@@ -1094,6 +1113,26 @@ function configureLink(anchor, url, label) {
   anchor.textContent = "";
   anchor.setAttribute("aria-disabled", "true");
   anchor.hidden = true;
+}
+
+function configureOptionalLink(anchor, url, label) {
+  anchor.textContent = label;
+  anchor.hidden = false;
+  if (url) {
+    anchor.href = url;
+    anchor.target = "_blank";
+    anchor.rel = "noreferrer noopener";
+    anchor.removeAttribute("aria-disabled");
+    anchor.removeAttribute("role");
+    anchor.removeAttribute("tabindex");
+    return;
+  }
+  anchor.removeAttribute("href");
+  anchor.removeAttribute("target");
+  anchor.removeAttribute("rel");
+  anchor.setAttribute("aria-disabled", "true");
+  anchor.setAttribute("role", "link");
+  anchor.setAttribute("tabindex", "-1");
 }
 
 function highlightActiveCard() {

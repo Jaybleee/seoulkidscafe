@@ -821,6 +821,11 @@ h1 em {
   width: 100%;
 }
 
+.place-card[data-category="museum"] .map-actions,
+.place-card[data-category="library"] .map-actions {
+  grid-template-columns: 1fr;
+}
+
 .card-actions {
   display: flex;
   gap: 5px;
@@ -874,6 +879,13 @@ h1 em {
   border-color: var(--purple);
   background: var(--purple);
   color: #fff;
+}
+
+.place-card[data-category="museum"] .secondary-link,
+.place-card[data-category="library"] .secondary-link {
+  border-color: #03c75a;
+  background: #effaf3;
+  color: #138a45;
 }
 
 .secondary-link {
@@ -1038,6 +1050,13 @@ h1 em {
   border: 1px solid #03c75a;
   background: #effaf3;
   color: #138a45;
+}
+
+.popup-action.is-disabled {
+  border-color: var(--line);
+  background: #edf1ee;
+  color: var(--muted);
+  pointer-events: none;
 }
 
 .reservation-sheet-backdrop {
