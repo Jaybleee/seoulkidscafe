@@ -1,4 +1,4 @@
-const DATA_VERSION = "place-images-2";
+const DATA_VERSION = "building-images-random-1";
 const DATA_URLS = {
   kids: ["../data/kids_cafes.json", "./data/kids_cafes.json", "/data/kids_cafes.json"].map((url) => `${url}?v=${DATA_VERSION}`),
   museums: ["../data/museums.json", "./data/museums.json", "/data/museums.json"].map((url) => `${url}?v=${DATA_VERSION}`),
@@ -614,6 +614,7 @@ function normalizeLibrary(record, index) {
 
 function finalizePlace(place) {
   place.searchText = `${place.name} ${place.categoryLabel} ${place.subtype} ${place.district} ${place.address || ""} ${place.summary} ${place.infoLabel}`.toLowerCase();
+  place.randomRank = Math.random();
   return place;
 }
 
@@ -762,7 +763,7 @@ function filterPlaces() {
         return true;
       });
     return categoryMatch && queryMatch && districtMatch && ageMatch && dayMatch && themeMatch && feeMatch && quickMatch && kidsOptionMatch;
-  });
+  }).sort((a, b) => a.randomRank - b.randomRank);
 
   if (!state.filtered.some((place) => place.id === state.activeId)) {
     state.activeId = "";
